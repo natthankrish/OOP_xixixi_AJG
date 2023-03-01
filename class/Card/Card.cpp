@@ -1,13 +1,4 @@
 #include "Card.hpp"
-
-Card& Card::operator=(const Card&){
-    this->cardType = cardType;
-    this->value = value;
-
-    return *this;
-}
-
-
 void Card::setCardType(string cardType){
     this->cardType = cardType;
 }

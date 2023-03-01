@@ -1,16 +1,14 @@
 #ifndef __CARD.HPP__
 #define __CARD.HPP__
+#include <string>
 
-#include "class/inventory/InventoryHolder.hpp"
-
-class Card : InventoryHolder
+using namespace std;
+class Card
 {
     protected:
         string cardType;
         int value;
     public:
-        Card& operator=(const Card&);
-
         void setCardType(string);
         string getCardType();
         void setValue(int);
