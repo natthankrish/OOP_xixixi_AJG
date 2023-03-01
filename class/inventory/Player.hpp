@@ -15,7 +15,9 @@ class Player : public InventoryHolder {
         //Kombo bestKombo
     public:
         Player();
-        Player(int, string, int);
+        Player(int, string, int, bool);
+        bool gethavePlayed();
+        bool sethavePlayed(bool);
         void updatePoint(int point);
         int getPoint();
         int getPlayerID();
