@@ -10,6 +10,7 @@ class Player : public InventoryHolder {
         int playerID;
         string name;
         int point;
+        bool havePlayedThisRound;
         //List<Card> playerCard
         //Kombo bestKombo
     public:

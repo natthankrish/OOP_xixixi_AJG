@@ -30,6 +30,16 @@ int List<T>::getNeff() {
 }
 
 template <class T>
+bool List<T>::isElement(T item) {
+    for (int i = 0; i < this->neff; i++) {
+        if (item == this->buffer[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+template <class T>
 void List<T>::insertFirst(T item) {
 // Insert item sebagai elemen pertama dan menggeser item yang sudah ada 
     if (isEmptyList()) {
