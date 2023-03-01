@@ -4,7 +4,7 @@
 using namespace std;
 
 Game::Game(int gameID) {
-    this->prize = 0;
+    this->prize = 64;
     this->maxPlayerPoint = 0;
     this->gameID = gameID;
 }
@@ -12,10 +12,10 @@ Game::Game(int gameID) {
 int Game::startGame(List<Player>& listPlayer) {
     cout << "PERMAIAN " << this->gameID << " dimulai" << endl;
     this->round = new Round(1, 1);
-    round->startRound(listPlayer);
+    round->startRound(listPlayer, this->prize);
     while (this->round->getRoundID() < 6) {
         NextRound();
-        round->startRound(listPlayer);
+        round->startRound(listPlayer, this->prize);
     }
     cout << "PERMAIAN SELESAI" << endl;
     return 0;
