@@ -13,7 +13,7 @@ class Game {
         int maxPlayerPoint;
     public:
         Game(int);
-        int startGame();
+        int startGame(List<Player>&);
         void NextRound();
 };
 

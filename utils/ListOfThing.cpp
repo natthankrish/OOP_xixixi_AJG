@@ -11,9 +11,7 @@ List<T>::~List() {
 
 template <class T>
 T List<T>::getElement(int index) {
-    if (!isEmptyList()) {
-        return this->buffer[index];
-    }
+    return this->buffer[index];
 }
 
 template <class T>
@@ -32,6 +30,16 @@ int List<T>::getNeff() {
 }
 
 template <class T>
+bool List<T>::isElement(T item) {
+    for (int i = 0; i < this->neff; i++) {
+        if (item == this->buffer[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+template <class T>
 void List<T>::insertFirst(T item) {
 // Insert item sebagai elemen pertama dan menggeser item yang sudah ada 
     if (isEmptyList()) {
@@ -40,7 +48,7 @@ void List<T>::insertFirst(T item) {
         for (int i = 1; i < neff + 1; i++) {
             this->buffer[i] = this->buffer[i-1];
         }
-        this->buffer[0] = item
+        this->buffer[0] = item;
     }
     this->neff++;
 }
@@ -88,7 +96,7 @@ template <class T>
 void List<T>::deleteAt(int index) {
     if (!isEmptyList()) {
         for (int i = index; i < this->neff - 1; i++) {
-            this->buffer[i] = this->buffer[i+1]
+            this->buffer[i] = this->buffer[i+1];
         }
         this->neff--;
     }
@@ -100,7 +108,7 @@ T List<T>::getMaxElement() {
         if (this->neff == 1) {
             return this->buffer[0];
         } else {
-            T max = this->buffer[0]
+            T max = this->buffer[0];
             for (int i = 1; i < this->neff; i++) {
                 if (this->buffer[i] > max) {
                     max = this->buffer[i];
