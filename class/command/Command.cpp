@@ -90,7 +90,7 @@ ordinaryCommand::~ordinaryCommand(){
     Command::~Command();
 }                               
 
-void execute() {
+void ordinaryCommand::execute() {
     cout<<"ordinaryCommand execute\n";
 }
 
@@ -115,6 +115,10 @@ Reverse::~Reverse(){
     abilityCommand::~abilityCommand();
 }    
 
+void Reverse::execute() {
+    cout<<"Reverse execute\n";
+}
+
 //======== Reroll ========
 Reroll::Reroll() : abilityCommand(){
 
@@ -135,6 +139,10 @@ Reroll& Reroll::operator=(const Reroll& X){
 Reroll::~Reroll(){
     abilityCommand::~abilityCommand();
 }    
+
+void Reroll::execute() {
+    cout<<"Reroll execute\n";
+}
 
 //======== Swap ========
 Swap::Swap() : abilityCommand(){
@@ -157,6 +165,10 @@ Swap::~Swap(){
     abilityCommand::~abilityCommand();
 }    
 
+void Swap::execute() {
+    cout<<"Swap execute\n";
+}
+
 //======== Switch ========
 Switch::Switch() : abilityCommand(){
 
@@ -177,6 +189,10 @@ Switch& Switch::operator=(const Switch& X){
 Switch::~Switch(){
     abilityCommand::~abilityCommand();
 }    
+
+void Switch::execute() {
+    cout<<"Switch execute\n";
+}
 
 //======== Quadruple ========
 Quadruple::Quadruple() : abilityCommand(){
@@ -199,6 +215,10 @@ Quadruple::~Quadruple(){
     abilityCommand::~abilityCommand();
 }    
 
+void Quadruple::execute() {
+    cout<<"Quadruple execute\n";
+}
+
 //======== Abilityless ========
 Abilityless::Abilityless() : abilityCommand(){
 
@@ -219,6 +239,10 @@ Abilityless& Abilityless::operator=(const Abilityless& X){
 Abilityless::~Abilityless(){
     abilityCommand::~abilityCommand();
 }    
+
+void Abilityless::execute() {
+    cout<<"Abilityless execute\n";
+}
 
 //======== Quarter ========
 Quarter::Quarter() : abilityCommand(){
@@ -241,6 +265,10 @@ Quarter::~Quarter(){
     abilityCommand::~abilityCommand();
 }    
 
+void Quarter::execute() {
+    cout<<"Quarter execute\n";
+}
+
 //======== Next ========
 Next::Next() : ordinaryCommand(){
 
@@ -261,6 +289,10 @@ Next& Next::operator=(const Next& X){
 Next::~Next(){
     ordinaryCommand::~ordinaryCommand();
 }    
+
+void Next::execute() {
+    cout<<"Next execute\n";
+}
 
 //======== Double ========
 Double::Double() : ordinaryCommand(){
@@ -283,6 +315,10 @@ Double::~Double(){
     ordinaryCommand::~abilityCommand();
 }    
 
+void Double::execute() {
+    cout<<"Double execute\n";
+}
+
 //======== Half ========
 Half::Half() : ordinaryCommand(){
 
@@ -303,5 +339,9 @@ Half& Half::operator=(const Half& X){
 Half::~Half(){
     ordinaryCommand::~abilityCommand();
 }    
+
+void Half::execute() {
+    cout<<"Half execute\n";
+}
 
 

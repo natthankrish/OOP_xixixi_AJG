@@ -10,6 +10,7 @@ class List {
 
     public:
         List(int);
+        ~List();
         T getElement(int);
         bool isEmptyList();
         int getSize();
