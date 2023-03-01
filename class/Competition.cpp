@@ -11,5 +11,6 @@ Competition::Competition() {
 void Competition::startCompetition() {
     cout << "MEMULAI PERMAINAN" << endl;
     this->currentGame = new Game(1);
+    int maxPoint = currentGame->startGame();
 }
 

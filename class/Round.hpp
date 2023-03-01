@@ -13,6 +13,8 @@ class Round {
         Round(int,int);
         void nextPlayer();
         void processCurrentPlayer();
+        int getRoundID();
+        void startRound();
 };
 
 #endif
