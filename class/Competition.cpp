@@ -12,7 +12,7 @@ Competition::Competition() {
         string playerName;
         cout << "Masukkan nama player " << i+1 << ": ";
         cin >> playerName;
-        Player* player = new Player(1, playerName, 0);
+        Player* player = new Player(1, playerName, 0, false);
         ListOfPlayer->insertLast(*player);
     }
     
