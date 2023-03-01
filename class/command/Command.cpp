@@ -5,11 +5,10 @@ using namespace std;
 
 //======== command ========
 Command::Command(){
-
+    
 }
 
-Command::Command(string type, string name){
-
+Command::Command(string type, string name): type(type), name(name) {
 }
 
 Command::Command(const Command& x): type(x.type), name(x.name){
