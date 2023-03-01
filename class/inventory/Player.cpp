@@ -1,5 +1,7 @@
 #include "Player.hpp"
 
+Player::Player(): InventoryHolder("Player"), playerID(0), name(""), point(0) {}
+
 Player::Player(int ID, string name, int point): InventoryHolder("Player"), playerID(ID), name(name), point(point) {
 
 }

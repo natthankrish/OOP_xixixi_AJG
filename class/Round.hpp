@@ -1,20 +1,21 @@
 #ifndef ROUND_HPP
 #define ROUND_HPP
 
-#include "command/Command.hpp"
+//#include "command/Command.hpp"
+#include "inventory/Player.hpp"
 
 class Round {
     private:
         int roundID;
         int idxCurrentPlayer;
         int playerRemaining;
-        Command command;
+        //Command command;
     public:
         Round(int,int);
-        void nextPlayer();
+        void nextPlayer(List<Player>&);
         void processCurrentPlayer();
         int getRoundID();
-        void startRound();
+        void startRound(List<Player>&);
 };
 
 #endif

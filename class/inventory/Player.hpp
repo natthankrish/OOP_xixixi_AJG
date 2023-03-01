@@ -1,5 +1,8 @@
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
+
 #include "InventoryHolder.hpp"
-#include "../utils/ListOfThing.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 
 class Player : public InventoryHolder {
@@ -10,6 +13,7 @@ class Player : public InventoryHolder {
         //List<Card> playerCard
         //Kombo bestKombo
     public:
+        Player();
         Player(int, string, int);
         void updatePoint(int point);
         int getPoint();
@@ -18,3 +22,5 @@ class Player : public InventoryHolder {
         void setPlayerCards();
         void searchBestDeckCards();
 };
+
+#endif
