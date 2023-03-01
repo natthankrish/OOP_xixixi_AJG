@@ -2,7 +2,7 @@
 #define _QUARTER_HPP_
 #include "AbilityCommand.hpp"
 
-class Quarter : abilityCommand {
+class Quarter : public abilityCommand {
     private:
 
     public:

@@ -2,7 +2,7 @@
 #define _QUADRUPLE_HPP_
 #include "AbilityCommand.hpp"
 
-class Quadruple : abilityCommand {
+class Quadruple : public abilityCommand {
     private:
 
     public:

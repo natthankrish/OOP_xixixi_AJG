@@ -2,7 +2,7 @@
 #define _HALF_HPP_
 #include "OrdinaryCommand.hpp"
 
-class Half : ordinaryCommand {
+class Half : public ordinaryCommand {
     private:
 
     public:

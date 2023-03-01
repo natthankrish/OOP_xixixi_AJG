@@ -2,7 +2,7 @@
 #define _NEXT_HPP_
 #include "OrdinaryCommand.hpp"
 
-class Next : ordinaryCommand {
+class Next : public ordinaryCommand {
     private:
 
     public:

@@ -2,7 +2,7 @@
 #define _ORDINARY_COMMAND_HPP
 #include "Command.hpp"
 
-class ordinaryCommand : Command {
+class ordinaryCommand : public Command {
     private:
 
     public:

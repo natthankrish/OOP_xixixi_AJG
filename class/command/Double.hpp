@@ -2,7 +2,7 @@
 #define _DOUBLE_HPP_
 #include "OrdinaryCommand.hpp"
 
-class Double : ordinaryCommand {
+class Double : public ordinaryCommand {
     private:
 
     public:

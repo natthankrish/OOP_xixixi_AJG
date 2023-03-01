@@ -2,7 +2,7 @@
 #define _ABILITY_COMMAND_HPP_
 #include "Command.hpp"
 
-class abilityCommand : Command {
+class abilityCommand : public Command {
     private:
 
     public:
