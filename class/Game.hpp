@@ -7,10 +7,14 @@
 class Game {
     private:
         //List<Card> tableCard;
+        Round* round;
+        int gameID;
         int prize;
-        Round round;
+        int maxPlayerPoint;
     public:
-        Game();
+        Game(int);
+        int startGame();
+        void NextRound();
 };
 
 #endif
