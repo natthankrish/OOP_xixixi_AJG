@@ -16,7 +16,7 @@ int Round::getRoundID() {
 void Round::startRound(List<Player>& listPlayer) {
     cout << "RONDE " << this->roundID << " dimulai" << endl;
 
-    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " : " <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() <<endl;
+    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
     processCurrentPlayer();
     while(this->playerRemaining > 0) {
@@ -31,7 +31,7 @@ void Round::nextPlayer(List<Player>& listPlayer) {
     if (this->idxCurrentPlayer > 7) {
         this->idxCurrentPlayer = 1; 
     }
-    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " : " <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() <<endl;
+    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 }
 
 void Round::processCurrentPlayer() {
