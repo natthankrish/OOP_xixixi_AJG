@@ -12,6 +12,7 @@ class InventoryHolder {
         //List<Card> tableCard;
         
     public:
+        InventoryHolder(string);
         void setType(string);
         string getType();
 
