@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Quadruple ========
-Quadruple::Quadruple() : abilityCommand(){
+Quadruple::Quadruple() : abilityCommand("ability", "quadruple"){
 
 }   
 

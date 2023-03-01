@@ -2,8 +2,8 @@
 #include <iostream>
 
 //======== Abilityless ========
-Abilityless::Abilityless() : abilityCommand(){
-    
+Abilityless::Abilityless() : abilityCommand("ability", "abilityless"){
+
 }   
 
 Abilityless::Abilityless(string type, string name) : abilityCommand(type, name){

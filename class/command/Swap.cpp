@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Swap ========
-Swap::Swap() : abilityCommand(){
+Swap::Swap() : abilityCommand("ability", "swap"){
 
 }   
 

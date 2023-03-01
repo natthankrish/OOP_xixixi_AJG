@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Half ========
-Half::Half() : ordinaryCommand(){
+Half::Half() : ordinaryCommand("ordinary", "double"){
 
 }   
 

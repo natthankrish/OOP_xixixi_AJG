@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Next ========
-Next::Next() : ordinaryCommand(){
+Next::Next() : ordinaryCommand("ordinary","next"){
 
 }   
 

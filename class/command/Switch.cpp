@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Switch ========
-Switch::Switch() : abilityCommand(){
+Switch::Switch() : abilityCommand("ability", "switch"){
 
 }   
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Quarter ========
-Quarter::Quarter() : abilityCommand(){
+Quarter::Quarter() : abilityCommand("ability", "quarter"){
 
 }   
 

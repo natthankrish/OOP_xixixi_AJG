@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Reroll ========
-Reroll::Reroll() : abilityCommand(){
+Reroll::Reroll() : abilityCommand("ability", "reroll"){
 
 }   
 

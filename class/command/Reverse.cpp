@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Reverse ========
-Reverse::Reverse() : abilityCommand(){
+Reverse::Reverse() : abilityCommand("ability", "reverse"){
 
 }   
 

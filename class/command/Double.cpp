@@ -2,7 +2,7 @@
 #include <iostream>
 
 //======== Double ========
-Double::Double() : ordinaryCommand(){
+Double::Double() : ordinaryCommand("ordinary", "double"){
 
 }   
 
