@@ -18,6 +18,10 @@ int List<T>::getSize() {
     return this->size;
 }
 template <class T>
+int List<T>::getNeff() {
+    return this->neff;
+}
+template <class T>
 void List<T>::insertFirst(T item) {
 // Insert item sebagai elemen pertama dan menggeser item yang sudah ada 
     if (isEmptyList()) {

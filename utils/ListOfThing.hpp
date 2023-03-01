@@ -13,6 +13,7 @@ class List {
         T getElement(int);
         bool isEmptyList();
         int getSize();
+        int getNeff();
         void insertFirst(T);
         void insertAt(T, int);
         void insertLast(T);
