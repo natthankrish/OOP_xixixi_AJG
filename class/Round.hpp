@@ -13,9 +13,9 @@ class Round {
     public:
         Round(int,int);
         void nextPlayer(List<Player>&);
-        void processCurrentPlayer();
+        void processCurrentPlayer(int&);
         int getRoundID();
-        void startRound(List<Player>&);
+        void startRound(List<Player>&, int &prize);
 };
 
 #endif
