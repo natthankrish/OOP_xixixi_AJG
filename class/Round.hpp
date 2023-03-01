@@ -5,12 +5,12 @@
 
 class Round {
     private:
-        int currentRound;
+        int roundID;
         int idxCurrentPlayer;
         int playerRemaining;
         Command command;
     public:
-        Round(int,int,Command);
+        Round(int,int);
         void nextPlayer();
         void processCurrentPlayer();
 };

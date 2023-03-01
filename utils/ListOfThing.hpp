@@ -15,7 +15,7 @@ class List {
         void insertFirst(T);
         void insertAt(T);
         void insertLast(T);
-        void deleteFirst()
+        void deleteFirst();
         void deleteLast();
         void deleteAt(int);
         T getMaxElement();
