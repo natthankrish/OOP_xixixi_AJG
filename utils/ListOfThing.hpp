@@ -11,11 +11,12 @@ class List {
     public:
         List(int);
         T getElement(int);
+        bool isEmptyList();
         int getSize();
         void insertFirst(T);
-        void insertAt(T);
+        void insertAt(T, int);
         void insertLast(T);
-        void deleteFirst()
+        void deleteFirst();
         void deleteLast();
         void deleteAt(int);
         T getMaxElement();
