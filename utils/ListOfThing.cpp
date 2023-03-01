@@ -5,7 +5,9 @@ List<T>::List(int size): size(size), neff(0) {
 }
 template <class T>
 T List<T>::getElement(int index) {
-    return this->buffer[index];
+    if (!isEmptyList()) {
+        return this->buffer[index];
+    }
 }
 template <class T>
 bool List<T>::isEmptyList() {
