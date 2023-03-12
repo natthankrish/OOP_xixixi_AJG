@@ -1,5 +1,5 @@
-#ifndef __NUMBERCARD.HPP__
-#define __NUMBERCARD.HPP__
+#ifndef __NUMBERCARD_HPP__
+#define __NUMBERCARD_HPP__
 #include "Card.hpp"
 #include <string>
 class NumberCard : Card
@@ -9,6 +9,7 @@ class NumberCard : Card
         string color;
 
     public:
+        NumberCard(int, string);
         int getNumber();
         void setNumber(int);
         string getColor();
