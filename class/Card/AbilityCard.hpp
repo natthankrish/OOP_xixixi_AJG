@@ -10,6 +10,7 @@ class AbilityCard : Card {
     private:
         string abilityName;
     public:
+        AbilityCard(string);
         string getAbilityName();
         void setAbilityName(string);
         void useCard();

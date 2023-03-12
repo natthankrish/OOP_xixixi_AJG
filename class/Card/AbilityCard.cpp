@@ -3,6 +3,10 @@
 #include <string>
 using namespace std;
 
+AbilityCard::AbilityCard(string name): abilityName(name) {
+
+}
+
 string AbilityCard::getAbilityName(){
     return this->abilityName;
 }

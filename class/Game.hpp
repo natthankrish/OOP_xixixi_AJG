@@ -4,7 +4,8 @@
 #include "../utils/ListOfThing.hpp"
 #include "Round.hpp"
 #include <vector>
-#include "Card/NumberCard.hpp"
+#include "inventory/CardsBank.hpp"
+#include "inventory/AbilityCardsBank.hpp"
 
 using namespace std;
 
@@ -14,13 +15,14 @@ class Game {
         int gameID;
         int prize;
         int maxPlayerPoint;
-        vector<NumberCard> CardsBank;
+        CardsBank cardsBank;
+        AbilityCardsBank abilityCardsBank;
     public:
         Game(int);
         int startGame(List<Player>&);
         void NextRound();
-        NumberCard getCardBankAt(int);
-        vector<NumberCard> getCardBank();
+        CardsBank getCardsBank();
+        AbilityCardsBank getAbilityCardsBank();
 };
 
 #endif

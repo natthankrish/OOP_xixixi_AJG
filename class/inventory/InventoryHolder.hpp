@@ -3,13 +3,16 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include "Card.hpp"
 
 using namespace std;
 
 class InventoryHolder {
     private:
         string type;
-        //List<Card> tableCard;
+        virtual void operator+(const Card&) = 0;
+        virtual void operator-(const Card&) = 0;
         
     public:
         InventoryHolder(string);

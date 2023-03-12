@@ -9,11 +9,14 @@ class NumberCard : Card
         string color;
 
     public:
+        NumberCard();
         NumberCard(int, string);
         int getNumber();
         void setNumber(int);
         string getColor();
         void setColor(string);
+        bool operator==(const NumberCard&);
+        bool operator!=(const NumberCard&);
     
 };
 

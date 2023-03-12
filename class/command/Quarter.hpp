@@ -1,7 +1,7 @@
 #ifndef _QUARTER_HPP_
 #define _QUARTER_HPP_
 #include "AbilityCommand.hpp"
-#include "Round.hpp"
+#include "../Round.hpp"
 
 class Quarter : public abilityCommand {
     private:
