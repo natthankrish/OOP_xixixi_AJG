@@ -1,7 +1,7 @@
 #ifndef _HALF_HPP_
 #define _HALF_HPP_
 #include "OrdinaryCommand.hpp"
-#include "../Round.hpp"
+class Round;
 
 class Half : public ordinaryCommand {
     private:
