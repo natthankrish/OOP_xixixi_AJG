@@ -39,40 +39,36 @@ void Round::nextPlayer(List<Player>& listPlayer) {
 }
 
 void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
-    string command;
-    cout << "Masukkan Perintah: "; 
-    cin >> command;
-
-    bool abilityvalid = false;
-    while (!(command == "HALF" || command == "DOUBLE" || command == "NEXT" || abilityvalid)) {
-        if (command == "CHECKPRIZE") {
-           this->command = new CheckPrize("ordinary", "checkprize", prize);
-        } else if (command == "HELP") {
-           this->command = new Help("ordinary", "checkprize", prize);
-        } else if (command == "QUARTER") {
-            abilityvalid = true;
-            continue;
-        } else if (command == "QUADRUPLE") {
-            abilityvalid = true;
-            continue;
-        } else {
-            cout << "Masukan salah! Ketik HELP untuk bantuan. "; 
-        }
-        cout << "Masukkan Perintah: "; 
-        cin >> command;
-    }
-
-    if (command == "NEXT") {
-        this->command = new Next("ordinary", "next", listPlayer);
-    } else if (command == "DOUBLE") {
-        this->command = new Double("ordinary", "double", listPlayer);
-    } else if (command == "HALF") {
-        this->command = new Half("ordinary", "half", listPlayer);
-    } else if (command == "QUADRUPLE") {
-        this->command = new Half("ability", "quadruple", listPlayer);
-    } else if (command == "QUARTER") {
-        this->command = new Half("ability", "quarter", listPlayer);
-    } 
-
+    string perintah;
     this->command->execute(*this, prize);
+
+    bool nextPerson = false;
+    while (!nextPerson) {
+        // masukan perintah
+        cout << "Masukkan Perintah: "; 
+        cin >> perintah;
+
+        // Percabangan buat objek
+        if (perintah == "CHECKPRIZE") {
+            this->command = new CheckPrize("ordinary", "checkprize", prize);
+        } else if (perintah == "HELP") {
+            this->command = new Help("ordinary", "checkprize", prize);
+        } else if (perintah == "NEXT") {
+            this->command = new Next("ordinary", "next", listPlayer);
+        } else if (perintah == "DOUBLE") {
+            this->command = new Double("ordinary", "double", listPlayer);
+        } else if (perintah == "HALF") {
+            this->command = new Half("ordinary", "half", listPlayer);
+        } else if (perintah == "QUADRUPLE") {
+            this->command = new Half("ability", "quadruple", listPlayer);
+        } else if (perintah == "QUARTER") {
+            this->command = new Half("ability", "quarter", listPlayer);
+        } else {
+            this->command = new Command();
+            cout << "Masukan salah! Ketik HELP untuk bantuan."; 
+        }
+
+        command->execute();
+        nextPerson = command;
+
 }
