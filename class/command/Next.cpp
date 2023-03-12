@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Next ========
-Next::Next() : ordinaryCommand("ordinary","next"){
+Next::Next() : ordinaryCommand("ordinary","next", List<Player>(10)){
 
 }   
 
-Next::Next(string type, string name) : ordinaryCommand(type, name){
+Next::Next(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
 
 }   
 
@@ -22,6 +22,6 @@ Next::~Next(){
     ordinaryCommand::~ordinaryCommand();
 }    
 
-void Next::execute() {
-    cout<<"Next execute\n";
+void Next::execute(Round round, int prize) {
+    cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }

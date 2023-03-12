@@ -2,7 +2,7 @@
 #define _REVERSE_HPP_
 #include "AbilityCommand.hpp"
 
-class Reverse : abilityCommand {
+class Reverse : public abilityCommand {
     private:
 
     public:
