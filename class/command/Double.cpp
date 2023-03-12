@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Double ========
-Double::Double() : ordinaryCommand("ordinary", "double"){
+Double::Double() : ordinaryCommand("ordinary", "double", List<Player>(10)){
 
 }   
 
-Double::Double(string type, string name) : ordinaryCommand(type, name){
+Double::Double(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
 
 }   
 
@@ -22,6 +22,8 @@ Double::~Double(){
     ordinaryCommand::~abilityCommand();
 }    
 
-void Double::execute() {
-    cout<<"Double execute\n";
+void Double::execute(Round round, int prize) {
+    cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan DOUBLE! Point hadiah naik dari " << prize;
+    prize *= 2; 
+    cout << " menjadi " << prize << endl;
 }

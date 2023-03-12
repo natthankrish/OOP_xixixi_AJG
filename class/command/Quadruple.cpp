@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Quadruple ========
-Quadruple::Quadruple() : abilityCommand("ability", "quadruple"){
+Quadruple::Quadruple() : abilityCommand("ability", "quadruple", List<Player>(10)){
 
 }   
 
-Quadruple::Quadruple(string type, string name) : abilityCommand(type, name){
+Quadruple::Quadruple(string type, string name, List<Player> listPlayer) : abilityCommand(type, name, listPlayer){
 
 }   
 
@@ -22,6 +22,8 @@ Quadruple::~Quadruple(){
     abilityCommand::~abilityCommand();
 }    
 
-void Quadruple::execute() {
-    cout<<"Quadruple execute\n";
+void Quadruple::execute(Round round, int prize) {
+        cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUADRUPLE! Point hadiah naik dari " << prize;
+        prize *= 4; 
+        cout << " menjadi " << prize << endl;
 }

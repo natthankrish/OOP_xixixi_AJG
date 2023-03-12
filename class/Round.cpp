@@ -13,6 +13,10 @@ int Round::getRoundID() {
     return this->roundID;
 }
 
+int Round::getIdxCurrentPlayer(){
+    return this->idxCurrentPlayer;
+}
+
 void Round::startRound(List<Player>& listPlayer, int &prize) {
     cout << "RONDE " << this->roundID << " dimulai" << endl;
 
@@ -62,36 +66,16 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
     }
 
     if (command == "NEXT") {
-        cout << "Giliran dilanjut ke player selanjutnya." << endl;
+        this->command = new Next("ordinary", "next", listPlayer);
     } else if (command == "DOUBLE") {
-        cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan DOUBLE! Point hadiah naik dari " << prize;
-        prize *= 2; 
-        cout << " menjadi " << prize << endl;
+        this->command = new Double("ordinary", "double", listPlayer);
     } else if (command == "HALF") {
-        if (prize != 1) {
-            cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan HALF! Point hadiah turun dari " << prize;
-            prize *= 0.5; 
-            cout << " menjadi " << prize << endl;
-        } else {
-            cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan HALF! Sayangnya hadiah sudah mencapai angka 1." << endl;
-            cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
-        }
+        this->command = new Half("ordinary", "half", listPlayer);
     } else if (command == "QUADRUPLE") {
-        cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan QUADRUPLE! Point hadiah naik dari " << prize;
-        prize *= 4; 
-        cout << " menjadi " << prize << endl;
+        this->command = new Half("ability", "quadruple", listPlayer);
     } else if (command == "QUARTER") {
-        if (prize >= 4) {
-            cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan QUARTER! Point hadiah turun dari " << prize;
-            prize *= 0.25; 
-            cout << " menjadi " << prize << endl;
-        } else if (prize == 2) {
-            cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan QUARTER! Sayangnya point hadiah hanya turun dari " << prize;
-            prize *= 0.5; 
-            cout << " menjadi " << prize << endl;
-        } else {
-            cout << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << " melakukan QUARTER! Sayangnya hadiah sudah mencapai angka 1." << endl;
-            cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
-        }
+        this->command = new Half("ability", "quarter", listPlayer);
     } 
+
+    this->command->execute(*this, prize);
 }

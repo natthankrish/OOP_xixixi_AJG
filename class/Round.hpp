@@ -1,20 +1,29 @@
 #ifndef ROUND_HPP
 #define ROUND_HPP
 
-//#include "command/Command.hpp"
+#include "command/Command.hpp"
+#include "command/OrdinaryCommand.hpp"
 #include "inventory/Player.hpp"
+#include "command/Next.hpp"
+#include "command/Double.hpp"
+#include "command/Half.hpp"
+#include "command/Quadruple.hpp"
+
 
 class Round {
     private:
         int roundID;
         int idxCurrentPlayer;
         int playerRemaining;
-        //Command command;
+        Command* command;
+
     public:
+        // friend ordinaryCommand;
         Round(int,int);
         void nextPlayer(List<Player>&);
         void processCurrentPlayer(List<Player>&, int&);
         int getRoundID();
+        int getIdxCurrentPlayer();
         void startRound(List<Player>&, int&);
 };
 

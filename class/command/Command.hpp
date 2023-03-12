@@ -2,6 +2,7 @@
 #define COMMAND_HPP
 
 #include <string>
+#include "Round.hpp"
 
 using namespace std;
 
@@ -25,7 +26,7 @@ class Command {
         void setType(string);
         void setName(string);
     
-        virtual void execute();
+        virtual void execute(Round round, int prize);
 };
 
 #endif
