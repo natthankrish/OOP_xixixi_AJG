@@ -8,6 +8,8 @@
 #include "command/Double.hpp"
 #include "command/Half.hpp"
 #include "command/Quadruple.hpp"
+#include "command/CheckPrize.hpp"
+#include "command/Help.hpp"
 
 
 class Round {

@@ -46,12 +46,9 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
     bool abilityvalid = false;
     while (!(command == "HALF" || command == "DOUBLE" || command == "NEXT" || abilityvalid)) {
         if (command == "CHECKPRIZE") {
-            cout << "Hadiah Game pada saat ini adalah " << prize << endl;
-            cout << "Sekarang masih giliran " << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << endl;
+           this->command = new CheckPrize("ordinary", "checkprize", prize);
         } else if (command == "HELP") {
-            cout << "PUSAT BANTUAN" << endl;
-            cout << "---------------------------------------" << endl;
-            cout << "Masih under construction" << endl;
+           this->command = new Help("ordinary", "checkprize", prize);
         } else if (command == "QUARTER") {
             abilityvalid = true;
             continue;
