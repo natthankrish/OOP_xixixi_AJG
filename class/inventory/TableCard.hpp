@@ -11,6 +11,7 @@ class TableCard : public InventoryHolder {
         const int CAPACITY = 5;
 
     public :
+        vector <NumberCard> getCard();
         void operator+(const NumberCard&);
         void operator-(const NumberCard&);
 };

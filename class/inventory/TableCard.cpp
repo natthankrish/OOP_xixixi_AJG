@@ -1,5 +1,9 @@
 #include "TableCard.hpp"
 
+vector <NumberCard> TableCard::getCard() {
+    return this->contents;
+}
+
 void TableCard::operator+(const NumberCard& card) {
     if (this->contents.size() >= CAPACITY) {
         throw TableCardFullException();
@@ -19,3 +23,4 @@ void TableCard::operator-(const NumberCard& card) {
     throw CardNotFoundException();
 
 }
+
