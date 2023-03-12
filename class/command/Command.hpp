@@ -2,7 +2,7 @@
 #define COMMAND_HPP
 
 #include <string>
-#include "Round.hpp"
+#include "../Round.hpp"
 
 using namespace std;
 

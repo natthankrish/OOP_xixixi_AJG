@@ -1,7 +1,7 @@
 #ifndef _NEXT_HPP_
 #define _NEXT_HPP_
 #include "OrdinaryCommand.hpp"
-#include "Round.hpp"
+#include "../Round.hpp"
 
 class Next : public ordinaryCommand {
     private:

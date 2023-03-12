@@ -1,7 +1,7 @@
 #ifndef _QUADRUPLE_HPP_
 #define _QUADRUPLE_HPP_
 #include "AbilityCommand.hpp"
-#include "Round.hpp"
+#include "../Round.hpp"
 
 class Quadruple : public abilityCommand {
     private:

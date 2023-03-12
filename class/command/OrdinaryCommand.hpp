@@ -1,9 +1,9 @@
 #ifndef _ORDINARY_COMMAND_HPP
 #define _ORDINARY_COMMAND_HPP
 #include "Command.hpp"
-#include "inventory/Player.hpp"
-#include "utils/ListOfThing.hpp"
-#include "Round.hpp"
+#include "../inventory/Player.hpp"
+#include "../../utils/ListOfThing.hpp"
+#include "../Round.hpp"
 
 class ordinaryCommand : public Command {
     protected:
