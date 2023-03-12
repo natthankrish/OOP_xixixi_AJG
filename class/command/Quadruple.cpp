@@ -22,7 +22,7 @@ Quadruple::~Quadruple(){
     abilityCommand::~abilityCommand();
 }    
 
-void Quadruple::execute(Round round, int prize) {
+void Quadruple::execute(int prize) {
         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUADRUPLE! Point hadiah naik dari " << prize;
         prize *= 4; 
         cout << " menjadi " << prize << endl;

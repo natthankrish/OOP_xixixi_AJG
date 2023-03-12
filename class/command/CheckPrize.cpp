@@ -7,7 +7,7 @@ CheckPrize::CheckPrize(string type, string name, List<Player> listPlayer) : ordi
 bool CheckPrize::continueToNextPlayer(){
     return false;
 }
-void CheckPrize::execute(Round round, int prize){
+void CheckPrize::execute(int& prize){
     cout << "Hadiah Game pada saat ini adalah " << prize << endl;
     cout << "Sekarang masih giliran " << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << endl;
 }

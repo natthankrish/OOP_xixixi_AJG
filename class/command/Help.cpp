@@ -9,7 +9,7 @@ bool Help::continueToNextPlayer(){
     return false;
 }
 
-void Help::execute(Round, int){
+void Help::execute(int){
     cout << "PUSAT BANTUAN" << endl;
     cout << "---------------------------------------" << endl;
     cout << "Masih under construction" << endl;

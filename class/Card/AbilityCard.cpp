@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+AbilityCard::AbilityCard(): abilityName("none") {}
+
 AbilityCard::AbilityCard(string name): abilityName(name) {
 
 }

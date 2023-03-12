@@ -4,15 +4,15 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "Card.hpp"
+#include "../Card/Card.hpp"
 
 using namespace std;
 
 class InventoryHolder {
     private:
         string type;
-        virtual void operator+(const Card&) = 0;
-        virtual void operator-(const Card&) = 0;
+        virtual void operator+(const NumberCard&) = 0;
+        virtual void operator-(const NumberCard&) = 0;
         
     public:
         InventoryHolder(string);

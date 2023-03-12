@@ -16,7 +16,7 @@ class abilityCommand : public Command {
         abilityCommand& operator=(const abilityCommand&);   // assignment
         ~abilityCommand();                                  //  dtor
 
-        virtual void execute(Round, int);
+        virtual void execute(int);
         virtual bool continueToNextPlayer();
 
 };

@@ -4,25 +4,25 @@
 #include <exception>
 using namespace std;
 
-struct PlayerCardFullException : public exception  {
+class PlayerCardFullException : public exception  {
 	const char* what() const throw() {
 		return "Kartu Player Sudah Penuh";
 	}
 };
 
-struct PlayerCardEmptyException : public exception  {
+class PlayerCardEmptyException : public exception  {
 	const char* what() const throw() {
 		return "Kartu Player Sudah Kosong";
 	}
 };
 
-struct TableCardFullException : public exception  {
+class TableCardFullException : public exception  {
 	const char* what() const throw() {
 		return "Kartu di Meja Sudah Penuh";
 	}
 };
 
-struct CardNotFoundException : public exception  {
+class CardNotFoundException : public exception  {
 	const char* what() const throw() {
 		return "Kartu Tidak Ada Di Meja";
 	}

@@ -36,3 +36,32 @@ vector<NumberCard> CardsBank::getElement() {
 NumberCard CardsBank::getElementAt(int i) {
     return this->element[i];
 }
+
+void CardsBank::operator+(const NumberCard& cardItem) {
+    this->element.push_back(cardItem);
+}
+
+void CardsBank::operator-(const NumberCard& element) {
+    for (auto ptr = this->element.begin(); ptr != this->element.end(); ptr++) {
+        if (ptr->getCardType() == element.getCardType() && ptr->getValue() == element.getValue()) {
+            this->element.erase(ptr);
+            return;
+        }
+    }
+}
+
+void CardsBank::bagiKartu(List<Player>& listPlayer) {
+    for (int i = 0; i < listPlayer.getSize(); i++) {
+        listPlayer[i] + this->element[0];
+        this->element.erase(this->element.begin());
+        listPlayer[i] + this->element[0];
+        this->element.erase(this->element.begin());
+    }
+}
+
+void CardsBank::seeCard() {
+    for (auto ptr = this->element.begin(); ptr != this->element.end(); ptr++) {
+        cout << ptr->getNumber() << " " << ptr->getColor() << endl;
+    }
+}
+

@@ -6,10 +6,11 @@
 
 using namespace std;
 
-class AbilityCard : Card {
+class AbilityCard : public Card {
     private:
         string abilityName;
     public:
+        AbilityCard();
         AbilityCard(string);
         string getAbilityName();
         void setAbilityName(string);

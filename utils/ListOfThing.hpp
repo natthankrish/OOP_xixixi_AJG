@@ -20,6 +20,7 @@ class List {
         bool isElement(T);
         void insertFirst(T);
         void insertAt(T, int);
+        T& operator[] (int index);
         void insertLast(T);
         void deleteFirst();
         void deleteLast();

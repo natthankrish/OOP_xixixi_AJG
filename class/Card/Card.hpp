@@ -3,16 +3,18 @@
 #include <string>
 
 using namespace std;
-class Card
-{
+class Card {
     protected:
         string cardType;
         int value;
     public:
+        Card();
+        Card(string, int);
         void setCardType(string);
-        string getCardType();
+        string getCardType() const;
         void setValue(int);
-        int getValue();
+        int getValue() const;
+        
 };
 
 

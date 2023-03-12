@@ -11,6 +11,10 @@ class CardsBank : public InventoryHolder {
         CardsBank();
         vector<NumberCard> getElement();
         NumberCard getElementAt(int);
+        virtual void operator+(const NumberCard&);
+        virtual void operator-(const NumberCard&);
+        void bagiKartu(List<Player>&);
+        void seeCard();
 };
 
 #endif

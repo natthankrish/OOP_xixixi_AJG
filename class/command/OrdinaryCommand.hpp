@@ -16,7 +16,7 @@ class ordinaryCommand : public Command {
         ordinaryCommand& operator=(const ordinaryCommand&); // assignment
         ~ordinaryCommand();                                 //  dtor
 
-        virtual void execute(Round, int);
+        virtual void execute(int);
         virtual bool continueToNextPlayer();
 
 };

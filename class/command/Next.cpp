@@ -22,7 +22,7 @@ Next::~Next(){
     ordinaryCommand::~ordinaryCommand();
 }    
 
-void Next::execute(Round round, int prize) {
+void Next::execute(int prize) {
     cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }
 

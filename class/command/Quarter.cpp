@@ -22,7 +22,7 @@ Quarter::~Quarter(){
     abilityCommand::~abilityCommand();
 }    
 
-void Quarter::execute(Round round, int prize) {
+void Quarter::execute(int prize) {
     if (prize >= 4) {
         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUARTER! Point hadiah turun dari " << prize;
         prize *= 0.25; 

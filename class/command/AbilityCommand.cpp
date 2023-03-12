@@ -22,7 +22,7 @@ abilityCommand::~abilityCommand() {
     Command::~Command();
 }
 
-void abilityCommand::execute(Round round, int prize) {
+void abilityCommand::execute(int prize) {
     cout<<"abilityCommand execute\n";
 }
 

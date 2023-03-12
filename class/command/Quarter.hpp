@@ -13,7 +13,7 @@ class Quarter : public abilityCommand {
         Quarter& operator=(const Quarter&); // assignment
         ~Quarter();                         //  dtor
 
-        void execute(Round, int);
+        void execute(int);
         bool continueToNextPlayer();
 
 };

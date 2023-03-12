@@ -26,7 +26,7 @@ class Command {
         void setType(string);
         void setName(string);
     
-        virtual void execute(Round, int);
+        virtual void execute(int);
 
         virtual bool continueToNextPlayer();
 };

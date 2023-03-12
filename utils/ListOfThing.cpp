@@ -103,6 +103,11 @@ void List<T>::deleteAt(int index) {
 }
 
 template <class T>
+T& List<T>::operator[] (int index) {
+    return this->buffer[index];
+}
+
+template <class T>
 T List<T>::getMaxElement() {
     if (!isEmptyList()) {
         if (this->neff == 1) {

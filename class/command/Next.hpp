@@ -13,7 +13,7 @@ class Next : public ordinaryCommand {
         Next& operator=(const Next&);   // assignment
         ~Next();                        //  dtor
 
-        void execute(Round, int);
+        void execute(int);
         bool continueToNextPlayer();
 
 

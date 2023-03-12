@@ -9,9 +9,7 @@ class Help : public ordinaryCommand {
         Help(string, string, List<Player>);
 
         bool continueToNextPlayer();
-        void execute(Round, int);
-        bool continueToNextPlayer();
-        
+        void execute(int);      
 };
 
 #endif

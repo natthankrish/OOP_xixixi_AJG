@@ -22,7 +22,7 @@ Half::~Half(){
     ordinaryCommand::~abilityCommand();
 }    
 
-void Half::execute(Round round, int prize) {
+void Half::execute(int prize) {
     if (prize != 1) {
         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan HALF! Point hadiah turun dari " << prize;
         prize *= 0.5; 

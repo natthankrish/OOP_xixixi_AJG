@@ -22,7 +22,7 @@ ordinaryCommand::~ordinaryCommand(){
     Command::~Command();
 }                               
 
-void ordinaryCommand::execute(Round round, int prize) {
+void ordinaryCommand::execute(int prize) {
     cout<<"ordinaryCommand execute\n";
 }
 

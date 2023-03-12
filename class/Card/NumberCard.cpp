@@ -3,13 +3,13 @@
 #include <string>
 using namespace std;
 
-NumberCard::NumberCard(): number(-1){
+NumberCard::NumberCard(): number(-1), Card(){
 }
 
-NumberCard::NumberCard(int number, string color): number(number), color(color) {
+NumberCard::NumberCard(int number, string color): number(number), color(color), Card() {
 }
 
-int NumberCard::getNumber() {
+int NumberCard::getNumber() const {
     return this->number;
 }
 
@@ -17,7 +17,7 @@ void NumberCard::setNumber(int number) {
     this->number = number;
 }
 
-string NumberCard::getColor() {
+string NumberCard::getColor() const {
     return this->color;
 }
 

@@ -4,13 +4,15 @@
 #include "../Card/AbilityCard.hpp"
 #include <vector>
 
-class AbilityCardsBank : public InventoryHolder {
+class AbilityCardsBank {
     private: 
-        vector<AbilityCard> element;
+        vector<Card> element;
     public: 
         AbilityCardsBank();
-        vector<AbilityCard> getElement(); 
-        AbilityCard getElementAt(int);
+        vector<Card> getElement(); 
+        Card getElementAt(int);
+        virtual void operator+(const Card&);
+        virtual void operator-(const Card&);
 };
 
 #endif
