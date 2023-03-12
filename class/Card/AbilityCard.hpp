@@ -1,5 +1,5 @@
-#ifndef __ABILITYCARD.HPP__
-#define __ABILITYCARD.HPP__
+#ifndef __ABILITYCARD_HPP__
+#define __ABILITYCARD_HPP__
 
 #include <string>
 #include "Card.hpp"

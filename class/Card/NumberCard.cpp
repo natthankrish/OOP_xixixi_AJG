@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+NumberCard::NumberCard(int number, string color): number(number), color(color) {
+}
 int NumberCard::getNumber(){
     return this->number;
 }
