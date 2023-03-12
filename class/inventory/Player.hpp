@@ -1,9 +1,11 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include <utility>
+#include <NumberCard.hpp>
 #include "InventoryHolder.hpp"
 #include "../../utils/ListOfThing.hpp"
-
+#include "AbilityCard.hpp"
 
 class Player : public InventoryHolder {
     private:
@@ -11,8 +13,9 @@ class Player : public InventoryHolder {
         string name;
         int point;
         bool havePlayedThisRound;
-        //List<Card> playerCard
-        //Kombo bestKombo
+        AbilityCard abilityCard;
+        pair<NumberCard, NumberCard> playerCards;
+        // Kombo bestKombo
     public:
         Player();
         Player(int, string, int, bool);
@@ -22,8 +25,11 @@ class Player : public InventoryHolder {
         int getPoint();
         int getPlayerID();
         string getName();
-        void setPlayerCards();
-        void searchBestDeckCards();
+        // void setPlayerCards();
+        // void searchBestDeckCards();
+        void operator+(const NumberCard&);
+        void operator-(const NumberCard&);
+
 };
 
 #endif
