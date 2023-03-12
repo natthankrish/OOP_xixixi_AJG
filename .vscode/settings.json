@@ -3,6 +3,12 @@
         "iostream": "cpp",
         "array": "cpp",
         "initializer_list": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "type_traits": "cpp"
     }
 }
