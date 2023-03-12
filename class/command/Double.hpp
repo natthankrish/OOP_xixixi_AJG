@@ -13,7 +13,7 @@ class Double : public ordinaryCommand {
         Double& operator=(const Double&);   // assignment
         ~Double();                          //  dtor
 
-        void execute(int);
+        void execute(int, Round);
         bool continueToNextPlayer();
 
 

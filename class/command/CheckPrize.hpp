@@ -9,7 +9,7 @@ class CheckPrize : public ordinaryCommand {
         CheckPrize(string, string, List<Player>);
 
         bool continueToNextPlayer();
-        void execute(int);
+        void execute(int&, Round);
 };
 
 #endif

@@ -13,7 +13,7 @@ class Quadruple : public abilityCommand {
         Quadruple& operator=(const Quadruple&); // assignment
         ~Quadruple();                           //  dtor
 
-        void execute(int);
+        void execute(int, Round);
         bool continueToNextPlayer();
 
 };

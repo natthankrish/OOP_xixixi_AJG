@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Reverse ========
-Reverse::Reverse() : abilityCommand("ability", "reverse"){
+Reverse::Reverse() : abilityCommand("ability", "reverse", List<Player>(10)){
 
 }   
 
-Reverse::Reverse(string type, string name) : abilityCommand(type, name){
+Reverse::Reverse(string type, string name) : abilityCommand(type, name, List<Player>(10)){
 
 }   
 

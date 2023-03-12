@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "../Card/Card.hpp"
+#include "../Card/NumberCard.hpp"
 
 using namespace std;
 

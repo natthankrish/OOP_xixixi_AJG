@@ -3,6 +3,8 @@
 #include "InventoryHolder.hpp"
 #include "../Card/NumberCard.hpp"
 #include <vector>
+#include "../../utils/ListOfThing.hpp"
+#include "Player.hpp"
 
 class CardsBank : public InventoryHolder {
     private: 

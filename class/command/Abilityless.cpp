@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Abilityless ========
-Abilityless::Abilityless() : abilityCommand("ability", "abilityless"){
+Abilityless::Abilityless() : abilityCommand("ability", "abilityless", List<Player>(10)){
 
 }   
 
-Abilityless::Abilityless(string type, string name) : abilityCommand(type, name){
+Abilityless::Abilityless(string type, string name) : abilityCommand(type, name, List<Player>(10)){
 
 }   
 

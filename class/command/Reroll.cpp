@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Reroll ========
-Reroll::Reroll() : abilityCommand("ability", "reroll"){
+Reroll::Reroll() : abilityCommand("ability", "reroll", List<Player>(10)){
 
 }   
 
-Reroll::Reroll(string type, string name) : abilityCommand(type, name){
+Reroll::Reroll(string type, string name) : abilityCommand(type, name, List<Player>(10)){
 
 }   
 

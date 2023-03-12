@@ -22,7 +22,7 @@ Double::~Double(){
     ordinaryCommand::~abilityCommand();
 }    
 
-void Double::execute(int prize) {
+void Double::execute(int prize, Round round) {
     cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan DOUBLE! Point hadiah naik dari " << prize;
     prize *= 2; 
     cout << " menjadi " << prize << endl;

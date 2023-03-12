@@ -1,4 +1,5 @@
 #include "Half.hpp"
+#include "../Round.hpp"
 #include <iostream>
 
 //======== Half ========
@@ -22,7 +23,7 @@ Half::~Half(){
     ordinaryCommand::~abilityCommand();
 }    
 
-void Half::execute(int prize) {
+void Half::execute(int prize, Round round) {
     if (prize != 1) {
         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan HALF! Point hadiah turun dari " << prize;
         prize *= 0.5; 

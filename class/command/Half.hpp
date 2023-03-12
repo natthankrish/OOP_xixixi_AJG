@@ -13,7 +13,7 @@ class Half : public ordinaryCommand {
         Half& operator=(const Half&);   // assignment
         ~Half();                        //  dtor
 
-        void execute(int);
+        void execute(int, Round);
         bool continueToNextPlayer();
 
 };

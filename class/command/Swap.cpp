@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Swap ========
-Swap::Swap() : abilityCommand("ability", "swap"){
+Swap::Swap() : abilityCommand("ability", "swap", List<Player>(10)){
 
 }   
 
-Swap::Swap(string type, string name) : abilityCommand(type, name){
+Swap::Swap(string type, string name) : abilityCommand(type, name, List<Player>(10)){
 
 }   
 
