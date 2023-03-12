@@ -19,7 +19,6 @@ class Game {
         Game(int);
         int startGame(List<Player>&);
         void NextRound();
-        void shuffleCards(vector<NumberCard>&);
         NumberCard getCardBankAt(int);
         vector<NumberCard> getCardBank();
 };
