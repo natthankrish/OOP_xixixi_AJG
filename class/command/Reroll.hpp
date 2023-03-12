@@ -13,6 +13,7 @@ class Reroll : public abilityCommand {
         ~Reroll();                          //  dtor
 
         void execute();
+        bool continueToNextPlayer();
 
 };
 

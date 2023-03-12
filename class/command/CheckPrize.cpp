@@ -11,3 +11,7 @@ void CheckPrize::execute(Round round, int prize){
     cout << "Hadiah Game pada saat ini adalah " << prize << endl;
     cout << "Sekarang masih giliran " << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << endl;
 }
+
+bool CheckPrize::continueToNextPlayer(){
+    return false;
+}

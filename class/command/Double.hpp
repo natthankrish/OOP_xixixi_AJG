@@ -14,6 +14,8 @@ class Double : public ordinaryCommand {
         ~Double();                          //  dtor
 
         void execute(Round, int);
+        bool continueToNextPlayer();
+
 
 };
 

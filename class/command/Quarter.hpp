@@ -14,6 +14,7 @@ class Quarter : public abilityCommand {
         ~Quarter();                         //  dtor
 
         void execute(Round, int);
+        bool continueToNextPlayer();
 
 };
 

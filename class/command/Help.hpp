@@ -10,7 +10,8 @@ class Help : public ordinaryCommand {
 
         bool continueToNextPlayer();
         void execute(Round, int);
-
+        bool continueToNextPlayer();
+        
 };
 
 #endif

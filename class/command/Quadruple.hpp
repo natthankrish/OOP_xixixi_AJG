@@ -14,6 +14,8 @@ class Quadruple : public abilityCommand {
         ~Quadruple();                           //  dtor
 
         void execute(Round, int);
+        bool continueToNextPlayer();
+
 };
 
 #endif

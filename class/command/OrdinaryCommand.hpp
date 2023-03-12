@@ -17,6 +17,7 @@ class ordinaryCommand : public Command {
         ~ordinaryCommand();                                 //  dtor
 
         virtual void execute(Round, int);
+        virtual bool continueToNextPlayer();
 
 };
 

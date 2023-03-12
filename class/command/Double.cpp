@@ -27,3 +27,7 @@ void Double::execute(Round round, int prize) {
     prize *= 2; 
     cout << " menjadi " << prize << endl;
 }
+
+bool Double::continueToNextPlayer(){
+    return true;
+}

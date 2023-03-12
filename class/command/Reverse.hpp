@@ -13,6 +13,7 @@ class Reverse : public abilityCommand {
         ~Reverse();                         //  dtor
 
         void execute();
+        bool continueToNextPlayer();
 
 };
 

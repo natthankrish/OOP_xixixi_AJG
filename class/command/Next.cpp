@@ -25,3 +25,7 @@ Next::~Next(){
 void Next::execute(Round round, int prize) {
     cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }
+
+bool Next::continueToNextPlayer(){
+    return true;
+}

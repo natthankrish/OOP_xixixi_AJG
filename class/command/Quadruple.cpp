@@ -27,3 +27,7 @@ void Quadruple::execute(Round round, int prize) {
         prize *= 4; 
         cout << " menjadi " << prize << endl;
 }
+
+bool Quadruple::continueToNextPlayer(){
+    return true;
+}

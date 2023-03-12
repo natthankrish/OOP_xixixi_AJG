@@ -17,6 +17,8 @@ class abilityCommand : public Command {
         ~abilityCommand();                                  //  dtor
 
         virtual void execute(Round, int);
+        virtual bool continueToNextPlayer();
+
 };
 
 #endif

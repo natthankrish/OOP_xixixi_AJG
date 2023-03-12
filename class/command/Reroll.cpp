@@ -25,3 +25,7 @@ Reroll::~Reroll(){
 void Reroll::execute() {
     cout<<"Reroll execute\n";
 }
+
+bool Reroll::continueToNextPlayer(){
+    return true;
+}

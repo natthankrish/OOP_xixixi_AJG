@@ -25,3 +25,6 @@ Reverse::~Reverse(){
 void Reverse::execute() {
     cout<<"Reverse execute\n";
 }
+bool Reverse::continueToNextPlayer(){
+    return false;
+}

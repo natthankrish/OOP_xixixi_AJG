@@ -13,6 +13,8 @@ class Switch : abilityCommand {
         ~Switch();                          //  dtor
 
         void execute();
+        bool continueToNextPlayer();
+
 
 };
 

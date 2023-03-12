@@ -36,3 +36,7 @@ void Quarter::execute(Round round, int prize) {
         cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
     }
 }
+
+bool Quarter::continueToNextPlayer(){
+    return true;
+}

@@ -44,3 +44,7 @@ void Command::execute(Round round, int prize) {
     cout << "execute Command\n";
 }
 
+bool continueToNextPlayer(){
+    return false;
+}
+

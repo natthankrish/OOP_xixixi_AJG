@@ -13,7 +13,8 @@ class Abilityless : public abilityCommand {
         ~Abilityless();                             //  dtor
 
         void execute();
-
+        bool continueToNextPlayer();
+        
 };
 
 #endif 

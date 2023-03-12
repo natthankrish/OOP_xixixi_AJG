@@ -14,6 +14,8 @@ class Next : public ordinaryCommand {
         ~Next();                        //  dtor
 
         void execute(Round, int);
+        bool continueToNextPlayer();
+
 
 };
 

@@ -32,3 +32,6 @@ void Half::execute(Round round, int prize) {
         cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
     }
 }
+bool Half::continueToNextPlayer(){
+    return true;
+}

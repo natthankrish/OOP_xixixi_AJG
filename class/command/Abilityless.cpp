@@ -25,3 +25,7 @@ Abilityless::~Abilityless(){
 void Abilityless::execute() {
     cout<<"Abilityless execute\n";
 }
+
+bool Abilityless::continueToNextPlayer(){
+    return true;
+}

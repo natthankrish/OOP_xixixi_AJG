@@ -25,3 +25,7 @@ abilityCommand::~abilityCommand() {
 void abilityCommand::execute(Round round, int prize) {
     cout<<"abilityCommand execute\n";
 }
+
+bool abilityCommand::continueToNextPlayer(){
+    return false;
+}

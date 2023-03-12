@@ -25,3 +25,7 @@ Swap::~Swap(){
 void Swap::execute() {
     cout<<"Swap execute\n";
 }
+
+bool Swap::continueToNextPlayer(){
+    return false;
+}

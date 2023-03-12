@@ -14,3 +14,6 @@ void Help::execute(Round, int){
     cout << "---------------------------------------" << endl;
     cout << "Masih under construction" << endl;
 }
+bool Help::continueToNextPlayer(){
+    return false;
+}

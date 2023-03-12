@@ -25,3 +25,7 @@ ordinaryCommand::~ordinaryCommand(){
 void ordinaryCommand::execute(Round round, int prize) {
     cout<<"ordinaryCommand execute\n";
 }
+
+bool ordinaryCommand::continueToNextPlayer(){
+    return false;
+}

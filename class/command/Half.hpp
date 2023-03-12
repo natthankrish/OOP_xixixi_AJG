@@ -14,6 +14,7 @@ class Half : public ordinaryCommand {
         ~Half();                        //  dtor
 
         void execute(Round, int);
+        bool continueToNextPlayer();
 
 };
 

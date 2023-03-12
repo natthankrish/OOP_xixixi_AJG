@@ -25,3 +25,7 @@ Switch::~Switch(){
 void Switch::execute() {
     cout<<"Switch execute\n";
 }
+
+bool Switch::continueToNextPlayer(){
+    return false;
+}

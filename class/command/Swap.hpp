@@ -13,6 +13,7 @@ class Swap : abilityCommand {
         ~Swap();                          //  dtor
 
         void execute();
+        bool continueToNextPlayer();
 
 };
 
