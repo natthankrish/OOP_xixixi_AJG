@@ -9,6 +9,8 @@ class List {
         int size;
 
     public:
+        // friend ordinaryCommand;
+        // friend abilityCommand;
         List(int);
         ~List();
         T getElement(int);

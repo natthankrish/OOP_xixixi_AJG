@@ -40,7 +40,7 @@ void Command::setName(string name) {
     this->name = name;
 }
 
-void Command::execute() {
+void Command::execute(Round round, int prize) {
     cout << "execute Command\n";
 }
 
