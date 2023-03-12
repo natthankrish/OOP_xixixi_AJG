@@ -1,3 +1,4 @@
+#include <iostream>
 #include "class/Competition.cpp"
 #include "class/Game.cpp"
 #include "class/Round.cpp"

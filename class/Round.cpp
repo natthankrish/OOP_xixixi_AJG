@@ -82,6 +82,6 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
         // }
 
         // command->execute();
-        nextPerson = command;
+        nextPerson = true;
     }
 }
