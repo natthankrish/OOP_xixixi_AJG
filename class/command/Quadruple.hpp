@@ -3,18 +3,11 @@
 #include "AbilityCommand.hpp"
 
 class Quadruple : public AbilityCommand {
-    private:
-
     public:
-        Quadruple();                            // default ctor
-        Quadruple(string, string, List<Player>);              // user defined ctor
-        Quadruple(const Quadruple&);            // cctor
-        Quadruple& operator=(const Quadruple&); // assignment
-        ~Quadruple();                           //  dtor
+        Quadruple(string, string);              // user defined ctor
 
         void execute(int, Round);
         bool continueToNextPlayer();
-
 };
 
 #endif

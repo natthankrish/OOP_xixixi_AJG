@@ -9,16 +9,10 @@
 
 class OrdinaryCommand : public Command {
     public:
-        OrdinaryCommand();                                  // default ctor
         OrdinaryCommand(string, string);                    // user defined ctor
-        OrdinaryCommand(const OrdinaryCommand&);            // cctor
-        OrdinaryCommand& operator=(const OrdinaryCommand&); // assignment
-        ~OrdinaryCommand();                                 //  dtor
 
         virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         virtual bool continueToNextPlayer();
-
 };
-
 
 #endif

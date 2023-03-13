@@ -5,14 +5,8 @@
 #include "../inventory/CardsBank.hpp"
 
 class Half : public OrdinaryCommand {
-    private:
-
     public:
-        Half();                         // default ctor
         Half(string, string);           // user defined ctor
-        Half(const Half&);              // cctor
-        Half& operator=(const Half&);   // assignment
-        ~Half();                        //  dtor
 
         void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer();

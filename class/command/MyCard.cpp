@@ -1,7 +1,6 @@
 #include "MyCard.hpp"
 
 MyCard::MyCard(string type, string name) : OrdinaryCommand("ordinary", "double"){   
-
 }
 
 bool MyCard::continueToNextPlayer(){

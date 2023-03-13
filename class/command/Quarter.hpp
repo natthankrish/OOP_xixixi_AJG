@@ -3,18 +3,11 @@
 #include "AbilityCommand.hpp"
 
 class Quarter : public AbilityCommand {
-    private:
-
     public:
-        Quarter();                          // default ctor
-        Quarter(string, string, List<Player>);            // user defined ctor
-        Quarter(const Quarter&);            // cctor
-        Quarter& operator=(const Quarter&); // assignment
-        ~Quarter();                         //  dtor
+        Quarter(string, string);            // user defined ctor
 
         void execute(int, Round);
         bool continueToNextPlayer();
-
 };
 
 #endif

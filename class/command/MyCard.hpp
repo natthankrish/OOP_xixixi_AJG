@@ -5,8 +5,6 @@
 #include "../inventory/CardsBank.hpp"
 
 class MyCard : public OrdinaryCommand {
-    private:
-
     public:
         MyCard(string, string);
 

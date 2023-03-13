@@ -2,25 +2,8 @@
 #include <iostream>
 
 //======== Quarter ========
-Quarter::Quarter() : AbilityCommand("ability", "quarter", List<Player>(10)){
-
-}   
-
-Quarter::Quarter(string type, string name,  List<Player> listPlayer) : AbilityCommand(type, name, listPlayer){
-
-}   
-
-Quarter::Quarter(const Quarter& x ) : AbilityCommand(x){
-
-}   
-
-Quarter& Quarter::operator=(const Quarter& X){
-
-} 
-
-Quarter::~Quarter(){
-    AbilityCommand::~AbilityCommand();
-}    
+Quarter::Quarter(string type, string name) : AbilityCommand(type, name){
+}
 
 void Quarter::execute(int prize, Round round) {
     if (prize >= 4) {

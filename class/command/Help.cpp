@@ -2,7 +2,6 @@
 #include <iostream>
 
 Help::Help(string type, string name) : OrdinaryCommand(type, name){
-
 }
 
 bool Help::continueToNextPlayer(){

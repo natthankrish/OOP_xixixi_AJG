@@ -6,19 +6,11 @@
 #include "../inventory/CardsBank.hpp"
 
 class Next : public OrdinaryCommand {
-    private:
-
     public:
-        Next();                         // default ctor
         Next(string, string);           // user defined ctor
-        Next(const Next&);              // cctor
-        Next& operator=(const Next&);   // assignment
-        ~Next();                        //  dtor
 
         void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer();
-
-
 };
 
 #endif

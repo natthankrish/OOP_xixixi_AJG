@@ -3,18 +3,11 @@
 #include "AbilityCommand.hpp"
 
 class Swap : AbilityCommand {
-    private:
-
     public:
-        Swap();                           // default ctor
         Swap(string, string);             // user defined ctor
-        Swap(const Swap&);              // cctor
-        Swap& operator=(const Swap&);   // assignment
-        ~Swap();                          //  dtor
 
         void execute();
         bool continueToNextPlayer();
-
 };
 
 #endif

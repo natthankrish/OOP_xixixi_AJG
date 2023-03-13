@@ -6,19 +6,10 @@
 #include "../Round.hpp"
 
 class AbilityCommand : public Command {
-    protected:
-        List<Player> listPlayer;
-
     public:
-        AbilityCommand();                                   // default ctor
-        AbilityCommand(string, string, List<Player>);                     // user defined ctor
-        AbilityCommand(const AbilityCommand&);              // cctor
-        AbilityCommand& operator=(const AbilityCommand&);   // assignment
-        ~AbilityCommand();                                  //  dtor
-
+        AbilityCommand(string, string);                     // user defined ctor
         virtual void execute(int);
         virtual bool continueToNextPlayer();
-
 };
 
 #endif

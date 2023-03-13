@@ -3,25 +3,8 @@
 #include <iostream>
 
 //======== Half ========
-Half::Half() : OrdinaryCommand("ordinary", "double"){
-
-}   
-
 Half::Half(string type, string name) : OrdinaryCommand(type, name){
-
 }   
-
-Half::Half(const Half& x ) : OrdinaryCommand(x){
-
-}   
-
-Half& Half::operator=(const Half& X){
-    return *this;
-} 
-
-Half::~Half(){
-    
-}    
 
 void Half::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     if (prize != 1) {
