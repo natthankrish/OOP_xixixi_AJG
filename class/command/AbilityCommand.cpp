@@ -12,3 +12,9 @@ void AbilityCommand::execute(List<Player>& listPlayer, int playeridx, int& prize
 bool AbilityCommand::continueToNextPlayer(){
     return false;
 }
+
+void AbilityCommand::doesPlayerHaveAbilityCard(List<Player>& listPlayer, int playeridx, string cardName){
+    if (listPlayer.getElement(playeridx - 1).getAbilityCard().getAbilityName() != cardName) {
+        throw PlayerDoesNotHaveCardException();
+    }
+}
