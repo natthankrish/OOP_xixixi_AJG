@@ -17,6 +17,7 @@ void Reverse::execute(List<Player>& listPlayer, int playeridx, int& prize, Cards
 bool Reverse::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
+        playerCardIsDeactivated(listPlayer, playeridx);
         // abilitycardsbank.getElement().push_back(AbilityCard("Reverse"));
         listPlayer.getElement(playeridx-1).setAbilityStatus(false);
         return true;

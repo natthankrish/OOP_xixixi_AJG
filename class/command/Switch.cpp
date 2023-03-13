@@ -54,6 +54,7 @@ void Switch::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsB
 bool Switch::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Switch");
+        playerCardIsDeactivated(listPlayer, playeridx);
         // abilitycardsbank.getElement().push_back(AbilityCard("Switch"));
         listPlayer.getElement(playeridx-1).setAbilityStatus(false);
         return true;
