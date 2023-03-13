@@ -82,3 +82,11 @@ void Player::seeCard() {
         cout << "Kartu Ability: " << this->abilityCard.getAbilityName() << endl;
     }
 }
+
+pair <NumberCard, NumberCard> Player::getPairOfCards() {
+    return this->playerCards;
+}
+
+AbilityCard Player::getAbilityCard() {
+    return this->abilityCard;
+}
