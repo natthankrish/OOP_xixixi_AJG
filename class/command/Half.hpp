@@ -8,12 +8,12 @@ class Half : public ordinaryCommand {
 
     public:
         Half();                         // default ctor
-        Half(string, string, List<Player>);           // user defined ctor
+        Half(string, string);           // user defined ctor
         Half(const Half&);              // cctor
         Half& operator=(const Half&);   // assignment
         ~Half();                        //  dtor
 
-        void execute(int, Round);
+        void execute(List<Player>&, int, int&);
         bool continueToNextPlayer();
 
 };

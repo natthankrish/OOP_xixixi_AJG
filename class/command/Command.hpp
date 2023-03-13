@@ -2,7 +2,7 @@
 #define COMMAND_HPP
 
 #include <string>
-#include "../Round.hpp"
+#include "../inventory/Player.hpp"
 
 using namespace std;
 
@@ -26,7 +26,7 @@ class Command {
         void setType(string);
         void setName(string);
     
-        virtual void execute(int);
+        virtual void execute(List<Player>&, int, int&);
 
         virtual bool continueToNextPlayer();
 };

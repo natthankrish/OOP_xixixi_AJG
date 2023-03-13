@@ -20,3 +20,7 @@ void AbilityCard::setAbilityName(string abilityName){
 void AbilityCard::useCard(){
     //
 }
+
+bool AbilityCard::operator!= (const AbilityCard& other) {
+    return this->abilityName != other.abilityName;
+}

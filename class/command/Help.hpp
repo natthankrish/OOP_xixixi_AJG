@@ -6,10 +6,10 @@ class Help : public ordinaryCommand {
     private:
 
     public:
-        Help(string, string, List<Player>);
+        Help(string, string);
 
         bool continueToNextPlayer();
-        void execute(int);      
+        void execute(List<Player>&, int, int&);      
 };
 
 #endif

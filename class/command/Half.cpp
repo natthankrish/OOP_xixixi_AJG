@@ -3,11 +3,11 @@
 #include <iostream>
 
 //======== Half ========
-Half::Half() : ordinaryCommand("ordinary", "double", List<Player>(10)){
+Half::Half() : ordinaryCommand("ordinary", "double"){
 
 }   
 
-Half::Half(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
+Half::Half(string type, string name) : ordinaryCommand(type, name){
 
 }   
 
@@ -16,20 +16,20 @@ Half::Half(const Half& x ) : ordinaryCommand(x){
 }   
 
 Half& Half::operator=(const Half& X){
-
+    return *this;
 } 
 
 Half::~Half(){
-    ordinaryCommand::~abilityCommand();
+    
 }    
 
-void Half::execute(int prize, Round round) {
+void Half::execute(List<Player>& listPlayer, int playeridx, int& prize) {
     if (prize != 1) {
-        cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan HALF! Point hadiah turun dari " << prize;
+        cout << listPlayer[playeridx-1].getName() << " melakukan HALF! Point hadiah turun dari " << prize;
         prize *= 0.5; 
         cout << " menjadi " << prize << endl;
     } else {
-        cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan HALF! Sayangnya hadiah sudah mencapai angka 1." << endl;
+        cout << listPlayer[playeridx-1].getName() << " melakukan HALF! Sayangnya hadiah sudah mencapai angka 1." << endl;
         cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
     }
 }

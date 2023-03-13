@@ -1,13 +1,13 @@
-#ifndef CHECKPRIZE_HPP
-#define CHECKPRIZE_HPP
+#ifndef MYCARD_HPP
+#define MYCARD_HPP
 #include "OrdinaryCommand.hpp"
 class Round;
 
-class CheckPrize : public ordinaryCommand {
+class MyCard : public ordinaryCommand {
     private:
 
     public:
-        CheckPrize(string, string);
+        MyCard(string, string);
 
         bool continueToNextPlayer();
         void execute(List<Player>&, int, int&);

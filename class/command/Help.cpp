@@ -1,7 +1,7 @@
 #include "Help.hpp"
 #include <iostream>
 
-Help::Help(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
+Help::Help(string type, string name) : ordinaryCommand(type, name){
 
 }
 
@@ -9,11 +9,9 @@ bool Help::continueToNextPlayer(){
     return false;
 }
 
-void Help::execute(int){
+void Help::execute(List<Player>& listPlayer, int playeridx, int& prize){
     cout << "PUSAT BANTUAN" << endl;
     cout << "---------------------------------------" << endl;
     cout << "Masih under construction" << endl;
-}
-bool Help::continueToNextPlayer(){
-    return false;
+    cout << "---------------------------------------" << endl;
 }

@@ -15,6 +15,7 @@ class AbilityCard : public Card {
         string getAbilityName();
         void setAbilityName(string);
         void useCard();
+        bool operator!=(const AbilityCard&);
 };
 
 #endif

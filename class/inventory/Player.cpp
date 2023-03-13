@@ -39,12 +39,20 @@ void Player::operator+(const NumberCard& card) {
     }
 }
 
+void Player::operator+(const AbilityCard& card) {
+    this->abilityCard = card;
+}
+
 void Player::operator-(const NumberCard& card) {
     if (this->playerCards.first == NumberCard() && this->playerCards.second == NumberCard()) {
         this->playerCards.first = card;
     } else if (this->playerCards.second == NumberCard()) {
         this->playerCards.first = card;
     }
+}
+
+void Player::operator-(const AbilityCard& card) {
+    this->abilityCard = AbilityCard();
 }
 
 NumberCard Player::operator--() {
@@ -61,4 +69,7 @@ NumberCard Player::operator--() {
 void Player::seeCard() {
     cout << "Kartu 1: " << this->playerCards.first.getNumber() << " " << this->playerCards.first.getColor() << endl;
     cout << "Kartu 2: " << this->playerCards.second.getNumber() << " " << this->playerCards.second.getColor() << endl;
+    if (this->abilityCard != AbilityCard()) {
+        cout << "Kartu Ability: " << this->abilityCard.getAbilityName() << endl;
+    }
 }

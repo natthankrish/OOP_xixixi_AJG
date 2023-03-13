@@ -8,10 +8,11 @@
 #include "command/Double.hpp"
 #include "command/Half.hpp"
 #include "command/Quadruple.hpp"
+#include "inventory/AbilityCardsBank.hpp"
 #include "inventory/CardsBank.hpp"
-//#include "command/CheckPrize.hpp"
-//#include "command/Help.hpp"
-
+#include "command/CheckPrize.hpp"
+#include "command/Help.hpp"
+#include "command/MyCard.hpp"
 
 class Round {
     private:
@@ -25,10 +26,10 @@ class Round {
         Round(int,int);
         void nextPlayer(List<Player>&);
         void processCurrentPlayer(List<Player>&, int&);
-        void initializeRound(List<Player>&, CardsBank&);
+        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&);
         int getRoundID();
         int getIdxCurrentPlayer();
-        void startRound(List<Player>&, int&, CardsBank&);
+        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
 };
 
 #endif

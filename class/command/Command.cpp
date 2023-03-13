@@ -40,11 +40,12 @@ void Command::setName(string name) {
     this->name = name;
 }
 
-void Command::execute(int prize) {
-    cout << "execute Command\n";
+void Command::execute(List<Player>& listPlayer, int playeridx, int& prize) {
+    cout << "Masukan salah! Ketik HELP untuk bantuan." << endl;
+    cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
 }
 
-bool continueToNextPlayer(){
+bool Command::continueToNextPlayer(){
     return false;
 }
 

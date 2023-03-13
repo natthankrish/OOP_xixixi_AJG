@@ -6,13 +6,14 @@
 
 class AbilityCardsBank {
     private: 
-        vector<Card> element;
+        vector<AbilityCard> element;
     public: 
         AbilityCardsBank();
-        vector<Card> getElement(); 
-        Card getElementAt(int);
-        virtual void operator+(const Card&);
-        virtual void operator-(const Card&);
+        vector<AbilityCard> getElement(); 
+        AbilityCard getElementAt(int);
+        virtual void operator+(const AbilityCard&);
+        virtual void operator-(const AbilityCard&);
+        void bagiAbility(List<Player>&);
 };
 
 #endif
