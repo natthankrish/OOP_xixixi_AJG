@@ -6,8 +6,19 @@ Reverse::Reverse(string type, string name) : AbilityCommand(type, name){
 }   
 
 void Reverse::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
-    cout<<"Reverse execute\n";
+    try{
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
+        //execution
+        
+    } catch (PlayerDoesNotHaveCardException e) {
+        cout << e.what() << "REVERSE." << endl;
+    }
 }
-bool Reverse::continueToNextPlayer(){
-    return false;
+bool Reverse::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+    try{
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
+        return true;
+    } catch (PlayerDoesNotHaveCardException e) {
+        return false;
+    }
 }

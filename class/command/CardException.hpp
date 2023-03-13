@@ -5,9 +5,10 @@
 using namespace std;
 
 class PlayerDoesNotHaveCardException : public exception  {
-	const char* what() const throw() {
-		return "Palyer tidak memiliki kartu.";
-	}
+	public: 
+		const char* what() const throw() {
+			return "Ets, tidak bisa. Kamu tidak punya kartu Ability ";
+		}
 };
 
 #endif
