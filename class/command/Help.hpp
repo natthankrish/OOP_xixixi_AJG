@@ -9,7 +9,7 @@ class Help : public OrdinaryCommand {
         Help(string, string);
 
         bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
-        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);      
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);      
 };
 
 #endif

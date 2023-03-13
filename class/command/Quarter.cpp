@@ -5,7 +5,7 @@
 Quarter::Quarter(string type, string name) : AbilityCommand(type, name){
 }
 
-void Quarter::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Quarter::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
         playerCardIsDeactivated(listPlayer, playeridx);

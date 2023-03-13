@@ -5,7 +5,7 @@
 Reroll::Reroll(string type, string name) : AbilityCommand(type, name){
 }
 
-void Reroll::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
         playerCardIsDeactivated(listPlayer, playeridx);

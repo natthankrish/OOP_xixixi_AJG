@@ -8,7 +8,7 @@ class Half : public OrdinaryCommand {
     public:
         Half(string, string);           // user defined ctor
 
-        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
