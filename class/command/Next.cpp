@@ -2,11 +2,11 @@
 #include <iostream>
 
 //======== Next ========
-Next::Next() : ordinaryCommand("ordinary","next", List<Player>(10)){
+Next::Next() : ordinaryCommand("ordinary","next"){
 
 }   
 
-Next::Next(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
+Next::Next(string type, string name) : ordinaryCommand(type, name){
 
 }   
 
@@ -15,14 +15,14 @@ Next::Next(const Next& x ) : ordinaryCommand(x){
 }   
 
 Next& Next::operator=(const Next& X){
-
+    return *this;
 } 
 
 Next::~Next(){
     ordinaryCommand::~ordinaryCommand();
 }    
 
-void Next::execute(int prize) {
+void Next::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }
 

@@ -17,26 +17,26 @@ int Round::getIdxCurrentPlayer(){
     return this->idxCurrentPlayer;
 }
 
-void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank) {
-    initializeRound(listPlayer, cardsbank);
+void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+    initializeRound(listPlayer, cardsbank, abilitycardsbank);
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
-    processCurrentPlayer(listPlayer, prize);
+    processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank);
     
     while(this->playerRemaining > 0) {
         this->playerRemaining--;
         nextPlayer(listPlayer);
-        processCurrentPlayer(listPlayer, prize);
+        processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank);
     }
 }
 
-void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank) {
+void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     if (this->roundID == 1) {
         cout << "RONDE 1 DIMULAI. SAATNYA PEMBAGIAN KARTU" << endl;
         cardsbank.bagiKartu(listPlayer);
     } else if (this->roundID == 2) {
         cout << "RONDE 2 DIMULAI. SAATNYA PEMBAGIAN ABILITY" << endl;
-       // cardsbank.bagiAbility();
+        abilitycardsbank.bagiAbility(listPlayer);
     } else {
         cout << "RONDE " << this->roundID << " DIMULAI." << endl;
     }
@@ -50,38 +50,40 @@ void Round::nextPlayer(List<Player>& listPlayer) {
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 }
 
-void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
+void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     string perintah;
     // this->command->execute(*this, prize);
-    listPlayer[this->getIdxCurrentPlayer()-1].seeCard();
     
     bool nextPerson = false;
     while (!nextPerson) {
         // masukan perintah
         cout << "Masukkan Perintah: "; 
         cin >> perintah;
-
-        // // Percabangan buat objek
-        // if (perintah == "CHECKPRIZE") {
-        //     this->command = new CheckPrize("ordinary", "checkprize", prize);
-        // } else if (perintah == "HELP") {
-        //     this->command = new Help("ordinary", "checkprize", prize);
-        // } else if (perintah == "NEXT") {
-        //     this->command = new Next("ordinary", "next", listPlayer);
-        // } else if (perintah == "DOUBLE") {
-        //     this->command = new Double("ordinary", "double", listPlayer);
-        // } else if (perintah == "HALF") {
-        //     this->command = new Half("ordinary", "half", listPlayer);
+        // Percabangan buat objek
+        if (perintah == "CHECKPRIZE") {
+            this->command = new CheckPrize("ordinary", "checkprize");
+        } else if (perintah == "HELP") {
+            this->command = new Help("ordinary", "help");
+        } else if (perintah == "NEXT") {
+            this->command = new Next("ordinary", "next");
+        } else if (perintah == "DOUBLE") {
+            this->command = new Double("ordinary", "double");
+        } else if (perintah == "HALF") {
+            this->command = new Half("ordinary", "half");
+        } else if (perintah == "MYCARD") {
+            this->command = new MyCard("ordinary", "mycard");
+        } else if (perintah == "CHANGEPLAYERCARD") {
+            this->command = new ChangePlayerCard("ordinary", "changenum");
         // } else if (perintah == "QUADRUPLE") {
         //     this->command = new Half("ability", "quadruple", listPlayer);
         // } else if (perintah == "QUARTER") {
         //     this->command = new Half("ability", "quarter", listPlayer);
-        // } else {
-        //     this->command = new Command();
-        //     cout << "Masukan salah! Ketik HELP untuk bantuan."; 
-        // }
+        } else {
+            this->command = new Command();
+             
+        }
 
-        // command->execute();
-        nextPerson = true;
+        this->command->execute(listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
+        nextPerson = this->command->continueToNextPlayer();
     }
 }

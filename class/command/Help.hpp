@@ -1,15 +1,17 @@
 #ifndef HELP_HPP
 #define HELP_HPP
 #include "OrdinaryCommand.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class Help : public ordinaryCommand {
     private:
 
     public:
-        Help(string, string, List<Player>);
+        Help(string, string);
 
         bool continueToNextPlayer();
-        void execute(int);      
+        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);      
 };
 
 #endif

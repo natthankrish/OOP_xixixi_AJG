@@ -10,6 +10,16 @@
 #include "class/Card/Card.cpp"
 #include "class/Card/NumberCard.cpp"
 #include "class/Card/AbilityCard.cpp"
+#include "class/command/CheckPrize.cpp"
+#include "class/command/Command.cpp"
+#include "class/command/OrdinaryCommand.cpp"
+#include "class/command/Help.cpp"
+#include "class/command/Next.cpp"
+#include "class/command/Half.cpp"
+#include "class/command/Double.cpp"
+#include "class/command/MyCard.cpp"
+#include "class/command/ChangePlayerCard.cpp"
+
 
 int main () {
     Competition* competition = new Competition();

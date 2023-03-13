@@ -7,11 +7,13 @@
 #include "command/Next.hpp"
 #include "command/Double.hpp"
 #include "command/Half.hpp"
-#include "command/Quadruple.hpp"
+//#include "command/Quadruple.hpp"
+#include "inventory/AbilityCardsBank.hpp"
 #include "inventory/CardsBank.hpp"
-//#include "command/CheckPrize.hpp"
-//#include "command/Help.hpp"
-
+#include "command/CheckPrize.hpp"
+#include "command/Help.hpp"
+#include "command/MyCard.hpp"
+#include "command/ChangePlayerCard.hpp"
 
 class Round {
     private:
@@ -24,11 +26,11 @@ class Round {
         // friend ordinaryCommand;
         Round(int,int);
         void nextPlayer(List<Player>&);
-        void processCurrentPlayer(List<Player>&, int&);
-        void initializeRound(List<Player>&, CardsBank&);
+        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
+        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&);
         int getRoundID();
         int getIdxCurrentPlayer();
-        void startRound(List<Player>&, int&, CardsBank&);
+        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
 };
 
 #endif

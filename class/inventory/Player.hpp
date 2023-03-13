@@ -28,7 +28,9 @@ class Player : public InventoryHolder {
         // void setPlayerCards();
         // void searchBestDeckCards();
         void operator+(const NumberCard&);
+        void operator+(const AbilityCard&);
         void operator-(const NumberCard&);
+        void operator-(const AbilityCard&);
         NumberCard operator--();
         void seeCard();
 

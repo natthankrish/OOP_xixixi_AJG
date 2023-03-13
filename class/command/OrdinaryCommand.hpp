@@ -4,19 +4,18 @@
 #include "../inventory/Player.hpp"
 #include "../../utils/ListOfThing.hpp"
 #include "../Round.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class ordinaryCommand : public Command {
-    protected:
-        List<Player> listPlayer;
-
     public:
         ordinaryCommand();                                  // default ctor
-        ordinaryCommand(string, string, List<Player>);                    // user defined ctor
+        ordinaryCommand(string, string);                    // user defined ctor
         ordinaryCommand(const ordinaryCommand&);            // cctor
         ordinaryCommand& operator=(const ordinaryCommand&); // assignment
         ~ordinaryCommand();                                 //  dtor
 
-        virtual void execute(int);
+        virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         virtual bool continueToNextPlayer();
 
 };

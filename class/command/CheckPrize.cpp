@@ -1,17 +1,13 @@
 #include "CheckPrize.hpp"
 
-CheckPrize::CheckPrize(string type, string name, List<Player> listPlayer) : ordinaryCommand("ordinary", "double",listPlayer){   
+CheckPrize::CheckPrize(string type, string name) : ordinaryCommand("ordinary", "double"){   
 
 }
 
 bool CheckPrize::continueToNextPlayer(){
     return false;
 }
-void CheckPrize::execute(int& prize, Round round){
+void CheckPrize::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
     cout << "Hadiah Game pada saat ini adalah " << prize << endl;
-    cout << "Sekarang masih giliran " << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << endl;
-}
-
-bool CheckPrize::continueToNextPlayer(){
-    return false;
+    cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
 }
