@@ -9,15 +9,12 @@ void Quadruple::execute(List<Player>& listPlayer, int playeridx, int& prize, Car
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
         //execution
-        
+        cout << listPlayer[playeridx-1].getName() << " melakukan QUDRUPLE! Point hadiah naik dari " << prize;
+        prize *= 4; 
+        cout << " menjadi " << prize << "!" << endl;
     } catch (PlayerDoesNotHaveCardException e) {
         cout << e.what() << "QUADRUPLE." << endl;
     }
-
-//         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUADRUPLE! Point hadiah naik dari " << prize;
-//         prize *= 4; 
-//         cout << " menjadi " << prize << endl;
-//             int i = 0;
 }
 
 bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
