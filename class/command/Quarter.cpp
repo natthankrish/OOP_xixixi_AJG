@@ -30,10 +30,12 @@ void Quarter::execute(List<Player>& listPlayer, int playeridx, int& prize, Cards
 bool Quarter::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
-        abilitycardsbank.getElement().push_back(AbilityCard("Quarter"));
-        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("none"));
+        // abilitycardsbank.getElement().push_back(AbilityCard("Quarter"));
+        listPlayer.getElement(playeridx-1).setAbilityStatus(false);
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
+        return false;
+    } catch (PlayerCardIsDeactivatedException e) {
         return false;
     }
 }
