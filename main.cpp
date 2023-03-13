@@ -18,6 +18,7 @@
 #include "class/command/Half.cpp"
 #include "class/command/Double.cpp"
 #include "class/command/MyCard.cpp"
+#include "class/command/ChangePlayerCard.cpp"
 
 
 int main () {

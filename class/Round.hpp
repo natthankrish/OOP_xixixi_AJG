@@ -7,12 +7,13 @@
 #include "command/Next.hpp"
 #include "command/Double.hpp"
 #include "command/Half.hpp"
-#include "command/Quadruple.hpp"
+//#include "command/Quadruple.hpp"
 #include "inventory/AbilityCardsBank.hpp"
 #include "inventory/CardsBank.hpp"
 #include "command/CheckPrize.hpp"
 #include "command/Help.hpp"
 #include "command/MyCard.hpp"
+#include "command/ChangePlayerCard.hpp"
 
 class Round {
     private:

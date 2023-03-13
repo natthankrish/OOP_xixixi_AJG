@@ -1,7 +1,6 @@
 #ifndef _DOUBLE_HPP_
 #define _DOUBLE_HPP_
 #include "OrdinaryCommand.hpp"
-class Round;
 
 class Double : public ordinaryCommand {
     private:

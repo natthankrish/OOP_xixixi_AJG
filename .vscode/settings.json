@@ -12,6 +12,16 @@
         "type_traits": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "atomic": "cpp",
+        "unordered_map": "cpp",
+        "iterator": "cpp",
+        "string_view": "cpp",
+        "istream": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp"
     }
 }

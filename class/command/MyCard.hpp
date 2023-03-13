@@ -1,7 +1,6 @@
 #ifndef MYCARD_HPP
 #define MYCARD_HPP
 #include "OrdinaryCommand.hpp"
-class Round;
 
 class MyCard : public ordinaryCommand {
     private:
