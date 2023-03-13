@@ -14,9 +14,11 @@ void Reverse::execute(List<Player>& listPlayer, int playeridx, int& prize, Cards
         cout << e.what() << "REVERSE." << endl;
     }
 }
-bool Reverse::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+bool Reverse::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
+        abilitycardsbank.getElement().push_back(AbilityCard("Reverse"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

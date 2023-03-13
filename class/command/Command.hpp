@@ -17,7 +17,7 @@ class Command {
         Command(string, string);            // user defined ctor
 
         virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
-        virtual bool continueToNextPlayer();
+        virtual bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
 #endif

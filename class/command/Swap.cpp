@@ -15,9 +15,11 @@ void Swap::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBan
     }
 }
 
-bool Swap::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+bool Swap::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Swap");
+        abilitycardsbank.getElement().push_back(AbilityCard("Swap"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

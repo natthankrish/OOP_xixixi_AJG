@@ -20,9 +20,11 @@ void Quadruple::execute(List<Player>& listPlayer, int playeridx, int& prize, Car
 //             int i = 0;
 }
 
-bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
+        abilitycardsbank.getElement().push_back(AbilityCard("Quadruple"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

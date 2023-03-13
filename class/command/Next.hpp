@@ -10,7 +10,7 @@ class Next : public OrdinaryCommand {
         Next(string, string);           // user defined ctor
 
         void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
-        bool continueToNextPlayer();
+        bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
 #endif

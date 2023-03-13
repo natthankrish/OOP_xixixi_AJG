@@ -9,6 +9,6 @@ void OrdinaryCommand::execute(List<Player>& listPlayer, int playeridx, int& priz
     cout<<"ordinary Command execute\n";
 }
 
-bool OrdinaryCommand::continueToNextPlayer(){
+bool OrdinaryCommand::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }

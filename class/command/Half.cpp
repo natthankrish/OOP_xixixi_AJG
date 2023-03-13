@@ -16,6 +16,6 @@ void Half::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBan
         cout << "Pengurangan poin dibatalkan. Giliran pemain selanjutnya." << endl;
     }
 }
-bool Half::continueToNextPlayer(){
+bool Half::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return true;
 }

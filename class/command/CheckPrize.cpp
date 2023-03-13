@@ -4,7 +4,7 @@ CheckPrize::CheckPrize(string type, string name) : OrdinaryCommand("ordinary", "
 
 }
 
-bool CheckPrize::continueToNextPlayer(){
+bool CheckPrize::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 void CheckPrize::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){

@@ -11,6 +11,6 @@ void Double::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsB
     cout << " menjadi " << prize << endl;
 }
 
-bool Double::continueToNextPlayer(){
+bool Double::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return true;
 }

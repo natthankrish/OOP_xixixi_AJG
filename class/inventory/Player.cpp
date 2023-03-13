@@ -32,6 +32,10 @@ AbilityCard Player::getAbilityCard(){
     return this->abilityCard;
 }
 
+void Player::setAbilityCard(AbilityCard abilityCard){
+    this->abilityCard = abilityCard;
+}
+
 // void Player::searchBestDeckCards() {
 
 // }

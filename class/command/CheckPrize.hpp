@@ -10,7 +10,7 @@ class CheckPrize : public OrdinaryCommand {
     public:
         CheckPrize(string, string);
 
-        bool continueToNextPlayer();
+        bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
         void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
 };
 

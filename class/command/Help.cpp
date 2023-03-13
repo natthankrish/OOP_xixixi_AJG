@@ -4,7 +4,7 @@
 Help::Help(string type, string name) : OrdinaryCommand(type, name){
 }
 
-bool Help::continueToNextPlayer(){
+bool Help::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 

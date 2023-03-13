@@ -3,7 +3,7 @@
 MyCard::MyCard(string type, string name) : OrdinaryCommand("ordinary", "double"){   
 }
 
-bool MyCard::continueToNextPlayer(){
+bool MyCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 

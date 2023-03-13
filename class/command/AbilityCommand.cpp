@@ -9,7 +9,7 @@ void AbilityCommand::execute(List<Player>& listPlayer, int playeridx, int& prize
     cout<<"abilityCommand execute\n";
 }
 
-bool AbilityCommand::continueToNextPlayer(){
+bool AbilityCommand::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 

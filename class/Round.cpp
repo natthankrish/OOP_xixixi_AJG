@@ -84,6 +84,6 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
         }
 
         this->command->execute(listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
-        nextPerson = this->command->continueToNextPlayer();
+        nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
     }
 }

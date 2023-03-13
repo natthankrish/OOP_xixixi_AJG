@@ -4,7 +4,7 @@ ChangePlayerCard::ChangePlayerCard(string type, string name) : OrdinaryCommand("
 
 }
 
-bool ChangePlayerCard::continueToNextPlayer(){
+bool ChangePlayerCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 void ChangePlayerCard::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){

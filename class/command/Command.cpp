@@ -12,7 +12,7 @@ void Command::execute(List<Player>& listPlayer, int playeridx, int& prize, Cards
     cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
 }
 
-bool Command::continueToNextPlayer(){
+bool Command::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 

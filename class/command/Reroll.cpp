@@ -15,9 +15,12 @@ void Reroll::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsB
     }
 }
 
-bool Reroll::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+bool Reroll::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
+        abilitycardsbank.getElement().push_back(AbilityCard("Re-roll"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
+
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

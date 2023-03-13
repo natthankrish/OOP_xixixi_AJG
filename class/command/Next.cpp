@@ -9,6 +9,6 @@ void Next::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBan
     cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }
 
-bool Next::continueToNextPlayer(){
+bool Next::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return true;
 }

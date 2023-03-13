@@ -16,9 +16,11 @@ void Switch::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsB
     }
 }
 
-bool Switch::continueToNextPlayer(List<Player>& listPlayer, int playeridx){
+bool Switch::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Switch");
+        abilitycardsbank.getElement().push_back(AbilityCard("Switch"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;
