@@ -1,6 +1,6 @@
 #include "CheckPrize.hpp"
 
-CheckPrize::CheckPrize(string type, string name, List<Player> listPlayer) : ordinaryCommand("ordinary", "double",listPlayer){   
+CheckPrize::CheckPrize(string type, string name) : OrdinaryCommand("ordinary", "check prize"){   
 
 }
 

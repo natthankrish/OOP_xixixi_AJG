@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Swap ========
-Swap::Swap() : abilityCommand("ability", "swap", List<Player>(10)){
+Swap::Swap() : AbilityCommand("ability", "swap"){
 
 }   
 
-Swap::Swap(string type, string name) : abilityCommand(type, name, List<Player>(10)){
+Swap::Swap(string type, string name) : AbilityCommand(type, name){
 
 }   
 
-Swap::Swap(const Swap& x ) : abilityCommand(x){
+Swap::Swap(const Swap& x ) : AbilityCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Swap& Swap::operator=(const Swap& X){
 } 
 
 Swap::~Swap(){
-    abilityCommand::~abilityCommand();
+    AbilityCommand::~AbilityCommand();
 }    
 
 void Swap::execute() {

@@ -3,12 +3,12 @@
 #include "OrdinaryCommand.hpp"
 class Round;
 
-class Half : public ordinaryCommand {
+class Half : public OrdinaryCommand {
     private:
 
     public:
         Half();                         // default ctor
-        Half(string, string, List<Player>);           // user defined ctor
+        Half(string, string);           // user defined ctor
         Half(const Half&);              // cctor
         Half& operator=(const Half&);   // assignment
         ~Half();                        //  dtor

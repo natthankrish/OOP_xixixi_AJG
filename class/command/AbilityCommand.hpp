@@ -5,16 +5,13 @@
 #include "../../utils/ListOfThing.hpp"
 #include "../Round.hpp"
 
-class abilityCommand : public Command {
-    protected:
-        List<Player> listPlayer;
-
+class AbilityCommand : public Command {
     public:
-        abilityCommand();                                   // default ctor
-        abilityCommand(string, string, List<Player>);                     // user defined ctor
-        abilityCommand(const abilityCommand&);              // cctor
-        abilityCommand& operator=(const abilityCommand&);   // assignment
-        ~abilityCommand();                                  //  dtor
+        AbilityCommand();                                   // default ctor
+        AbilityCommand(string, string);                     // user defined ctor
+        AbilityCommand(const AbilityCommand&);              // cctor
+        AbilityCommand& operator=(const AbilityCommand&);   // assignment
+        ~AbilityCommand();                                  //  dtor
 
         virtual void execute(int);
         virtual bool continueToNextPlayer();

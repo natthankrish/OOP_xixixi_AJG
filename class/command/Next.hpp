@@ -3,12 +3,12 @@
 #include "OrdinaryCommand.hpp"
 #include "../Round.hpp"
 
-class Next : public ordinaryCommand {
+class Next : public OrdinaryCommand {
     private:
 
     public:
         Next();                         // default ctor
-        Next(string, string, List<Player>);           // user defined ctor
+        Next(string, string);           // user defined ctor
         Next(const Next&);              // cctor
         Next& operator=(const Next&);   // assignment
         ~Next();                        //  dtor

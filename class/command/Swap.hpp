@@ -2,7 +2,7 @@
 #define _SWAP_HPP_
 #include "AbilityCommand.hpp"
 
-class Swap : abilityCommand {
+class Swap : AbilityCommand {
     private:
 
     public:

@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Quadruple ========
-Quadruple::Quadruple() : abilityCommand("ability", "quadruple", List<Player>(10)){
+Quadruple::Quadruple() : AbilityCommand("ability", "quadruple"){
 
 }   
 
-Quadruple::Quadruple(string type, string name, List<Player> listPlayer) : abilityCommand(type, name, listPlayer){
+Quadruple::Quadruple(string type, string name) : AbilityCommand(type, name){
 
 }   
 
-Quadruple::Quadruple(const Quadruple& x ) : abilityCommand(x){
+Quadruple::Quadruple(const Quadruple& x ) : AbilityCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Quadruple& Quadruple::operator=(const Quadruple& X){
 } 
 
 Quadruple::~Quadruple(){
-    abilityCommand::~abilityCommand();
+    AbilityCommand::~AbilityCommand();
 }    
 
 void Quadruple::execute(int prize, Round round) {

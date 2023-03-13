@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Double ========
-Double::Double() : ordinaryCommand("ordinary", "double", List<Player>(10)){
+Double::Double() : OrdinaryCommand("ordinary", "double"){
 
 }   
 
-Double::Double(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
+Double::Double(string type, string name) : OrdinaryCommand(type, name){
 
 }   
 
-Double::Double(const Double& x ) : ordinaryCommand(x){
+Double::Double(const Double& x ) : OrdinaryCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Double& Double::operator=(const Double& X){
 } 
 
 Double::~Double(){
-    ordinaryCommand::~abilityCommand();
+    OrdinaryCommand::~abilityCommand();
 }    
 
 void Double::execute(int prize, Round round) {

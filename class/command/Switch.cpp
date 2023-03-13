@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Switch ========
-Switch::Switch() : abilityCommand("ability", "switch"){
+Switch::Switch() : AbilityCommand("ability", "switch"){
 
 }   
 
-Switch::Switch(string type, string name) : abilityCommand(type, name){
+Switch::Switch(string type, string name) : AbilityCommand(type, name){
 
 }   
 
-Switch::Switch(const Switch& x ) : abilityCommand(x){
+Switch::Switch(const Switch& x ) : AbilityCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Switch& Switch::operator=(const Switch& X){
 } 
 
 Switch::~Switch(){
-    abilityCommand::~abilityCommand();
+    AbilityCommand::~AbilityCommand();
 }    
 
 void Switch::execute() {

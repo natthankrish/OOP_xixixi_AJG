@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Abilityless ========
-Abilityless::Abilityless() : abilityCommand("ability", "abilityless", List<Player>(10)){
+Abilityless::Abilityless() : AbilityCommand("ability", "abilityless"){
 
 }   
 
-Abilityless::Abilityless(string type, string name) : abilityCommand(type, name, List<Player>(10)){
+Abilityless::Abilityless(string type, string name) : AbilityCommand(type, name){
 
 }   
 
-Abilityless::Abilityless(const Abilityless& x ) : abilityCommand(x){
+Abilityless::Abilityless(const Abilityless& x ) : AbilityCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Abilityless& Abilityless::operator=(const Abilityless& X){
 } 
 
 Abilityless::~Abilityless(){
-    abilityCommand::~abilityCommand();
+    AbilityCommand::~AbilityCommand();
 }    
 
 void Abilityless::execute() {

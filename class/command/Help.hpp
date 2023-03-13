@@ -2,11 +2,11 @@
 #define HELP_HPP
 #include "OrdinaryCommand.hpp"
 
-class Help : public ordinaryCommand {
+class Help : public OrdinaryCommand {
     private:
 
     public:
-        Help(string, string, List<Player>);
+        Help(string, string);
 
         bool continueToNextPlayer();
         void execute(int);      

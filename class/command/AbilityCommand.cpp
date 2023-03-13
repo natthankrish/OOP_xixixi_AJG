@@ -2,30 +2,30 @@
 #include <iostream>
 
 //======== abilityCommand ========
-abilityCommand::abilityCommand() : Command(), listPlayer(List<Player>(10)){
+AbilityCommand::AbilityCommand() : Command() {
     setType("ability");
 }
 
-abilityCommand::abilityCommand(string type, string name, List<Player> listOfPlayer) : Command(type, name), listPlayer(listOfPlayer) {
+AbilityCommand::AbilityCommand(string type, string name) : Command(type, name) {
 
 }
 
-abilityCommand::abilityCommand(const abilityCommand& x) : Command(x), listPlayer(x.listPlayer) {
+AbilityCommand::AbilityCommand(const AbilityCommand& x) : Command(x) {
 
 }
 
-abilityCommand& abilityCommand::operator=(const abilityCommand& x) {
+AbilityCommand& AbilityCommand::operator=(const AbilityCommand& x) {
 
 }
 
-abilityCommand::~abilityCommand() {
+AbilityCommand::~AbilityCommand() {
     Command::~Command();
 }
 
-void abilityCommand::execute(int prize) {
+void AbilityCommand::execute(int prize) {
     cout<<"abilityCommand execute\n";
 }
 
-bool abilityCommand::continueToNextPlayer(){
+bool AbilityCommand::continueToNextPlayer(){
     return false;
 }

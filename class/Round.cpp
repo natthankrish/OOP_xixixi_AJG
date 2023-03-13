@@ -81,7 +81,7 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize) {
         //     cout << "Masukan salah! Ketik HELP untuk bantuan."; 
         // }
 
-        // command->execute();
+        command->execute(listPlayer, this.getIdxCurrentPlayer()-1, prize);
         nextPerson = true;
     }
 }
