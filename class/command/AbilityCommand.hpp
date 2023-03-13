@@ -8,7 +8,7 @@
 class AbilityCommand : public Command {
     public:
         AbilityCommand(string, string);                     // user defined ctor
-        virtual void execute(int);
+        virtual void execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank);
         virtual bool continueToNextPlayer();
 };
 

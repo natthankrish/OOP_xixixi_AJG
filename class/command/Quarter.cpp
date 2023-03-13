@@ -5,7 +5,7 @@
 Quarter::Quarter(string type, string name) : AbilityCommand(type, name){
 }
 
-void Quarter::execute(int prize, Round round) {
+void Quarter::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     if (prize >= 4) {
         cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUARTER! Point hadiah turun dari " << prize;
         prize *= 0.25; 
