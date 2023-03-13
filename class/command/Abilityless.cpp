@@ -26,7 +26,7 @@ void Abilityless::execute(List<Player>& listPlayer, int playeridx, int& prize, C
         if(listPlayer.getElement(choice-1).getAbilityCard().getAbilityName() == "none") {
             cout << "Kartu ability " << listPlayer.getElement(choice-1).getName() << " telah dipakai sebelumnya. Yah, sayang penggunaan kartu ini sia-sia" << endl; 
         } else {
-            listPlayer.getElement(choice-1).setAbilityCard(AbilityCard("none"));
+            listPlayer.getElement(choice-1).setAbilityStatus(false);
             cout << "Kartu ability " << listPlayer.getElement(choice-1).getName() << " telah dimatikan." << endl;
         }
 
