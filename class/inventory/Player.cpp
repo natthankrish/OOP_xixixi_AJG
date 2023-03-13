@@ -27,6 +27,11 @@ string Player::getName() {
 void Player::setName(string name) {
     this->name = name;
 }
+
+AbilityCard Player::getAbilityCard(){
+    return this->abilityCard;
+}
+
 // void Player::searchBestDeckCards() {
 
 // }
