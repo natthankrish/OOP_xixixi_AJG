@@ -4,7 +4,7 @@
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
 
-class Half : public ordinaryCommand {
+class Half : public OrdinaryCommand {
     private:
 
     public:

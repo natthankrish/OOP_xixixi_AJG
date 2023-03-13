@@ -5,7 +5,7 @@
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
 
-class ChangePlayerCard : public ordinaryCommand {
+class ChangePlayerCard : public OrdinaryCommand {
     private:
 
     public:

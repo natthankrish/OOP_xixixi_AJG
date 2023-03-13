@@ -5,7 +5,7 @@
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
 
-class Next : public ordinaryCommand {
+class Next : public OrdinaryCommand {
     private:
 
     public:

@@ -1,6 +1,6 @@
 #include "MyCard.hpp"
 
-MyCard::MyCard(string type, string name) : ordinaryCommand("ordinary", "double"){   
+MyCard::MyCard(string type, string name) : OrdinaryCommand("ordinary", "double"){   
 
 }
 

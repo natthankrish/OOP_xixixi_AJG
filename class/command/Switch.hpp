@@ -2,7 +2,7 @@
 #define _SWITCH_HPP_
 #include "AbilityCommand.hpp"
 
-class Switch : abilityCommand {
+class Switch : AbilityCommand {
     private:
 
     public:

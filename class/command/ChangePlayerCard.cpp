@@ -1,6 +1,6 @@
 #include "ChangePlayerCard.hpp"
 
-ChangePlayerCard::ChangePlayerCard(string type, string name) : ordinaryCommand("ordinary", "changenum"){   
+ChangePlayerCard::ChangePlayerCard(string type, string name) : OrdinaryCommand("ordinary", "changenum"){   
 
 }
 

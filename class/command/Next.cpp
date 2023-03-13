@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Next ========
-Next::Next() : ordinaryCommand("ordinary","next"){
+Next::Next() : OrdinaryCommand("ordinary","next"){
 
 }   
 
-Next::Next(string type, string name) : ordinaryCommand(type, name){
+Next::Next(string type, string name) : OrdinaryCommand(type, name){
 
 }   
 
-Next::Next(const Next& x ) : ordinaryCommand(x){
+Next::Next(const Next& x ) : OrdinaryCommand(x){
 
 }   
 
@@ -19,7 +19,7 @@ Next& Next::operator=(const Next& X){
 } 
 
 Next::~Next(){
-    ordinaryCommand::~ordinaryCommand();
+    OrdinaryCommand::~OrdinaryCommand();
 }    
 
 void Next::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {

@@ -2,7 +2,7 @@
 #define _ABILITYLESS_HPP_
 #include "AbilityCommand.hpp"
 
-class Abilityless : public abilityCommand {
+class Abilityless : public AbilityCommand {
     private:
 
     public:

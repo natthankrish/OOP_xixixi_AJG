@@ -2,30 +2,30 @@
 #include <iostream>
 
 //======== ordinaryCommand ========
-ordinaryCommand::ordinaryCommand() : Command() {
+OrdinaryCommand::OrdinaryCommand() : Command() {
     setType("ordinary");
 }  
 
-ordinaryCommand::ordinaryCommand(string type, string name) : Command(type, name) {
+OrdinaryCommand::OrdinaryCommand(string type, string name) : Command(type, name) {
 
 }  
 
-ordinaryCommand::ordinaryCommand(const ordinaryCommand& x ) : Command(x) {
+OrdinaryCommand::OrdinaryCommand(const OrdinaryCommand& x ) : Command(x) {
 
 }   
 
-ordinaryCommand& ordinaryCommand::operator=(const ordinaryCommand& X){
+OrdinaryCommand& OrdinaryCommand::operator=(const OrdinaryCommand& X){
     return *this;
 } 
 
-ordinaryCommand::~ordinaryCommand(){
+OrdinaryCommand::~OrdinaryCommand(){
     Command::~Command();
 }                               
 
-void ordinaryCommand::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void OrdinaryCommand::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     cout<<"ordinary Command execute\n";
 }
 
-bool ordinaryCommand::continueToNextPlayer(){
+bool OrdinaryCommand::continueToNextPlayer(){
     return false;
 }

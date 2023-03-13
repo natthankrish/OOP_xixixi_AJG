@@ -1,7 +1,7 @@
 #include "Help.hpp"
 #include <iostream>
 
-Help::Help(string type, string name) : ordinaryCommand(type, name){
+Help::Help(string type, string name) : OrdinaryCommand(type, name){
 
 }
 

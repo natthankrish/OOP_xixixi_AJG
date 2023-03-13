@@ -2,15 +2,15 @@
 #include <iostream>
 
 //======== Double ========
-Double::Double() : ordinaryCommand("ordinary", "double"){
+Double::Double() : OrdinaryCommand("ordinary", "double"){
 
 }   
 
-Double::Double(string type, string name) : ordinaryCommand(type, name){
+Double::Double(string type, string name) : OrdinaryCommand(type, name){
 
 }   
 
-Double::Double(const Double& x ) : ordinaryCommand(x){
+Double::Double(const Double& x ) : OrdinaryCommand(x){
 
 }   
 

@@ -3,15 +3,15 @@
 #include <iostream>
 
 //======== Half ========
-Half::Half() : ordinaryCommand("ordinary", "double"){
+Half::Half() : OrdinaryCommand("ordinary", "double"){
 
 }   
 
-Half::Half(string type, string name) : ordinaryCommand(type, name){
+Half::Half(string type, string name) : OrdinaryCommand(type, name){
 
 }   
 
-Half::Half(const Half& x ) : ordinaryCommand(x){
+Half::Half(const Half& x ) : OrdinaryCommand(x){
 
 }   
 

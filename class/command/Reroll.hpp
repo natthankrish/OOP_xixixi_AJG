@@ -2,7 +2,7 @@
 #define _REROLL_HPP_
 #include "AbilityCommand.hpp"
 
-class Reroll : public abilityCommand {
+class Reroll : public AbilityCommand {
     private:
 
     public:
