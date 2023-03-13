@@ -8,6 +8,7 @@ Quarter::Quarter(string type, string name) : AbilityCommand(type, name){
 void Quarter::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
+        playerCardIsDeactivated(listPlayer, playeridx);
         //execution
         if (prize >= 4) {
             cout << listPlayer[playeridx-1].getName() << " melakukan QUARTER! Point hadiah turun dari " << prize;
@@ -23,8 +24,9 @@ void Quarter::execute(List<Player>& listPlayer, int playeridx, int& prize, Cards
         }
     } catch (PlayerDoesNotHaveCardException e) {
         cout << e.what() << "QUATER" << endl;
+    } catch (PlayerCardIsDeactivatedException e) {
+        cout << e.what() << endl;
     }
-
 }
 
 bool Quarter::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
