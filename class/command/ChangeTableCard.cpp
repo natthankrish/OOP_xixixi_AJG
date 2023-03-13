@@ -11,7 +11,17 @@ bool ChangeTableCard::continueToNextPlayer(List<Player>& listPlayer, int playeri
     return false;
 }
 void ChangeTableCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
-    ifstream infile("input.txt"); // sementara
+    string filename;
+    cout << "Masukkan nama file dengan ekstensi .txt: ";
+    cin >> filename;
+
+    ifstream infile(filename); // sementara
+    while (!infile.is_open()) {
+        cout << "Failed to open file: " << filename << endl;
+        cout << "Masukkan ulang nama file dengan ekstensi .txt: ";
+        cin >> filename;
+        ifstream infile(filename); // sementara
+    } 
     string word;
     int num;
     int count = 0;
