@@ -24,7 +24,7 @@ bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Ab
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
         abilitycardsbank.getElement().push_back(AbilityCard("Quadruple"));
-        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("none"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

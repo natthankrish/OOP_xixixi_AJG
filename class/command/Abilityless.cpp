@@ -19,7 +19,7 @@ bool Abilityless::continueToNextPlayer(List<Player>& listPlayer, int playeridx, 
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Abilityless");
         abilitycardsbank.getElement().push_back(AbilityCard("Abilityless"));
-        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("none"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

@@ -32,7 +32,7 @@ bool Quarter::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abil
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
         abilitycardsbank.getElement().push_back(AbilityCard("Quarter"));
-        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("None"));
+        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("none"));
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;
