@@ -3,12 +3,12 @@
 #include "OrdinaryCommand.hpp"
 class Round;
 
-class Double : public OrdinaryCommand {
+class Double : public ordinaryCommand {
     private:
 
     public:
         Double();                           // default ctor
-        Double(string, string);             // user defined ctor
+        Double(string, string, List<Player>);             // user defined ctor
         Double(const Double&);              // cctor
         Double& operator=(const Double&);   // assignment
         ~Double();                          //  dtor

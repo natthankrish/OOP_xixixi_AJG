@@ -12,26 +12,6 @@
         "type_traits": "cpp",
         "deque": "cpp",
         "string": "cpp",
-        "vector": "cpp",
-        "*.ipp": "cpp",
-        "atomic": "cpp",
-        "strstream": "cpp",
-        "chrono": "cpp",
-        "complex": "cpp",
-        "list": "cpp",
-        "unordered_map": "cpp",
-        "iterator": "cpp",
-        "optional": "cpp",
-        "string_view": "cpp",
-        "istream": "cpp",
-        "new": "cpp",
-        "sstream": "cpp",
-        "stdexcept": "cpp",
-        "stop_token": "cpp",
-        "streambuf": "cpp",
-        "system_error": "cpp",
-        "thread": "cpp",
-        "tuple": "cpp",
-        "variant": "cpp"
+        "vector": "cpp"
     }
 }

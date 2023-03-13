@@ -3,15 +3,15 @@
 #include <iostream>
 
 //======== Half ========
-Half::Half() : OrdinaryCommand("ordinary", "half"){
+Half::Half() : ordinaryCommand("ordinary", "double", List<Player>(10)){
 
 }   
 
-Half::Half(string type, string name) : OrdinaryCommand(type, name){
+Half::Half(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
 
 }   
 
-Half::Half(const Half& x ) : OrdinaryCommand(x){
+Half::Half(const Half& x ) : ordinaryCommand(x){
 
 }   
 
@@ -20,7 +20,7 @@ Half& Half::operator=(const Half& X){
 } 
 
 Half::~Half(){
-    OrdinaryCommand::~abilityCommand();
+    ordinaryCommand::~abilityCommand();
 }    
 
 void Half::execute(int prize, Round round) {

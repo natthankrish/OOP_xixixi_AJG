@@ -3,11 +3,11 @@
 #include "OrdinaryCommand.hpp"
 class Round;
 
-class CheckPrize : public OrdinaryCommand {
+class CheckPrize : public ordinaryCommand {
     private:
 
     public:
-        CheckPrize(string, string);
+        CheckPrize(string, string, List<Player>);
 
         bool continueToNextPlayer();
         void execute(int&, Round);

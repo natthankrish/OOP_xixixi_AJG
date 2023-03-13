@@ -1,7 +1,7 @@
 #include "Help.hpp"
 #include <iostream>
 
-Help::Help(string type, string name) : OrdinaryCommand(type, name){
+Help::Help(string type, string name, List<Player> listPlayer) : ordinaryCommand(type, name, listPlayer){
 
 }
 
