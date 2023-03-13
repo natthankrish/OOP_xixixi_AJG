@@ -33,6 +33,8 @@ class Player : public InventoryHolder {
         void operator+(const AbilityCard&);
         void operator-(const NumberCard&);
         void operator-(const AbilityCard&);
+        pair <NumberCard, NumberCard> getPairOfCards();
+        AbilityCard getAbilityCard();
         NumberCard operator--();
         void seeCard();
 
