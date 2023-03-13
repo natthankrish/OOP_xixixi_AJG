@@ -4,6 +4,8 @@
 #include "../inventory/Player.hpp"
 #include "../../utils/ListOfThing.hpp"
 #include "../Round.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class ordinaryCommand : public Command {
     public:
@@ -13,7 +15,7 @@ class ordinaryCommand : public Command {
         ordinaryCommand& operator=(const ordinaryCommand&); // assignment
         ~ordinaryCommand();                                 //  dtor
 
-        virtual void execute(List<Player>&, int, int&);
+        virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         virtual bool continueToNextPlayer();
 
 };

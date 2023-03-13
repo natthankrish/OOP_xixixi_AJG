@@ -1,6 +1,8 @@
 #ifndef _HALF_HPP_
 #define _HALF_HPP_
 #include "OrdinaryCommand.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class Half : public ordinaryCommand {
     private:
@@ -12,7 +14,7 @@ class Half : public ordinaryCommand {
         Half& operator=(const Half&);   // assignment
         ~Half();                        //  dtor
 
-        void execute(List<Player>&, int, int&);
+        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer();
 
 };

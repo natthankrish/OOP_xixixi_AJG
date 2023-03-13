@@ -3,6 +3,8 @@
 
 #include <string>
 #include "../inventory/Player.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 using namespace std;
 
@@ -26,7 +28,7 @@ class Command {
         void setType(string);
         void setName(string);
     
-        virtual void execute(List<Player>&, int, int&);
+        virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
 
         virtual bool continueToNextPlayer();
 };

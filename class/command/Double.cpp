@@ -22,7 +22,7 @@ Double::~Double(){
     
 }    
 
-void Double::execute(List<Player>& listPlayer, int playeridx, int& prize) {
+void Double::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     cout << listPlayer[playeridx-1].getName() << " melakukan DOUBLE! Point hadiah naik dari " << prize;
     prize *= 2; 
     cout << " menjadi " << prize << endl;

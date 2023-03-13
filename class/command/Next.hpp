@@ -2,6 +2,8 @@
 #define _NEXT_HPP_
 #include "OrdinaryCommand.hpp"
 #include "../Round.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class Next : public ordinaryCommand {
     private:
@@ -13,7 +15,7 @@ class Next : public ordinaryCommand {
         Next& operator=(const Next&);   // assignment
         ~Next();                        //  dtor
 
-        void execute(List<Player>&, int, int&);
+        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer();
 
 

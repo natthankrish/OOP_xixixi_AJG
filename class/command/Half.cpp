@@ -23,7 +23,7 @@ Half::~Half(){
     
 }    
 
-void Half::execute(List<Player>& listPlayer, int playeridx, int& prize) {
+void Half::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     if (prize != 1) {
         cout << listPlayer[playeridx-1].getName() << " melakukan HALF! Point hadiah turun dari " << prize;
         prize *= 0.5; 

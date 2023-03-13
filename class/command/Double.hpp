@@ -1,6 +1,8 @@
 #ifndef _DOUBLE_HPP_
 #define _DOUBLE_HPP_
 #include "OrdinaryCommand.hpp"
+#include "../inventory/AbilityCardsBank.hpp"
+#include "../inventory/CardsBank.hpp"
 
 class Double : public ordinaryCommand {
     private:
@@ -12,7 +14,7 @@ class Double : public ordinaryCommand {
         Double& operator=(const Double&);   // assignment
         ~Double();                          //  dtor
 
-        void execute(List<Player>&, int, int&);
+        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
         bool continueToNextPlayer();
 
 

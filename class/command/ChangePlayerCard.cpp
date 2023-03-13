@@ -7,7 +7,7 @@ ChangePlayerCard::ChangePlayerCard(string type, string name) : ordinaryCommand("
 bool ChangePlayerCard::continueToNextPlayer(){
     return false;
 }
-void ChangePlayerCard::execute(List<Player>& listPlayer, int playeridx, int& prize){
+void ChangePlayerCard::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
     // TO DOOO
     cout << "Test" << endl;
 }
