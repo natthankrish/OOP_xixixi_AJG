@@ -121,6 +121,7 @@ int ChangePlayerCard::stringToInt(string word) {
     if (word == "13") {
         return 13;
     }
+    return -1;
 }
 
 bool ChangePlayerCard::isNum(string word) {

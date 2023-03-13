@@ -13,6 +13,7 @@ class Player : public InventoryHolder {
         int point;
         bool havePlayedThisRound;
         AbilityCard abilityCard;
+        bool abilityCardStatus;
         pair<NumberCard, NumberCard> playerCards;
         // Kombo bestKombo
     public:
@@ -26,6 +27,8 @@ class Player : public InventoryHolder {
         string getName();
         void setName(string);
         void setAbilityCard(AbilityCard);
+        bool getAbilityStatus();
+        void setAbilityStatus(bool);
         AbilityCard getAbilityCard();
         // void setPlayerCards();
         // void searchBestDeckCards();
@@ -34,7 +37,6 @@ class Player : public InventoryHolder {
         void operator-(const NumberCard&);
         void operator-(const AbilityCard&);
         pair <NumberCard, NumberCard> getPairOfCards();
-        AbilityCard getAbilityCard();
         NumberCard operator--();
         void seeCard();
 

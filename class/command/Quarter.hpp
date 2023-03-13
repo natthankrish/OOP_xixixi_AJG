@@ -1,5 +1,6 @@
 #ifndef _QUARTER_HPP_
 #define _QUARTER_HPP_
+
 #include "AbilityCommand.hpp"
 
 class Quarter : public AbilityCommand {

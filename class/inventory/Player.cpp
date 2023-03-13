@@ -1,9 +1,9 @@
 #include "Player.hpp"
 #include "InventoryException.hpp"
 
-Player::Player() : InventoryHolder("Player"), playerID(0), name(""), point(0) , havePlayedThisRound(false) {};
+Player::Player() : InventoryHolder("Player"), playerID(0), name(""), point(0) , havePlayedThisRound(false), abilityCardStatus(true) {};
 
-Player::Player(int ID, string name, int point, bool status): InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false) {};
+Player::Player(int ID, string name, int point, bool status): InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false), abilityCardStatus(true) {};
 
 bool Player::gethavePlayed() {
     return this->havePlayedThisRound;
@@ -36,9 +36,13 @@ void Player::setAbilityCard(AbilityCard abilityCard){
     this->abilityCard = abilityCard;
 }
 
-// void Player::searchBestDeckCards() {
+bool Player::getAbilityStatus() {
+    return this->abilityCardStatus;
+}
 
-// }
+void Player::setAbilityStatus(bool val) {
+    this->abilityCardStatus = val;
+}
 
 void Player::operator+(const NumberCard& card) {
     if (this->playerCards.first.getNumber() == -1) {
@@ -85,8 +89,4 @@ void Player::seeCard() {
 
 pair <NumberCard, NumberCard> Player::getPairOfCards() {
     return this->playerCards;
-}
-
-AbilityCard Player::getAbilityCard() {
-    return this->abilityCard;
 }

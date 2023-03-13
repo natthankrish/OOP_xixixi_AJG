@@ -79,8 +79,7 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
         // } else if (perintah == "QUARTER") {
         //     this->command = new Half("ability", "quarter", listPlayer);
         } else {
-            this->command = new Command();
-             
+            this->command = new Command("none", "none");
         }
 
         this->command->execute(listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
