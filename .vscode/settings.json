@@ -24,6 +24,7 @@
         "system_error": "cpp",
         "tuple": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "*.ipp": "cpp"
     }
 }
