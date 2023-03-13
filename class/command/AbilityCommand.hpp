@@ -15,6 +15,8 @@ class AbilityCommand : public Command {
 
         void doesPlayerHaveAbilityCard(List<Player>& listPlayer, int playeridx, string cardName);
         void doAllOtherPlayersHaveUsedTheirCards(List<Player>& listPlayer, int playeridx);
+        void playerCardIsUsed(List<Player>& listPlayer, int playeridx);
+        void playerCardIsDeactivated(List<Player>& listPlayer, int playeridx);
 };
 
 #endif
