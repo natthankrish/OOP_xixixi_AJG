@@ -17,4 +17,16 @@ class AllOtherPlayersHaveUsedTheirCardsException : public exception {
 			return "Eits, ternyata semua pemain sudah memakai kartu kemampuan. Yah kamu kena sendiri deh, kemampuanmu menjadi abilityless. Yah, pengunaan kartu ini sia-sia";
 		}
 };
+class PlayerCardIsUsedException : public exception {
+	public: 
+		const char* what() const throw() {
+			return "";
+		}
+};
+class PlayerCardIsDeactivatedException : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Oops, kartu yang kamu pilih telah dimatikan sebelumnya :(.\nSilahkan lakukan perintah lain.";
+		}
+};
 #endif
