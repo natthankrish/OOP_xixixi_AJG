@@ -14,18 +14,14 @@ void Abilityless::execute(List<Player>& listPlayer, int playeridx, int& prize, C
         cout << listPlayer.getElement(playeridx-1).getName()<< " akan mematikan kartu ability lawan!" << endl;
         cout << "Silahkan pilih pemain yang kartu abilitynya ingin dimatikan: " << endl;
         
-        int j = 1;
         for(int i = 1 ; i <= listPlayer.getNeff(); i++){
-            if(i != playeridx) {
-                cout << j << ". " << listPlayer.getElement(i-1).getName() << endl;
-                j++;
-            }
+            cout << i << ". " << listPlayer.getElement(i).getName() << endl;
         }
         cin >> choice;
 
         playerCardIsUsed(listPlayer, playeridx);
         listPlayer.getElement(choice-1).setAbilityStatus(false);
-        cout << "Kartu ability " << listPlayer.getElement(choice-1).getName() << " telah dimatikan." << endl;
+        cout << "Kartu ability " << listPlayer.getElement(choice).getName() << " telah dimatikan." << endl;
 
     } catch (PlayerDoesNotHaveCardException e) {
         cout << e.what() << "ABILITYLESS." << endl;
@@ -33,7 +29,7 @@ void Abilityless::execute(List<Player>& listPlayer, int playeridx, int& prize, C
     } catch (AllOtherPlayersHaveUsedTheirCardsException e) {
         cout << e.what() << endl;
     } catch (PlayerCardIsUsedException e) {
-        cout << "Kartu ability " << listPlayer.getElement(choice-1).getName() << " telah dipakai sebelumnya. Yah, sayang penggunaan kartu ini sia-sia" << endl; 
+        cout << "Kartu ability " << listPlayer.getElement(choice).getName() << " telah dipakai sebelumnya. Yah, sayang penggunaan kartu ini sia-sia" << endl; 
     }
 }
 
