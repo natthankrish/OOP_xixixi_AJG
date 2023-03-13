@@ -11,4 +11,10 @@ class PlayerDoesNotHaveCardException : public exception  {
 		}
 };
 
+class AllOtherPlayersHaveUsedTheirCardsException : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Eits, ternyata semua pemain sudah memakai kartu kemampuan. Yah kamu kena sendiri deh, kemampuanmu menjadi abilityless. Yah, pengunaan kartu ini sia-sia";
+		}
+};
 #endif

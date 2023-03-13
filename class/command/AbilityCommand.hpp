@@ -14,6 +14,7 @@ class AbilityCommand : public Command {
         virtual bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 
         void doesPlayerHaveAbilityCard(List<Player>& listPlayer, int playeridx, string cardName);
+        void doAllOtherPlayersHaveUsedTheirCards(List<Player>& listPlayer, int playeridx);
 };
 
 #endif

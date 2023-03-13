@@ -18,3 +18,13 @@ void AbilityCommand::doesPlayerHaveAbilityCard(List<Player>& listPlayer, int pla
         throw PlayerDoesNotHaveCardException();
     }
 }
+
+void AbilityCommand::doAllOtherPlayersHaveUsedTheirCards(List<Player>& listPlayer, int playeridx){
+    
+    for(int i = 1 ; i <= listPlayer.getNeff(); i++){
+        if(i != playeridx && listPlayer.getElement(i-1).getAbilityCard().getAbilityName() != "none"){
+            throw AllOtherPlayersHaveUsedTheirCardsException();
+        }
+    }
+
+}
