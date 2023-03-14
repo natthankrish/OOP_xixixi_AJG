@@ -8,15 +8,16 @@ Game::Game(int gameID) {
     this->prize = 64;
     this->maxPlayerPoint = 0;
     this->gameID = gameID;
+    this->ascending = true;
 }
 
 int Game::startGame(List<Player>& listPlayer) {
     cout << "PERMAIAN " << this->gameID << " dimulai" << endl;
     this->round = new Round(1, 1);
-    round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard);
+    round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard, this->ascending);
     while (this->round->getRoundID() < 6) {
         NextRound();
-        round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard);
+        round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard, this->ascending);
     }
     
     cout << "PERMAIAN SELESAI" << endl;

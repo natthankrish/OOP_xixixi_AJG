@@ -11,7 +11,7 @@ class OrdinaryCommand : public Command {
     public:
         OrdinaryCommand(string, string);                    // user defined ctor
 
-        virtual void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool);
+        virtual void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
         virtual bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
