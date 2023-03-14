@@ -2,7 +2,7 @@
 #define _SWITCH_HPP_
 #include "AbilityCommand.hpp"
 
-class Switch : AbilityCommand {
+class Switch : public AbilityCommand {
     public:
         Switch(string, string);             // user defined ctor
 

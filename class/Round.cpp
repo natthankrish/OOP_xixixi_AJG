@@ -78,6 +78,16 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Quadruple("ability", "quadruple");
         } else if (perintah == "QUARTER") {
             this->command = new Quarter("ability", "quarter");
+        } else if (perintah == "REROLL") {
+            this->command = new Reroll("ability", "reroll");
+        } else if (perintah == "SWAP") {
+            this->command = new Swap("ability", "swap");
+        } else if (perintah == "SWITCH") {
+            this->command = new Switch("ability", "switch");
+        } else if (perintah == "REVERSE") {
+            this->command = new Reverse("ability", "reverse");
+        } else if (perintah == "ABILITYLESS") {
+            this->command = new Abilityless("ability", "abilityless");
         } else {
             this->command = new Command("none", "none");
         }

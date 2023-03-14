@@ -2,7 +2,7 @@
 #define _SWAP_HPP_
 #include "AbilityCommand.hpp"
 
-class Swap : AbilityCommand {
+class Swap : public AbilityCommand {
     public:
         Swap(string, string);             // user defined ctor
 
