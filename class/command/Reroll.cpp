@@ -11,8 +11,11 @@ void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeri
         playerCardIsDeactivated(listPlayer, playeridx);
         //execution
         cout << "Melakukan pembuangan kartu yang sedang dimiliki" << endl;
-        NumberCard card1 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
+        NumberCard card1 = listPlayer.getElement(playeridx-1).getPairOfCards().first;
         NumberCard card2 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
+
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().first;
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().second;
 
         listPlayer[playeridx-1]+cardsbank.getElementAt(0);
         cardsbank-cardsbank.getElementAt(0);
