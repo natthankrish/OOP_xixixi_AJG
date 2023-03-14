@@ -7,6 +7,7 @@
 #include "class/inventory/InventoryHolder.cpp"
 #include "class/inventory/CardsBank.cpp"
 #include "class/inventory/AbilityCardsBank.cpp"
+#include "class/inventory/TableCard.cpp"
 #include "class/Card/Card.cpp"
 #include "class/Card/NumberCard.cpp"
 #include "class/Card/AbilityCard.cpp"

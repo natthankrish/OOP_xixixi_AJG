@@ -26,11 +26,11 @@ class Round {
         // friend ordinaryCommand;
         Round(int,int);
         void nextPlayer(List<Player>&);
-        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
+        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&);
         void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&);
         int getRoundID();
         int getIdxCurrentPlayer();
-        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
+        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&);
 };
 
 #endif
