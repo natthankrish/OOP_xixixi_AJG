@@ -115,7 +115,7 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Command("none", "none");
         }
 
-        this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
+        this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank, ascending);
         nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
         //listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
     }
