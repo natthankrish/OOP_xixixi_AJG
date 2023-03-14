@@ -5,7 +5,7 @@
 AbilityCommand::AbilityCommand(string type, string name) : Command(type, name){
 }
 
-void AbilityCommand::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void AbilityCommand::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     cout<<"abilityCommand execute\n";
 }
 

@@ -17,6 +17,7 @@ class Game {
         int maxPlayerPoint;
         CardsBank cardsBank;
         AbilityCardsBank abilityCardsBank;
+        TableCard tablecard;
         
     public:
         Game(int);

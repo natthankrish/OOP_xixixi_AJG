@@ -6,7 +6,7 @@ Switch::Switch(string type, string name) : AbilityCommand(type, name){
 
 }   
 
-void Switch::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Switch::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
     int choice;
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Switch");

@@ -13,10 +13,10 @@ Game::Game(int gameID) {
 int Game::startGame(List<Player>& listPlayer) {
     cout << "PERMAIAN " << this->gameID << " dimulai" << endl;
     this->round = new Round(1, 1);
-    round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank);
+    round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard);
     while (this->round->getRoundID() < 6) {
         NextRound();
-        round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank);
+        round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard);
     }
     
     cout << "PERMAIAN SELESAI" << endl;

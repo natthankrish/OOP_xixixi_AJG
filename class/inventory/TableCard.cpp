@@ -1,5 +1,7 @@
 #include "TableCard.hpp"
 
+TableCard::TableCard(): InventoryHolder("tablecard") {}
+
 vector <NumberCard> TableCard::getCard() {
     return this->contents;
 }
@@ -17,7 +19,7 @@ void TableCard::operator-(const NumberCard& card) {
     while (i < this->contents.size()) {
         if (this->contents[i] == card) {
             this->contents.erase(this->contents.begin() + i);
-            break;
+            return;
         }
     }
     throw CardNotFoundException();

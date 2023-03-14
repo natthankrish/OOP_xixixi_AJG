@@ -10,8 +10,19 @@ ChangePlayerCard::ChangePlayerCard(string type, string name) : OrdinaryCommand("
 bool ChangePlayerCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
-void ChangePlayerCard::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
-    ifstream infile("input.txt");
+void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
+    string filename;
+    cout << "Masukkan nama file dengan ekstensi .txt: ";
+    cin >> filename;
+
+    ifstream infile(filename); // sementara
+    while (!infile.is_open()) {
+        cout << "Failed to open file: " << filename << endl;
+        cout << "Masukkan ulang nama file dengan ekstensi .txt: ";
+        cin >> filename;
+        ifstream infile(filename); // sementara
+    } 
+    
     string word;
     int num;
     int count = 0;

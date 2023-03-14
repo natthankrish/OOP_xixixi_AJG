@@ -17,16 +17,16 @@ int Round::getIdxCurrentPlayer(){
     return this->idxCurrentPlayer;
 }
 
-void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
     initializeRound(listPlayer, cardsbank, abilitycardsbank);
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
-    processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank);
+    processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard);
     
     while(this->playerRemaining > 0) {
         this->playerRemaining--;
         nextPlayer(listPlayer);
-        processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank);
+        processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard);
     }
 }
 
@@ -50,7 +50,7 @@ void Round::nextPlayer(List<Player>& listPlayer) {
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 }
 
-void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
     string perintah;
     // this->command->execute(*this, prize);
     
@@ -82,7 +82,7 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Command("none", "none");
         }
 
-        this->command->execute(listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
+        this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
         nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
     }
 }

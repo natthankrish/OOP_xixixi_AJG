@@ -2,6 +2,7 @@
 #define ABILITYCARDSBANK_HPP
 #include "InventoryHolder.hpp"
 #include "../Card/AbilityCard.hpp"
+#include "Player.hpp"
 #include <vector>
 
 class AbilityCardsBank {
