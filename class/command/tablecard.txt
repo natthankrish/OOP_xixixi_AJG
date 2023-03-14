@@ -1,0 +1,5 @@
+13 kuning
+13 hijau
+13 biru
+13 merah
+11 kuning
