@@ -41,6 +41,7 @@ void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, Abili
     } else {
         cout << "RONDE " << this->roundID << " DIMULAI." << endl;
     }
+    cout << "----------------------------------------------------------" << endl;
 }
 
 void Round::nextPlayer(List<Player>& listPlayer) {
@@ -67,6 +68,7 @@ void Round::nextPlayer(List<Player>& listPlayer) {
             }
         }
     }
+    cout << "----------------------------------------------------------" << endl;
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
 }
