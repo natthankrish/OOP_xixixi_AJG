@@ -33,8 +33,9 @@ bool Quarter::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abil
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
         playerCardIsDeactivated(listPlayer, playeridx);
-        // abilitycardsbank.getElement().push_back(AbilityCard("Quarter"));
-        listPlayer.getElement(playeridx-1).setAbilityStatus(false);
+        AbilityCard temp = listPlayer.getElement(playeridx-1)-listPlayer.getElement(playeridx-1).getAbilityCard(); 
+        abilitycardsbank + temp;
+        // listPlayer.getElement(playeridx-1).setAbilityStatus(false);
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;
