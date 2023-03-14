@@ -1,5 +1,5 @@
-#ifndef _CHANGETABLECARD_HPP_
-#define _CHANGETABLECARD_HPP_
+#ifndef _CHANGECARD_HPP_
+#define _CHANGECARD_HPP_
 
 #include "OrdinaryCommand.cpp"
 #include "../inventory/AbilityCardsBank.cpp"
@@ -14,14 +14,14 @@
 #include "../inventory/InventoryHolder.cpp"
 #include "Command.cpp"
 #include "CardException.hpp"
-#include "ChangePlayerCard.cpp"
+// #include "ChangePlayerCard.cpp"
 #include "../inventory/TableCard.cpp"
 
-class ChangeTableCard : public OrdinaryCommand {
+class ChangeCard : public OrdinaryCommand {
     private:
 
     public:
-        ChangeTableCard(string, string);             // user defined ctor
+        ChangeCard(string, string);             // user defined ctor
 
         void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
         bool continueToNextPlayer(List<Player>&, int, AbilityCardsBank&);

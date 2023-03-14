@@ -1,16 +1,16 @@
-#include "ChangeTableCard.hpp"
+#include "ChangeCard.hpp"
 #include <iostream> 
 #include <fstream>
 using namespace std;
 
-ChangeTableCard::ChangeTableCard(string type, string name) : OrdinaryCommand("ordinary", "changenum"){   
+ChangeCard::ChangeCard(string type, string name) : OrdinaryCommand("ordinary", "changenum"){   
 
 }
 
-bool ChangeTableCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
+bool ChangeCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
-void ChangeTableCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
+void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
     string filename;
     cout << "Masukkan nama file card player dengan ekstensi .txt: ";
     cin >> filename;
@@ -199,7 +199,7 @@ void ChangeTableCard::execute(TableCard& tablecard, List<Player>& listPlayer, in
     }
 }
 
-int ChangeTableCard::stringToInt(string word) {
+int ChangeCard::stringToInt(string word) {
     if (word == "1") {
         return 1;
     }
@@ -242,7 +242,7 @@ int ChangeTableCard::stringToInt(string word) {
     return -1;
 }
 
-bool ChangeTableCard::isNum(string word) {
+bool ChangeCard::isNum(string word) {
     if (word == "1" ||
         word == "2" ||
         word == "3" ||
@@ -274,9 +274,9 @@ int main() {
         Player* player = new Player(1, playerName, 0, false);
         ListOfPlayer->insertLast(*player);
     }
+
+
     TableCard tablecard;
-    ChangeTableCard change("tablecard", "card");
-    ChangePlayerCard change2("playercard", "card");
     int prize = 0;
 
     for (int i = 0; i < tablecard.getCard().size(); i++) {
@@ -291,9 +291,11 @@ int main() {
     cardsbank - cardsbank.getElementAt(0);
     tablecard + cardsbank.getElementAt(0);
     cardsbank - cardsbank.getElementAt(0);
-    change2.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, true);
+    bool something = true;
+
+    ChangeCard change("something", "something");
     try {
-        change.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, true);
+        change.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, something);
     } catch (TableCardDoNotMatch e) {
         cout << e.what() << endl; 
     }
