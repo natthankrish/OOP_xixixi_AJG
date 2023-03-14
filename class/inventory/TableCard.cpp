@@ -6,6 +6,10 @@ vector <NumberCard> TableCard::getCard() {
     return this->contents;
 }
 
+NumberCard TableCard::getCardAt(int i) {
+    return this->contents[i];
+}
+
 void TableCard::operator+(const NumberCard& card) {
     if (this->contents.size() >= CAPACITY) {
         throw TableCardFullException();

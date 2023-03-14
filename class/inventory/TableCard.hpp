@@ -13,6 +13,7 @@ class TableCard : public InventoryHolder {
     public :
         TableCard();
         vector <NumberCard> getCard();
+        NumberCard getCardAt(int);
         void operator+(const NumberCard&);
         void operator-(const NumberCard&);
         void seeCard();

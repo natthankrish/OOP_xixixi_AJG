@@ -5,6 +5,7 @@
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
 #include "../inventory/InventoryException.hpp"
+#include "CardException.hpp"
 
 // #include "../inventory/Player.cpp"
 // #include "../../utils/ListOfThing.cpp"
@@ -13,7 +14,6 @@
 // #include "../Card/AbilityCard.cpp"
 // #include "../inventory/InventoryHolder.cpp"
 // #include "Command.cpp"
-// #include "CardException.hpp"
 // // #include "ChangePlayerCard.cpp"
 // #include "../inventory/TableCard.cpp"
 
