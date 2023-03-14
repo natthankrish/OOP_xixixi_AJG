@@ -57,10 +57,11 @@ void Player::operator+(const AbilityCard& card) {
 }
 
 void Player::operator-(const NumberCard& card) {
-    if (this->playerCards.second != NumberCard()) {
+    if (this->playerCards.second == card) {
         this->playerCards.second = NumberCard();
-    } else if (this->playerCards.first != NumberCard()) {
-        this->playerCards.first = NumberCard();
+    } else if (this->playerCards.first == card) {
+        this->playerCards.first = this->playerCards.second;
+        this->playerCards.second = NumberCard();
     }
 }
 
