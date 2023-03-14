@@ -6,7 +6,7 @@
 Half::Half(string type, string name) : OrdinaryCommand(type, name){
 }   
 
-void Half::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending) {
+void Half::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     if (prize != 1) {
         cout << listPlayer[playeridx-1].getName() << " melakukan HALF! Point hadiah turun dari " << prize;
         prize *= 0.5; 

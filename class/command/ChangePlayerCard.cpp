@@ -10,7 +10,7 @@ ChangePlayerCard::ChangePlayerCard(string type, string name) : OrdinaryCommand("
 bool ChangePlayerCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
-void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending){
+void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
     string filename;
     cout << "Masukkan nama file dengan ekstensi .txt: ";
     cin >> filename;

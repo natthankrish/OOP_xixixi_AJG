@@ -8,7 +8,7 @@ bool Help::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Ability
     return false;
 }
 
-void Help::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending){
+void Help::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
     cout << "PUSAT BANTUAN" << endl;
     cout << "---------------------------------------" << endl;
     cout << "Masih under construction" << endl;

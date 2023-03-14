@@ -5,7 +5,7 @@
 Abilityless::Abilityless(string type, string name) : AbilityCommand(type, name){
 }   
 
-void Abilityless::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending) {
+void Abilityless::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     int choice;
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Abilityless");
