@@ -11,7 +11,7 @@
 * [Folders and Files Description](#folders-and-files-description)
 
 ## **Program Description**
-
+The constructed program is a 7-players card game. As the game starts, each players will have initially 0 point as the starting point. For each round of the game, the players will take turns to play. The goal of each round will be for players to take more and more points. Players will be using the card game to do several commands during the game. The card game itself consists of 4 type of colors. Sorted from the highest value, the colors are Red, Yellow, Blue, and Green. For each color types of cards, each card has the value of 1 until 13. Players can combine several combinations of the cards they have when playing the game. The game will be ended if a player has at least 2^32 points. Else, the game will be continued into several games and rounds. 
 
 ## **Required Program**
 Here are the things needed to run the program: 
