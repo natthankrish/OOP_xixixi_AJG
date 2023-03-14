@@ -23,6 +23,11 @@
 #include "class/command/MyCard.cpp"
 #include "class/command/ChangePlayerCard.cpp"
 #include "class/command/AbilityCommand.cpp"
+#include "class/command/Swap.cpp"
+#include "class/command/Switch.cpp"
+#include "class/command/Reroll.cpp"
+#include "class/command/Reverse.cpp"
+#include "class/command/Abilityless.cpp"
 
 
 int main () {
