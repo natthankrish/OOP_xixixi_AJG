@@ -1,0 +1,12 @@
+#include "CheckTableCard.hpp"
+
+CheckTableCard::CheckTableCard(string type, string name) : OrdinaryCommand("ordinary", "checktablecard"){   
+
+}
+
+bool CheckTableCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
+    return false;
+}
+void CheckTableCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
+    tablecard.seeCard();
+}

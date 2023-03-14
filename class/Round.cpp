@@ -18,7 +18,7 @@ int Round::getIdxCurrentPlayer(){
 }
 
 void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
-    initializeRound(listPlayer, cardsbank, abilitycardsbank);
+    initializeRound(listPlayer, cardsbank, abilitycardsbank, tablecard);
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
     processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard, ascending);
@@ -30,18 +30,25 @@ void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank
     }
 }
 
-void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
     for(int i = 0; i < listPlayer.getNeff(); i++){
         listPlayer[i].sethavePlayed(false);
     }
     if (this->roundID == 1) {
-        cout << "RONDE 1 DIMULAI. SAATNYA PEMBAGIAN KARTU" << endl;
+        displayTitle("RONDE 1", "SAATNYA PEMBAGIAN KARTU");
         cardsbank.bagiKartu(listPlayer);
     } else if (this->roundID == 2) {
-        cout << "RONDE 2 DIMULAI. SAATNYA PEMBAGIAN ABILITY" << endl;
+        displayTitle("RONDE 2", "SAATNYA PEMBAGIAN ABILITY");
         abilitycardsbank.bagiAbility(listPlayer);
+        tablecard + cardsbank.getElementAt(0);
+        cardsbank - cardsbank.getElementAt(0);
+        // cout << cardsbank.getElement().size() <<endl;
     } else {
-        cout << "RONDE " << this->roundID << " DIMULAI." << endl;
+        string round = "RONDE " + to_string(this->roundID);
+        displayTitle(round, "None");
+        tablecard + cardsbank.getElementAt(0);
+        cardsbank - cardsbank.getElementAt(0);
+        // cout << cardsbank.getElement().size() <<endl;
     }
     cout << "----------------------------------------------------------" << endl;
 }
@@ -84,6 +91,7 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
         // masukan perintah
         cout << "Masukkan Perintah: "; 
         cin >> perintah;
+        perintah = capitalize(perintah);
         // Percabangan buat objek
         if (perintah == "CHECKPRIZE") {
             this->command = new CheckPrize("ordinary", "checkprize");
@@ -97,6 +105,8 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Half("ordinary", "half");
         } else if (perintah == "MYCARD") {
             this->command = new MyCard("ordinary", "mycard");
+        } else if (perintah == "CHECKTABLECARD") {
+            this->command = new CheckTableCard("ordinary", "checktablecard");
         } else if (perintah == "CHANGECARD") {
             this->command = new ChangeCard("ordinary", "changenum");
         } else if (perintah == "QUADRUPLE") {
@@ -122,4 +132,44 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
         //listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
     }
     listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
+}
+
+string Round::capitalize(string command){
+    for (int i = 0; i < command.length(); i++){
+        command[i] = toupper(command[i]);
+    }
+    return command;
+}
+
+string Round::displayTitle(string title, string subtitle){
+    string border = "==============================================" ;
+    int whitespace = border.length() - title.length() - 4;
+    int frontwhitespace = whitespace / 2;
+    int backwhitespace = whitespace - frontwhitespace;
+    cout << border << endl;
+    cout << "==";
+    for( int i = 0; i < frontwhitespace ; i++){
+        cout << " ";
+    }
+    cout << title;
+    for (int i = 0; i < backwhitespace; i++){
+        cout << " ";
+    }
+    cout << "==" << endl;
+    cout << border << endl;
+    if (subtitle != "None"){
+        int whitespace = border.length() - subtitle.length() - 4;
+        int frontwhitespace = whitespace / 2;
+        int backwhitespace = whitespace - frontwhitespace;
+        cout << "==";
+        for( int i = 0; i < frontwhitespace ; i++){
+            cout << " ";
+        }
+        cout << subtitle;
+        for (int i = 0; i < backwhitespace; i++){
+            cout << " ";
+        }
+        cout << "==" << endl;
+        cout << border << endl;
+    }
 }

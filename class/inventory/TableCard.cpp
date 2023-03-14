@@ -30,3 +30,8 @@ void TableCard::operator-(const NumberCard& card) {
 
 }
 
+void TableCard::seeCard() {
+    for (auto ptr = this->contents.begin(); ptr != this->contents.end(); ++ptr){
+        cout << ptr->getNumber() << " " << ptr->getColor() << endl;
+    }
+}

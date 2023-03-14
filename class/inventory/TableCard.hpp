@@ -16,6 +16,7 @@ class TableCard : public InventoryHolder {
         NumberCard getCardAt(int);
         void operator+(const NumberCard&);
         void operator-(const NumberCard&);
+        void seeCard();
 };
 
 #endif

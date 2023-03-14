@@ -10,7 +10,8 @@ Competition::Competition() {
     this->ListOfPlayer = new List<Player>(7);
     for (int i = 0;i < 7; i++) {
         string playerName;
-        cout << "Masukkan nama player " << i+1 << ": ";
+        cout << "Masukkan nama player " << i+1 << ": " << endl;
+        cout << "=> ";
         cin >> playerName;
         Player* player = new Player(1, playerName, 0, false);
         ListOfPlayer->insertLast(*player);
