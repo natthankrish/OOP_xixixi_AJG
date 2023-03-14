@@ -7,7 +7,6 @@ Round::Round(int roundID, int idxCurrentPlayer) {
     this->roundID = roundID;
     this->idxCurrentPlayer = idxCurrentPlayer;
     this->playerRemaining = 6;
-    this->ascending = true;
 }
 
 int Round::getRoundID() {
@@ -18,20 +17,23 @@ int Round::getIdxCurrentPlayer(){
     return this->idxCurrentPlayer;
 }
 
-void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
+void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
     initializeRound(listPlayer, cardsbank, abilitycardsbank);
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
 
-    processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard);
+    processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard, ascending);
     
     while(this->playerRemaining > 0) {
         this->playerRemaining--;
-        nextPlayer(listPlayer);
-        processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard);
+        nextPlayer(listPlayer, ascending);
+        processCurrentPlayer(listPlayer, prize, cardsbank, abilitycardsbank, tablecard, ascending);
     }
 }
 
 void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+    for(int i = 0; i < listPlayer.getNeff(); i++){
+        listPlayer[i].sethavePlayed(false);
+    }
     if (this->roundID == 1) {
         cout << "RONDE 1 DIMULAI. SAATNYA PEMBAGIAN KARTU" << endl;
         cardsbank.bagiKartu(listPlayer);
@@ -44,8 +46,8 @@ void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, Abili
     cout << "----------------------------------------------------------" << endl;
 }
 
-void Round::nextPlayer(List<Player>& listPlayer) {
-    if (this->ascending) {
+void Round::nextPlayer(List<Player>& listPlayer, bool& ascending) {
+    if (ascending) {
         this->idxCurrentPlayer++;
         if (this->idxCurrentPlayer > 7) {
             this->idxCurrentPlayer = 1; 
@@ -73,7 +75,7 @@ void Round::nextPlayer(List<Player>& listPlayer) {
 
 }
 
-void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
+void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
     string perintah;
     // this->command->execute(*this, prize);
     
@@ -119,4 +121,5 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
         nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
         //listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
     }
+    listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
 }

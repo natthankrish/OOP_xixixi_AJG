@@ -18,6 +18,7 @@ class Game {
         CardsBank cardsBank;
         AbilityCardsBank abilityCardsBank;
         TableCard tablecard;
+        bool ascending;
         
     public:
         Game(int);
