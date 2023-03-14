@@ -28,6 +28,7 @@
 #include "class/command/Reroll.cpp"
 #include "class/command/Reverse.cpp"
 #include "class/command/Abilityless.cpp"
+#include "class/command/CheckTableCard.cpp"
 
 
 int main () {

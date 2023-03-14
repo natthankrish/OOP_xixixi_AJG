@@ -20,6 +20,7 @@
 #include "command/Reroll.hpp"
 #include "command/Reverse.hpp"
 #include "command/Abilityless.hpp"
+#include "command/CheckTableCard.hpp"
 
 class Round {
     private:
@@ -33,10 +34,12 @@ class Round {
         Round(int,int);
         void nextPlayer(List<Player>&, bool&);
         void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
-        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&);
+        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&, TableCard&);
         int getRoundID();
         int getIdxCurrentPlayer();
         void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
+        string capitalize(string command);
+        string displayTitle(string title, string subtitle);
 };
 
 #endif

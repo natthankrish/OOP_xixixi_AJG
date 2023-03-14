@@ -26,6 +26,7 @@ class Game {
         void NextRound();
         CardsBank getCardsBank();
         AbilityCardsBank getAbilityCardsBank();
+        string displayTitle(string title, string subtitle);
 };
 
 #endif
