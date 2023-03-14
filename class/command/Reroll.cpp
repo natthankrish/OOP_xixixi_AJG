@@ -14,9 +14,9 @@ void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeri
         NumberCard card1 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
         NumberCard card2 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
 
-        listPlayer.getElement(playeridx-1)+cardsbank.getElementAt(0);
+        listPlayer[playeridx-1]+cardsbank.getElementAt(0);
         cardsbank-cardsbank.getElementAt(0);
-        listPlayer.getElement(playeridx-1)+cardsbank.getElementAt(0);
+        listPlayer[playeridx-1]+cardsbank.getElementAt(0);
         cardsbank-cardsbank.getElementAt(0);
 
         cardsbank+card1;

@@ -62,11 +62,11 @@ void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx
             card2 = listPlayer.getElement(choice2).getPairOfCards().second; 
         }
 
-        listPlayer.getElement(choice1)-card1;
-        listPlayer.getElement(choice2)-card2;
+        listPlayer[choice1]-card1;
+        listPlayer[choice2]-card2;
 
-        listPlayer.getElement(choice1)+card2;
-        listPlayer.getElement(choice2)+card1;
+        listPlayer[choice1]+card2;
+        listPlayer[choice2]+card1;
         
     } catch (PlayerDoesNotHaveCardException e) {
         cout << e.what() << "SWAP." << endl;
