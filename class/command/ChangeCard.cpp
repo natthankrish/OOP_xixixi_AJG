@@ -275,57 +275,57 @@ bool ChangeCard::isNum(string word) {
         
 }
 
-int main() {
-    CardsBank cardsbank;
-    AbilityCardsBank abilitybank;
-    List<Player>* ListOfPlayer = new List<Player>(7);
-    for (int i = 0;i < 7; i++) {
-        string playerName;
-        cout << "Masukkan nama player " << i+1 << ": ";
-        cin >> playerName;
-        Player* player = new Player(1, playerName, 0, false);
-        ListOfPlayer->insertLast(*player);
-    }
+// int main() {
+//     CardsBank cardsbank;
+//     AbilityCardsBank abilitybank;
+//     List<Player>* ListOfPlayer = new List<Player>(7);
+//     for (int i = 0;i < 7; i++) {
+//         string playerName;
+//         cout << "Masukkan nama player " << i+1 << ": ";
+//         cin >> playerName;
+//         Player* player = new Player(1, playerName, 0, false);
+//         ListOfPlayer->insertLast(*player);
+//     }
 
 
-    TableCard tablecard;
-    int prize = 0;
+//     TableCard tablecard;
+//     int prize = 0;
 
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
-    for (int i = 0; i < tablecard.getCard().size(); i++) {
-        cout << tablecard.getCard()[i].getNumber() << " " << tablecard.getCard()[i].getColor() << endl;
-    }
+//     tablecard + cardsbank.getElementAt(0);
+//     cardsbank - cardsbank.getElementAt(0);
+//     tablecard + cardsbank.getElementAt(0);
+//     cardsbank - cardsbank.getElementAt(0);
+//     tablecard + cardsbank.getElementAt(0);
+//     cardsbank - cardsbank.getElementAt(0);
+//     for (int i = 0; i < tablecard.getCard().size(); i++) {
+//         cout << tablecard.getCard()[i].getNumber() << " " << tablecard.getCard()[i].getColor() << endl;
+//     }
 
-    // bagi kartu untuk player
-    cardsbank.bagiKartu(*ListOfPlayer);
-    bool something = true;
+//     // bagi kartu untuk player
+//     cardsbank.bagiKartu(*ListOfPlayer);
+//     bool something = true;
 
-    ChangeCard change("something", "something");
-    try {
-        change.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, something);
-    } catch (TableCardDoNotMatch e) {
-        cout << e.what() << endl; 
-    } catch (PlayerCardDoNotMatch e) {
-        cout << e.what() << endl; 
-    } catch (ChangePlayerCardFailed e) {
-        cout << e.what() << endl; 
-    } catch (ChangeTableCardFailed e) {
-        cout << e.what() << endl; 
-    }
+//     ChangeCard change("something", "something");
+//     try {
+//         change.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, something);
+//     } catch (TableCardDoNotMatch e) {
+//         cout << e.what() << endl; 
+//     } catch (PlayerCardDoNotMatch e) {
+//         cout << e.what() << endl; 
+//     } catch (ChangePlayerCardFailed e) {
+//         cout << e.what() << endl; 
+//     } catch (ChangeTableCardFailed e) {
+//         cout << e.what() << endl; 
+//     }
 
-    // bagi ability 
-    // abilitybank.bagiAbility(*ListOfPlayer);
-       // checking
-    // for (int i = 0; i < 7; i++) {
-    //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
-    //     << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
-    //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
-    //     << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
-    //     cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
-    // }
-}
+//     // bagi ability 
+//     // abilitybank.bagiAbility(*ListOfPlayer);
+//        // checking
+//     // for (int i = 0; i < 7; i++) {
+//     //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
+//     //     << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
+//     //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
+//     //     << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
+//     //     cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
+//     // }
+// }
