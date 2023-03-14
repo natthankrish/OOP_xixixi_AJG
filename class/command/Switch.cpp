@@ -25,17 +25,17 @@ void Switch::execute(TableCard& tablecard, List<Player>& listPlayer, int playeri
 
         pair <NumberCard, NumberCard> temp = listPlayer.getElement(playeridx-1).getPairOfCards();
 
-        listPlayer.getElement(playeridx-1)-listPlayer.getElement(playeridx-1).getPairOfCards().second;
-        listPlayer.getElement(playeridx-1)-listPlayer.getElement(playeridx-1).getPairOfCards().first;
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().second;
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().first;
         
-        listPlayer.getElement(playeridx-1)+listPlayer.getElement(choice).getPairOfCards().first;
-        listPlayer.getElement(playeridx-1)+listPlayer.getElement(choice).getPairOfCards().second;
+        listPlayer[playeridx-1]+listPlayer.getElement(choice).getPairOfCards().first;
+        listPlayer[playeridx-1]+listPlayer.getElement(choice).getPairOfCards().second;
 
-        listPlayer.getElement(choice)-listPlayer.getElement(choice).getPairOfCards().second;
-        listPlayer.getElement(choice)-listPlayer.getElement(choice).getPairOfCards().first;
+        listPlayer[choice]-listPlayer.getElement(choice).getPairOfCards().second;
+        listPlayer[choice]-listPlayer.getElement(choice).getPairOfCards().first;
         
-        listPlayer.getElement(choice)+temp.first;
-        listPlayer.getElement(choice)+temp.second;
+        listPlayer[choice]+temp.first;
+        listPlayer[choice]+temp.second;
 
 
         cout << "Kedua kartu pemain" << listPlayer.getElement(choice).getName() << " telah ditukar dengan " << listPlayer.getElement(playeridx-1).getName() << "!" << endl;
