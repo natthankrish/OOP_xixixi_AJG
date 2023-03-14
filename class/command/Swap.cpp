@@ -19,11 +19,15 @@ void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx
         cout << listPlayer.getElement(playeridx-1).getName()<< " melakukan SWAPCARD." << endl;
 
         cout << "Silahkan pilih pemain yang kartunya ingin anda tukar:" << endl;
-        for(int i = 1 ; i <= listPlayer.getNeff(); i++){
-            cout << i << ". " << listPlayer.getElement(i).getName() << endl;
+        int j = 1;
+        for(int i = 0; i < listPlayer.getNeff(); i++){
+            if (i != playeridx - 1) {
+                cout << j << ". " << listPlayer.getElement(i).getName() << endl;
+                j++;
+            }
         }
         cin >> choice1; 
-        
+         
         cout << "Silahkan pilih pemain lain yang kartunya ingin anda tukar:" << endl;
         int j = 1;
         for(int i = 1 ; i <= listPlayer.getNeff(); i++){
@@ -32,10 +36,16 @@ void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx
                 j++;
             }
         }
-        cin >> choice2; 
+        cin >> choice2;
 
         if (choice2 >= choice1) {
             choice2++;
+        }
+        if(choice2 >= playeridx) {
+            choice2++;
+        }
+        if(choice1 >= playeridx) {
+            choice1++;
         }
 
         cout << "Silahkan pilih kartu kanan/kiri " << listPlayer.getElement(choice1).getName() << ":" << endl;
