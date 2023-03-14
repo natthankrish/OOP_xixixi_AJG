@@ -14,12 +14,12 @@
 #include "command/CheckPrize.hpp"
 #include "command/Help.hpp"
 #include "command/MyCard.hpp"
-#include "command/ChangePlayerCard.hpp"
 #include "command/Swap.hpp"
 #include "command/Switch.hpp"
 #include "command/Reroll.hpp"
 #include "command/Reverse.hpp"
 #include "command/Abilityless.hpp"
+#include "command/ChangeCard.hpp"
 
 class Round {
     private:

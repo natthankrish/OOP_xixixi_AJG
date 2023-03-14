@@ -28,6 +28,20 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     int count = 0;
 
     cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+
+    vector<NumberCard> tempp;
+    for (int i = 0; i < 14*2; i++) {
+        if (infile >> word) {
+            if (isNum(word)) {
+                num = stringToInt(word);
+            } else {
+                cout << num << " " << word << endl;
+                tempp.push_back(NumberCard(num, word));
+            }
+        } else {
+            throw PlayerCardDoNotMatch();
+        }
+    } 
     // taking all of the number cards from player
     while (count < 7) {
         if (listPlayer.getElement(count).getPairOfCards().first != NumberCard() && listPlayer.getElement(count).getPairOfCards().second != NumberCard()) {
@@ -50,25 +64,32 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         cardsbank + temp;
     }
 
+    cout << "temp size: " << tempp.size() << endl;
+    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
     // bagi ulang dengan spesifikasi dari file
     count = 0;
+    int counttemp = 0;
     while (count < 7) {
-        for (int i = 0; i < 4; i++) {
-            if (infile >> word) {
-                // cout << word << " ";0
-                if (isNum(word)) {
-                    num = stringToInt(word);
-                } else {
-                    NumberCard temp(num, word);
-                    // cout << temp.getNumber() << " " << temp.getColor() << endl;
-                    listPlayer[count] + temp;
-                    // cout << listPlayer.getElement(count).getPairOfCards().first.getNumber() << listPlayer.getElement(count).getPairOfCards().first.getColor() << endl;
-                    cardsbank - temp; 
-                }  
+        // cout << temp.getNumber() << " " << temp.getColor() << endl
+        for (int i = 0; i < 2; i++) {
+            listPlayer[count] + tempp[counttemp];
+            // cout << listPlayer.getElement(count).getPairOfCards().first.getNumber() << listPlayer.getElement(count).getPairOfCards().first.getColor() << endl;
+            try {
+                cardsbank - tempp[count];
+            } catch (CardNotFoundException e) {
+                for (int j = 0; j < count - 1; j++) {
+                    // returning all the cards back to the cardsbank
+                    cardsbank + tempp[count];
+                }
+                throw ChangePlayerCardFailed();
+
             }
+            counttemp++;
         }
         count++;
     }
+
+    cout << "Count temp" << counttemp << endl;
     cout << endl;
     infile.close();
 
@@ -122,6 +143,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
 
     infile2.close();
 
+    cout << "Cardsbank size3: " << cardsbank.getElement().size() << endl;
     // penggantian table card
     cout << "Masukkan nama file table card dengan ekstensi .txt: ";
     cin >> filename;
@@ -133,14 +155,8 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         cin >> filename;
         ifstream infile3(filename); // sementara
     }
-
-    string word;
-    int num;
-    int count = 0;
-
-
-
-    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+   
+    count = 0;
     // checking if all the table cards from the input are in cardsbank
     // taking all the cards back from the table to cards bank
 
@@ -153,9 +169,6 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
                 temp.push_back(NumberCard(num, word));
             }
         } else {
-            for (int i = 0; i < countTableCard; i++) {
-                tablecard + temp0[i];
-            }
             throw TableCardDoNotMatch();
         }
     } 
@@ -169,8 +182,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             for (int j = 0; j < i-1; j++) {
                 cardsbank + temp[j];
             }
-            cout << e.what() << endl;
-            cout << "Gagal mengganti table card karena kartu tidak terdapat pada cardsbank" << endl;
+            throw ChangeTableCardFailed();
         }
     }
 
@@ -279,18 +291,18 @@ int main() {
     TableCard tablecard;
     int prize = 0;
 
+    tablecard + cardsbank.getElementAt(0);
+    cardsbank - cardsbank.getElementAt(0);
+    tablecard + cardsbank.getElementAt(0);
+    cardsbank - cardsbank.getElementAt(0);
+    tablecard + cardsbank.getElementAt(0);
+    cardsbank - cardsbank.getElementAt(0);
     for (int i = 0; i < tablecard.getCard().size(); i++) {
         cout << tablecard.getCard()[i].getNumber() << " " << tablecard.getCard()[i].getColor() << endl;
     }
 
     // bagi kartu untuk player
     cardsbank.bagiKartu(*ListOfPlayer);
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
-    tablecard + cardsbank.getElementAt(0);
-    cardsbank - cardsbank.getElementAt(0);
     bool something = true;
 
     ChangeCard change("something", "something");
@@ -298,16 +310,22 @@ int main() {
         change.execute(tablecard, *ListOfPlayer, 0, prize, cardsbank, abilitybank, something);
     } catch (TableCardDoNotMatch e) {
         cout << e.what() << endl; 
+    } catch (PlayerCardDoNotMatch e) {
+        cout << e.what() << endl; 
+    } catch (ChangePlayerCardFailed e) {
+        cout << e.what() << endl; 
+    } catch (ChangeTableCardFailed e) {
+        cout << e.what() << endl; 
     }
 
     // bagi ability 
-    abilitybank.bagiAbility(*ListOfPlayer);
+    // abilitybank.bagiAbility(*ListOfPlayer);
        // checking
-    for (int i = 0; i < 7; i++) {
-        cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
-        << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
-        cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
-        << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
-        cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
-    }
+    // for (int i = 0; i < 7; i++) {
+    //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
+    //     << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
+    //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
+    //     << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
+    //     cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
+    // }
 }

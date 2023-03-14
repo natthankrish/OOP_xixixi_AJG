@@ -35,4 +35,22 @@ class TableCardDoNotMatch : public exception {
 			return "Oops, table card yang kamu masukan kurang atau tidak sesuai spesifikasi, gagal mengganti table card!";
 		}
 };
+class PlayerCardDoNotMatch : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Oops, table card yang kamu masukan kurang atau tidak sesuai spesifikasi, gagal mengganti table card!";
+		}
+};
+class ChangePlayerCardFailed : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Gagal mengganti player card karena kartu tidak ada pada cardsbank!";
+		}
+};
+class ChangeTableCardFailed : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Gagal mengganti table card karena kartu tidak ada pada cardsbank!";
+		}
+};
 #endif
