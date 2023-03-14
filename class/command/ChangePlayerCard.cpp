@@ -12,13 +12,13 @@ bool ChangePlayerCard::continueToNextPlayer(List<Player>& listPlayer, int player
 }
 void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending){
     string filename;
-    cout << "Masukkan nama file dengan ekstensi .txt: ";
+    cout << "Masukkan nama file card player dengan ekstensi .txt: ";
     cin >> filename;
 
     ifstream infile(filename); // sementara
     while (!infile.is_open()) {
         cout << "Failed to open file: " << filename << endl;
-        cout << "Masukkan ulang nama file dengan ekstensi .txt: ";
+        cout << "Masukkan ulang nama file card player dengan ekstensi .txt: ";
         cin >> filename;
         ifstream infile(filename); // sementara
     } 
@@ -27,6 +27,7 @@ void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, i
     int num;
     int count = 0;
 
+    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
     // taking all of the number cards from player
     while (count < 7) {
         if (listPlayer.getElement(count).getPairOfCards().first != NumberCard() && listPlayer.getElement(count).getPairOfCards().second != NumberCard()) {
@@ -57,12 +58,26 @@ void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, i
         count++;
     }
     cout << endl;
+    infile.close();
+
+    cout << "Masukkan nama file ability card player dengan ekstensi .txt: ";
+    cin >> filename;
+
+    ifstream infile2(filename); // sementara
+    while (!infile2.is_open()) {
+        cout << "Failed to open file: " << filename << endl;
+        cout << "Masukkan ulang nama file ability card player dengan ekstensi .txt: ";
+        cin >> filename;
+        ifstream infile2(filename); // sementara
+    } 
 
     // taking all of the ability cards from player
+    bool hasAbilityCard = false;
     count = 0;
     while (count < 7) {
         if (listPlayer.getElement(count).getAbilityCard() != AbilityCard()) {
             cout << "Masuk taking all of the ability cards from player, kartu ability tidak kosong" << endl; 
+            hasAbilityCard = true;
             AbilityCard temp = listPlayer.getElement(count).getAbilityCard();
             abilitycardsbank + temp;          
             listPlayer[count] - temp;
@@ -71,25 +86,38 @@ void ChangePlayerCard::execute(TableCard& tablecard, List<Player>& listPlayer, i
     }
 
     // bagi ulang semua kartu ability dari input file
-    count = 0; 
-    while (count < 7 && infile >> word) {
-        // cout << word << endl;
-        AbilityCard temp(word);
-        listPlayer[count] + temp; 
-        abilitycardsbank - temp;
-        count++; 
-    }
+    if (hasAbilityCard) {
+        count = 0; 
+        while (count < 7 && infile2 >> word) {
+            cout << word << endl;
+            AbilityCard temp(word);
+            listPlayer[count] + temp; 
+            abilitycardsbank - temp;
+            count++; 
+        }
+    } else {
+        // clearing the abilitycardsbank
+        while (abilitycardsbank.getElement().size()) {
+            abilitycardsbank - abilitycardsbank.getElementAt(0);
+        }
+        count = 0; 
+        while (count < 7 && infile2 >> word) {
+            AbilityCard temp(word);
+            abilitycardsbank + temp;
+            count++;
+        }
+    } 
 
-    infile.close();
+    infile2.close();
 
-    // checking
-    for (int i = 0; i < 7; i++) {
-        cout << i << " " << listPlayer.getElement(i).getPairOfCards().first.getNumber() << " " 
-        << listPlayer.getElement(i).getPairOfCards().first.getColor() << endl;
-        cout << i << " " << listPlayer.getElement(i).getPairOfCards().second.getNumber() << " " 
-        << listPlayer.getElement(i).getPairOfCards().second.getColor() << endl;
-        cout << listPlayer.getElement(i).getAbilityCard().getAbilityName() << endl;  
-    }
+    // // checking
+    // for (int i = 0; i < 7; i++) {
+    //     cout << i << " " << listPlayer.getElement(i).getPairOfCards().first.getNumber() << " " 
+    //     << listPlayer.getElement(i).getPairOfCards().first.getColor() << endl;
+    //     cout << i << " " << listPlayer.getElement(i).getPairOfCards().second.getNumber() << " " 
+    //     << listPlayer.getElement(i).getPairOfCards().second.getColor() << endl;
+    //     cout << listPlayer.getElement(i).getAbilityCard().getAbilityName() << endl;  
+    // }
 }
 
 int ChangePlayerCard::stringToInt(string word) {

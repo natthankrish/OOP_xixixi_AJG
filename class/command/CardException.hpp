@@ -29,4 +29,10 @@ class PlayerCardIsDeactivatedException : public exception {
 			return "Oops, kartu yang kamu pilih telah dimatikan sebelumnya :(.\nSilahkan lakukan perintah lain.";
 		}
 };
+class TableCardDoNotMatch : public exception {
+	public: 
+		const char* what() const throw() {
+			return "Oops, table card yang kamu masukan kurang atau tidak sesuai spesifikasi, gagal mengganti table card!";
+		}
+};
 #endif
