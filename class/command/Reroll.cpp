@@ -25,7 +25,7 @@ void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeri
         cardsbank+card1;
         cardsbank+card2;
 
-        cout << "Kamu mendapat 2 kartu baru yaitu:";
+        cout << "Kamu mendapat 2 kartu baru yaitu:" << endl;
         cout << "1. " << listPlayer.getElement(playeridx-1).getPairOfCards().first.getNumber() << " " << listPlayer.getElement(playeridx-1).getPairOfCards().first.getColor() << endl; 
         cout << "2. " << listPlayer.getElement(playeridx-1).getPairOfCards().second.getNumber() << " " << listPlayer.getElement(playeridx-1).getPairOfCards().second.getColor() << endl; 
 

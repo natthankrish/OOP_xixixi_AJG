@@ -29,11 +29,11 @@ void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx
         cin >> choice1; 
          
         cout << "Silahkan pilih pemain lain yang kartunya ingin anda tukar:" << endl;
-        int j = 1;
-        for(int i = 1 ; i <= listPlayer.getNeff(); i++){
+        int k = 1;
+        for(int i = 1 ; i < listPlayer.getNeff(); i++){
             if(i != choice1) {
-                cout << j << ". " << listPlayer.getElement(i).getName() << endl;
-                j++;
+                cout << k << ". " << listPlayer.getElement(i).getName() << endl;
+                k++;
             }
         }
         cin >> choice2;
