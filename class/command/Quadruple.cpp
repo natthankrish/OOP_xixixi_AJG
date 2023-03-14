@@ -25,7 +25,7 @@ bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Ab
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
         playerCardIsDeactivated(listPlayer, playeridx);
-        AbilityCard temp = listPlayer.getElement(playeridx-1)-listPlayer.getElement(playeridx-1).getAbilityCard(); 
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
         abilitycardsbank + temp;
         // listPlayer.getElement(playeridx-1).setAbilityStatus(false);
         return true;

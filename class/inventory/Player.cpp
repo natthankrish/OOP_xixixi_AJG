@@ -64,7 +64,7 @@ void Player::operator-(const NumberCard& card) {
     }
 }
 
-AbilityCard& Player::operator-(const AbilityCard& card) {
+AbilityCard Player::operator-(const AbilityCard& card) {
     AbilityCard temp = card;
     this->abilityCard = AbilityCard();
     return temp;
