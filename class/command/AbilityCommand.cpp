@@ -20,13 +20,16 @@ void AbilityCommand::doesPlayerHaveAbilityCard(List<Player>& listPlayer, int pla
 }
 
 void AbilityCommand::doAllOtherPlayersHaveUsedTheirCards(List<Player>& listPlayer, int playeridx){
-    
+    int condition = true;
     for(int i = 1 ; i <= listPlayer.getNeff(); i++){
         if(i != playeridx && listPlayer.getElement(i-1).getAbilityCard().getAbilityName() != "none"){
-            throw AllOtherPlayersHaveUsedTheirCardsException();
+            condition = false;
+            break;
         }
     }
-
+    if(condition){
+        throw AllOtherPlayersHaveUsedTheirCardsException();
+    }
 }
 
 void AbilityCommand::playerCardIsUsed(List<Player>& listPlayer, int playeridx){
