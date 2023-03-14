@@ -39,8 +39,8 @@ bool Reroll::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abili
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
         playerCardIsDeactivated(listPlayer, playeridx);
-        // abilitycardsbank.getElement().push_back(AbilityCard("Re-roll"));
-        listPlayer.getElement(playeridx-1).setAbilityStatus(false);
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
+        abilitycardsbank + temp;
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;

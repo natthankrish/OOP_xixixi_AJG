@@ -32,8 +32,8 @@ bool Reverse::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abil
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
         playerCardIsDeactivated(listPlayer, playeridx);
-        // abilitycardsbank.getElement().push_back(AbilityCard("Reverse"));
-        listPlayer.getElement(playeridx-1).setAbilityStatus(false);
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
+        abilitycardsbank + temp;
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;    

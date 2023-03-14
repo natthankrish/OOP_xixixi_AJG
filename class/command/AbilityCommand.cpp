@@ -30,12 +30,12 @@ void AbilityCommand::doAllOtherPlayersHaveUsedTheirCards(List<Player>& listPlaye
 }
 
 void AbilityCommand::playerCardIsUsed(List<Player>& listPlayer, int playeridx){
-    if (!listPlayer.getElement(playeridx - 1).getAbilityStatus()) {
-        throw PlayerDoesNotHaveCardException();
+    if (listPlayer.getElement(playeridx - 1).getAbilityCard().getAbilityName() == "none") {
+        throw PlayerCardIsUsedException();
     }
 }
 void AbilityCommand::playerCardIsDeactivated(List<Player>& listPlayer, int playeridx){
     if (!listPlayer.getElement(playeridx - 1).getAbilityStatus()) {
-        throw PlayerDoesNotHaveCardException();
+        throw PlayerCardIsDeactivatedException();
     }
 }

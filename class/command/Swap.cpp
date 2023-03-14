@@ -79,8 +79,8 @@ bool Swap::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Ability
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Swap");
         playerCardIsDeactivated(listPlayer, playeridx);
-        // abilitycardsbank.getElement().push_back(AbilityCard("Swap"));
-        listPlayer.getElement(playeridx-1).setAbilityCard(AbilityCard("none"));
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
+        abilitycardsbank + temp;
         return true;
     } catch (PlayerDoesNotHaveCardException e) {
         return false;
