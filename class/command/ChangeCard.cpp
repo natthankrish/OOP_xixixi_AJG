@@ -16,18 +16,18 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     cin >> filename;
 
     ifstream infile(filename); // sementara
-    while (!infile.is_open()) {
+    while (infile.fail()) {
         cout << "Failed to open file: " << filename << endl;
         cout << "Masukkan ulang nama file card player dengan ekstensi .txt: ";
         cin >> filename;
-        ifstream infile(filename); // sementara
+        infile = ifstream(filename); // sementara
     } 
     
     string word;
     int num;
     int count = 0;
 
-    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+    // cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
 
     vector<NumberCard> tempp;
     for (int i = 0; i < 14*2; i++) {
@@ -35,7 +35,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             if (isNum(word)) {
                 num = stringToInt(word);
             } else {
-                cout << num << " " << word << endl;
+                // cout << num << " " << word << endl;
                 tempp.push_back(NumberCard(num, word));
             }
         } else {
@@ -53,7 +53,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     // taking all of the number cards from player
     while (count < 7) {
         if (listPlayer.getElement(count).getPairOfCards().first != NumberCard() && listPlayer.getElement(count).getPairOfCards().second != NumberCard()) {
-            cout << "Masuk taking all of the number cards from player, kartu number tidak kosong" << endl; 
+            // cout << "Masuk taking all of the number cards from player, kartu number tidak kosong" << endl; 
             oldplayercards.push_back(listPlayer[count].getPairOfCards().first);
             oldplayercards.push_back(listPlayer[count].getPairOfCards().second);
             cardsbank + listPlayer[count].operator--();
@@ -74,8 +74,8 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         cardsbank + temp;
     }
 
-    cout << "temp size: " << tempp.size() << endl;
-    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+    // cout << "temp size: " << tempp.size() << endl;
+    // cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
     // bagi ulang dengan spesifikasi dari file
     count = 0;
     int counttemp = 0;
@@ -125,19 +125,19 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         count++;
     }
 
-    cout << "Count temp" << counttemp << endl;
-    cout << endl;
+    // cout << "Count temp" << counttemp << endl;
+    // cout << endl;
     infile.close();
 
     cout << "Masukkan nama file ability card player dengan ekstensi .txt: ";
     cin >> filename;
 
     ifstream infile2(filename); // sementara
-    while (!infile2.is_open()) {
+    while (infile2.fail()) {
         cout << "Failed to open file: " << filename << endl;
         cout << "Masukkan ulang nama file ability card player dengan ekstensi .txt: ";
         cin >> filename;
-        ifstream infile2(filename); // sementara
+        infile2 = ifstream(filename);
     } 
 
     // taking all of the ability cards from player
@@ -179,17 +179,21 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
 
     infile2.close();
 
-    cout << "Cardsbank size3: " << cardsbank.getElement().size() << endl;
+    vector<NumberCard> oldcardsbank2;
+    for (int i = 0; i < cardsbank.getElement().size(); i++) {
+        oldcardsbank2.push_back(cardsbank.getElementAt(i));
+    }
+    // cout << "Cardsbank size3: " << cardsbank.getElement().size() << endl;
     // penggantian table card
     cout << "Masukkan nama file table card dengan ekstensi .txt: ";
     cin >> filename;
 
     ifstream infile3(filename); // sementara
-    while (!infile3.is_open()) {
+    while (infile3.fail()) {
         cout << "Failed to open file: " << filename << endl;
         cout << "Masukkan ulang nama file table card dengan ekstensi .txt: ";
         cin >> filename;
-        ifstream infile3(filename); // sementara
+        infile3 = ifstream(filename);
     }
    
     count = 0;
@@ -222,20 +226,35 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     //     }
     // }
 
-    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+    // cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
     // all cards from the input file are found in the cards bank
     // placing the cards from the input file to the table card
     for (int i = 0; i < countTableCard; i++) {
         try {
             cardsbank - temp[i];
         } catch (CardNotFoundException e) {
-            for (int j = 0; j < i-1; j++) {
-                cardsbank + temp[j];
-                tablecard - temp[j];
+            while (cardsbank.getElement().size() > 0) {
+                cardsbank - cardsbank.getElementAt(0);
             }
-            for (int k = 0; k < countTableCard; k++) {
-                tablecard + temp0[k];
+            cout << cardsbank.getElement().size() << endl;
+            // assigning it back to the old cards bank
+            for (int i = 0; i < oldcardsbank2.size(); i++) {
+                cardsbank + oldcardsbank2[i];
             }
+            // cout << "size now: " << cardsbank.getElement().size() << endl;
+            // clearing table card 
+            // cout << " table size now: " << tablecard.getCard().size() << endl;
+            while (tablecard.getCard().size() > 0) {
+                // cout << "something" << endl;
+                tablecard - tablecard.getCard()[0];
+            }
+
+            for (int i = 0; i < temp0.size(); i++) {
+                // cout << "something2" << endl;
+                tablecard + temp0[i];
+            }
+
+            // cout << "TABLE CARD" << tablecard.getCard()[0].getNumber() << " " << tablecard.getCard()[0].getColor() << endl;
             throw ChangeTableCardFailed();
         }
         tablecard + temp[i];
@@ -247,8 +266,23 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         try {
             cardsbank - temp[i];
         } catch (CardNotFoundException e) {
-            for (int j = countTableCard; j < i-1; j++) {
-                cardsbank + temp[j];
+            while (cardsbank.getElement().size() > 0) {
+                cardsbank - cardsbank.getElementAt(0);
+            }
+            cout << cardsbank.getElement().size() << endl;
+            // assigning it back to the old cards bank
+            for (int i = 0; i < oldcardsbank2.size(); i++) {
+                cardsbank + oldcardsbank2[i];
+            }
+            cout << "size now: " << cardsbank.getElement().size() << endl;
+            // clearing table card 
+            while (tablecard.getCard().size() > 0) {
+                // cout << "something" << endl;
+                tablecard - tablecard.getCard()[0];
+            }
+
+            for (int i = 0; i < temp0.size(); i++) {
+                tablecard + temp0[i];
             }
         }
         cardsbank + temp[i];
@@ -257,10 +291,10 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
 
     infile3.close();
     // checking
-    for (int i = 0; i < countTableCard; i++) {
-        cout << tablecard.getCard()[i].getNumber() << " " 
-        << tablecard.getCard()[i].getColor() << endl;
-    }
+    // for (int i = 0; i < countTableCard; i++) {
+    //     cout << tablecard.getCard()[i].getNumber() << " " 
+    //     << tablecard.getCard()[i].getColor() << endl;
+    // }
 }
 
 int ChangeCard::stringToInt(string word) {
@@ -342,27 +376,9 @@ bool ChangeCard::isNum(string word) {
 
 //     TableCard tablecard;
 //     int prize = 0;
-
-//     tablecard + cardsbank.getElementAt(0);
-//     cardsbank - cardsbank.getElementAt(0);
-//     tablecard + cardsbank.getElementAt(0);
-//     cardsbank - cardsbank.getElementAt(0);
-//     tablecard + cardsbank.getElementAt(0);
-//     cardsbank - cardsbank.getElementAt(0);
-//     for (int i = 0; i < tablecard.getCard().size(); i++) {
-//         cout << tablecard.getCard()[i].getNumber() << " " << tablecard.getCard()[i].getColor() << endl;
-//     }
 //     // bagi ability 
-//     abilitybank.bagiAbility(*ListOfPlayer);
 //     // checking
-//     cardsbank.bagiKartu(*ListOfPlayer);
-//     for (int i = 0; i < 7; i++) {
-//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
-//         << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
-//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
-//         << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
-//         cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
-//     }
+//     // cardsbank.bagiKartu(*ListOfPlayer);
 
 //     // bagi kartu untuk player
 //     bool something = true;
@@ -378,6 +394,22 @@ bool ChangeCard::isNum(string word) {
 //         cout << e.what() << endl; 
 //     } catch (ChangeTableCardFailed e) {
 //         cout << e.what() << endl; 
+//     }
+//     for (int i = 0; i < 7; i++) {
+//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
+//         << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
+//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
+//         << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
+//     }
+
+//     for (int i = 0 ; i < abilitybank.getElement().size(); i++) {
+//         cout << abilitybank.getElementAt(i).getAbilityName() << endl;
+//     }
+
+//     int count = 37;
+//     for (int i = 0; i < 5; i++) {
+//         cout << cardsbank.getElementAt(count).getNumber() << cardsbank.getElementAt(count).getColor() << endl;
+//         count--;
 //     }
 
 // }
