@@ -8,7 +8,7 @@ AbilityCardsBank::AbilityCardsBank() {
     temp.push_back(AbilityCard("Quadruple"));
     temp.push_back(AbilityCard("Quarter"));
     temp.push_back(AbilityCard("Reverse"));
-    temp.push_back(AbilityCard("Swap Card"));
+    temp.push_back(AbilityCard("Swap"));
     temp.push_back(AbilityCard("Switch"));
     temp.push_back(AbilityCard("Abilityless"));
 
