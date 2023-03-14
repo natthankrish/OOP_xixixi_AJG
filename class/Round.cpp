@@ -7,6 +7,7 @@ Round::Round(int roundID, int idxCurrentPlayer) {
     this->roundID = roundID;
     this->idxCurrentPlayer = idxCurrentPlayer;
     this->playerRemaining = 6;
+    this->ascending = true;
 }
 
 int Round::getRoundID() {
@@ -43,11 +44,31 @@ void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, Abili
 }
 
 void Round::nextPlayer(List<Player>& listPlayer) {
-    this->idxCurrentPlayer++;
-    if (this->idxCurrentPlayer > 7) {
-        this->idxCurrentPlayer = 1; 
+    if (this->ascending) {
+        this->idxCurrentPlayer++;
+        if (this->idxCurrentPlayer > 7) {
+            this->idxCurrentPlayer = 1; 
+        }
+        while (listPlayer[this->idxCurrentPlayer-1].gethavePlayed()) {
+            this->idxCurrentPlayer++;
+            if (this->idxCurrentPlayer > 7) {
+                this->idxCurrentPlayer = 1; 
+            }
+        }
+    } else {
+        this->idxCurrentPlayer--;
+        if (this->idxCurrentPlayer < 1) {
+            this->idxCurrentPlayer = 7; 
+        }
+        while (listPlayer[this->idxCurrentPlayer-1].gethavePlayed()) {
+            this->idxCurrentPlayer--;
+            if (this->idxCurrentPlayer < 1) {
+                this->idxCurrentPlayer = 7; 
+            }
+        }
     }
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
+
 }
 
 void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard) {
@@ -94,5 +115,6 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
 
         this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank);
         nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
+        //listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
     }
 }

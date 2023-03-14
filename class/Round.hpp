@@ -26,6 +26,7 @@ class Round {
         int roundID;
         int idxCurrentPlayer;
         int playerRemaining;
+        bool ascending;
         Command* command;
 
     public:
