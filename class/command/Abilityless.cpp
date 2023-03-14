@@ -20,7 +20,7 @@ void Abilityless::execute(TableCard& tablecard, List<Player>& listPlayer, int pl
         cin >> choice;
 
         playerCardIsUsed(listPlayer, choice);
-        listPlayer.getElement(choice-1).setAbilityStatus(false);
+        listPlayer[choice-1].setAbilityStatus(false);
         cout << "Kartu ability " << listPlayer.getElement(choice).getName() << " telah dimatikan." << endl;
     } catch (PlayerDoesNotHaveCardException e) {
         cout << e.what() << "ABILITYLESS." << endl;
