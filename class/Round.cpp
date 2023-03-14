@@ -105,10 +105,10 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Half("ordinary", "half");
         } else if (perintah == "MYCARD") {
             this->command = new MyCard("ordinary", "mycard");
-        } else if (perintah == "CHANGEPLAYERCARD") {
-            this->command = new ChangePlayerCard("ordinary", "changenum");
         } else if (perintah == "CHECKTABLECARD") {
             this->command = new CheckTableCard("ordinary", "checktablecard");
+        } else if (perintah == "CHANGECARD") {
+            this->command = new ChangeCard("ordinary", "changenum");
         } else if (perintah == "QUADRUPLE") {
             this->command = new Quadruple("ability", "quadruple");
         } else if (perintah == "QUARTER") {

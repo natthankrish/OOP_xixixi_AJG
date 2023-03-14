@@ -21,7 +21,7 @@
 #include "class/command/Quadruple.cpp"
 #include "class/command/Quarter.cpp"
 #include "class/command/MyCard.cpp"
-#include "class/command/ChangePlayerCard.cpp"
+#include "class/command/ChangeCard.cpp"
 #include "class/command/AbilityCommand.cpp"
 #include "class/command/Swap.cpp"
 #include "class/command/Switch.cpp"

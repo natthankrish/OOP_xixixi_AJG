@@ -71,7 +71,7 @@ cd OOP_xixixi_AJG
 | Daniel Egiant Sitanggang | 13521056 |
 | Ilham Akbar  | 13521068 |
 | Juan Christopher Santoso | 13521116 | 
-| Brigita Carolina | 13521156 | 
+| Brigita Tri Carolina | 13521156 | 
 | Antonio Natthan Krishna | 13521162 | 
 
 
