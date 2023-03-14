@@ -18,8 +18,11 @@
 #include "class/command/Next.cpp"
 #include "class/command/Half.cpp"
 #include "class/command/Double.cpp"
+#include "class/command/Quadruple.cpp"
+#include "class/command/Quarter.cpp"
 #include "class/command/MyCard.cpp"
 #include "class/command/ChangePlayerCard.cpp"
+#include "class/command/AbilityCommand.cpp"
 
 
 int main () {
