@@ -27,7 +27,12 @@ void TableCard::operator-(const NumberCard& card) {
 }
 
 void TableCard::seeCard() {
+    int count = 0;
     for (auto ptr = this->contents.begin(); ptr != this->contents.end(); ++ptr){
-        cout << ptr->getNumber() << " " << ptr->getColor() << endl;
+        cout << count+1 <<". " << ptr->getNumber() << " " << ptr->getColor() << endl;
+        count++;
+    }
+    if (count == 0){
+        cout << "Tidak ada kartu di atas meja." <<endl;
     }
 }

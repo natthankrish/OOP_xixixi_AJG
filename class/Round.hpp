@@ -39,7 +39,8 @@ class Round {
         int getIdxCurrentPlayer();
         void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
         string capitalize(string command);
-        string displayTitle(string title, string subtitle);
+        void displayTitle(string title, string subtitle);
+        void displayPlayerTurn (string player, string name);
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "Game.hpp"
 #include <iostream>
-
 using namespace std;
 
 
@@ -12,8 +11,8 @@ Game::Game(int gameID) {
 }
 
 int Game::startGame(List<Player>& listPlayer) {
-    // string game = "PERMAINAN " + to_string(this->gameID);
-    // displayTitle(game, "None");
+    string game = "PERMAINAN " + to_string(this->gameID);
+    displayTitle(game, "None");
 
     this->round = new Round(1, 1);
     round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard, this->ascending);
@@ -22,7 +21,7 @@ int Game::startGame(List<Player>& listPlayer) {
         round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard, this->ascending);
     }
     
-    // displayTitle("PERMAINAN SELESAI", "None");
+    displayTitle("PERMAINAN SELESAI", "None");
     return 0;
 }
     
@@ -39,8 +38,8 @@ CardsBank Game::getCardsBank() {
     return this->cardsBank;
 }
 
-string Game::displayTitle(string title, string subtitle){
-    string border = "==============================================" ;
+void Game::displayTitle(string title, string subtitle){
+    string border = "==================================================" ;
     int whitespace = border.length() - title.length() - 4;
     int frontwhitespace = whitespace / 2;
     int backwhitespace = whitespace - frontwhitespace;
