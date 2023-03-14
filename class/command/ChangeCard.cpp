@@ -42,10 +42,20 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             throw PlayerCardDoNotMatch();
         }
     } 
+    // saving cards bank cards
+    vector<NumberCard> oldcardsbank;
+    for (int i = 0; i < cardsbank.getElement().size(); i++) {
+        oldcardsbank.push_back(cardsbank.getElementAt(i));
+    }
+
+    // saving the player cards
+    vector<NumberCard> oldplayercards;
     // taking all of the number cards from player
     while (count < 7) {
         if (listPlayer.getElement(count).getPairOfCards().first != NumberCard() && listPlayer.getElement(count).getPairOfCards().second != NumberCard()) {
             cout << "Masuk taking all of the number cards from player, kartu number tidak kosong" << endl; 
+            oldplayercards.push_back(listPlayer[count].getPairOfCards().first);
+            oldplayercards.push_back(listPlayer[count].getPairOfCards().second);
             cardsbank + listPlayer[count].operator--();
             cardsbank + listPlayer[count].operator--();
         }
@@ -75,12 +85,38 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             listPlayer[count] + tempp[counttemp];
             // cout << listPlayer.getElement(count).getPairOfCards().first.getNumber() << listPlayer.getElement(count).getPairOfCards().first.getColor() << endl;
             try {
-                cardsbank - tempp[count];
+                cardsbank - tempp[counttemp];
             } catch (CardNotFoundException e) {
-                for (int j = 0; j < count - 1; j++) {
-                    // returning all the cards back to the cardsbank
-                    cardsbank + tempp[count];
+                // clearing cards bank 
+                while (cardsbank.getElement().size() > 0) {
+                    cardsbank - cardsbank.getElementAt(0);
                 }
+                cout << cardsbank.getElement().size() << endl;
+                // assigning it back to the old cards bank
+                for (int i = 0; i < oldcardsbank.size(); i++) {
+                    cardsbank + oldcardsbank[i];
+                }
+                cout << "size now: " << cardsbank.getElement().size() << endl;
+
+                // clearing player card
+                int countplayer = 0;
+
+                for (int i = 0; i < 7; i++) {
+                    for (int i = 0; i < 2; i++) {
+                        listPlayer[countplayer] - listPlayer[countplayer].getPairOfCards().first;
+                        listPlayer[countplayer] - listPlayer[countplayer].getPairOfCards().second;
+                    }
+                    countplayer++;
+                }
+
+                countplayer = 0;
+                for (int i = 0; i < 7; i++) {
+                    for (int i = 0; i < 2; i++) {
+                        listPlayer[countplayer] + oldplayercards[countplayer];
+                    }
+                    countplayer++;
+                }
+                cout << listPlayer[0].getPairOfCards().first.getNumber() << " " << listPlayer[0].getPairOfCards().first.getColor() << endl; 
                 throw ChangePlayerCardFailed();
 
             }
@@ -173,33 +209,49 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
         }
     } 
 
-    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
-    for (int i = 0; i < 5; i++) {
-        try {
-            cardsbank - temp[i];
-        } catch (CardNotFoundException e) {
-            // returning the cards back to the cards bank
-            for (int j = 0; j < i-1; j++) {
-                cardsbank + temp[j];
-            }
-            throw ChangeTableCardFailed();
-        }
-    }
+    // cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+    // for (int i = 0; i < 5; i++) {
+    //     try {
+    //         cardsbank - temp[i];
+    //     } catch (CardNotFoundException e) {
+    //         // returning the cards back to the cards bank
+    //         for (int j = 0; j < i-1; j++) {
+    //             cardsbank + temp[j];
+    //         }
+    //         throw ChangeTableCardFailed();
+    //     }
+    // }
 
+    cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
     // all cards from the input file are found in the cards bank
     // placing the cards from the input file to the table card
     for (int i = 0; i < countTableCard; i++) {
-        cardsbank - temp[0];
-        tablecard + temp[0];
-        temp.erase(temp.begin());
+        try {
+            cardsbank - temp[i];
+        } catch (CardNotFoundException e) {
+            for (int j = 0; j < i-1; j++) {
+                cardsbank + temp[j];
+                tablecard - temp[j];
+            }
+            for (int k = 0; k < countTableCard; k++) {
+                tablecard + temp0[k];
+            }
+            throw ChangeTableCardFailed();
+        }
+        tablecard + temp[i];
     }
 
     // placing the rest of the table card
-    while (temp.size() > 0) {
+    for (int i = countTableCard; i < 5; i++) {
         // placing the rest of the cards on top of the cardsbank
-        cardsbank - temp[0];
-        cardsbank + temp[0];
-        temp.erase(temp.begin());
+        try {
+            cardsbank - temp[i];
+        } catch (CardNotFoundException e) {
+            for (int j = countTableCard; j < i-1; j++) {
+                cardsbank + temp[j];
+            }
+        }
+        cardsbank + temp[i];
     }
     
 
@@ -300,9 +352,19 @@ bool ChangeCard::isNum(string word) {
 //     for (int i = 0; i < tablecard.getCard().size(); i++) {
 //         cout << tablecard.getCard()[i].getNumber() << " " << tablecard.getCard()[i].getColor() << endl;
 //     }
+//     // bagi ability 
+//     abilitybank.bagiAbility(*ListOfPlayer);
+//     // checking
+//     cardsbank.bagiKartu(*ListOfPlayer);
+//     for (int i = 0; i < 7; i++) {
+//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
+//         << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
+//         cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
+//         << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
+//         cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
+//     }
 
 //     // bagi kartu untuk player
-//     cardsbank.bagiKartu(*ListOfPlayer);
 //     bool something = true;
 
 //     ChangeCard change("something", "something");
@@ -318,14 +380,4 @@ bool ChangeCard::isNum(string word) {
 //         cout << e.what() << endl; 
 //     }
 
-//     // bagi ability 
-//     // abilitybank.bagiAbility(*ListOfPlayer);
-//        // checking
-//     // for (int i = 0; i < 7; i++) {
-//     //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().first.getNumber() << " " 
-//     //     << ListOfPlayer->getElement(i).getPairOfCards().first.getColor() << endl;
-//     //     cout << i << " " << ListOfPlayer->getElement(i).getPairOfCards().second.getNumber() << " " 
-//     //     << ListOfPlayer->getElement(i).getPairOfCards().second.getColor() << endl;
-//     //     cout << ListOfPlayer->getElement(i).getAbilityCard().getAbilityName() << endl;  
-//     // }
 // }

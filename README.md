@@ -44,13 +44,13 @@ cd OOP_xixixi_AJG
 | 3 | Game Round Robin System | | &check; |
 | 4 | Reward Point | | &check; |
 | 5 | Combinations  | High Card |  |
-|   |               | Pair|  |
-|   |               | Two Pairs |  |
+|   |               | Pair| &check; |
+|   |               | Two Pairs | &check; |
 |   |               | Three of a Kind |  |
-|   |               | Straight |  |
-|   |               | Flush |  |
+|   |               | Straight | &check; |
+|   |               | Flush | &check; |
 |   |               | Full House |  |
-|   |               | Four of a Kind |  |
+|   |               | Four of a Kind | &check;  |
 |   |               | Straight Flush |  |
 | 6 | Abilities and Commands | Next |  |
 |   |                        | Re-Roll |  |
