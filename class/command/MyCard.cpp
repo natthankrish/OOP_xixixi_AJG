@@ -7,7 +7,7 @@ bool MyCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abili
     return false;
 }
 
-void MyCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
+void MyCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending){
     listPlayer[playeridx-1].seeCard();
     cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
 }

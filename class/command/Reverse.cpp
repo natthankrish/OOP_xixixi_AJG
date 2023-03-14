@@ -5,7 +5,7 @@
 Reverse::Reverse(string type, string name) : AbilityCommand(type, name){
 }   
 
-void Reverse::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Reverse::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reverse");
         playerCardIsDeactivated(listPlayer, playeridx);

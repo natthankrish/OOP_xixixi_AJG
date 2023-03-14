@@ -5,7 +5,7 @@
 Quadruple::Quadruple(string type, string name) : AbilityCommand(type, name){
 }   
 
-void Quadruple::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Quadruple::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
         playerCardIsDeactivated(listPlayer, playeridx);

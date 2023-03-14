@@ -5,7 +5,7 @@
 Swap::Swap(string type, string name) : AbilityCommand(type, name){
 }   
 
-void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Swap::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool ascending) {
 
     try{
         int choice1;

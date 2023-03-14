@@ -17,7 +17,7 @@ class Command {
     public:
         Command(string, string);            // user defined ctor
 
-        virtual void execute(TableCard& tablecard, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
+        virtual void execute(TableCard& tablecard, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool);
         virtual bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 

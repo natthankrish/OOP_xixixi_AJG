@@ -20,7 +20,7 @@ class ChangeTableCard : public OrdinaryCommand {
     public:
         ChangeTableCard(string, string);             // user defined ctor
 
-        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool);
         bool continueToNextPlayer(List<Player>&, int, AbilityCardsBank&);
         int stringToInt(string);
         bool isNum(string);
