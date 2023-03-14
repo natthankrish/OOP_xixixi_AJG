@@ -8,8 +8,8 @@ class Help : public OrdinaryCommand {
     public:
         Help(string, string);
 
-        bool continueToNextPlayer();
-        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);      
+        bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);      
 };
 
 #endif

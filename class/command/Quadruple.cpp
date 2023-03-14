@@ -5,12 +5,32 @@
 Quadruple::Quadruple(string type, string name) : AbilityCommand(type, name){
 }   
 
-void Quadruple::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
-        cout << listPlayer.getElement(round.getIdxCurrentPlayer()-1).getName() << " melakukan QUADRUPLE! Point hadiah naik dari " << prize;
+void Quadruple::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
+    try{
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
+        playerCardIsDeactivated(listPlayer, playeridx);
+
+        //execution
+        cout << listPlayer[playeridx-1].getName() << " melakukan QUDRUPLE! Point hadiah naik dari " << prize;
         prize *= 4; 
-        cout << " menjadi " << prize << endl;
+        cout << " menjadi " << prize << "!" << endl;
+    } catch (PlayerDoesNotHaveCardException e) {
+        cout << e.what() << "QUADRUPLE." << endl;
+    } catch (PlayerCardIsDeactivatedException e) {
+        cout << e.what() << endl;
+    }
 }
 
-bool Quadruple::continueToNextPlayer(){
-    return true;
+bool Quadruple::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
+    try{
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quadruple");
+        playerCardIsDeactivated(listPlayer, playeridx);
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
+        abilitycardsbank + temp;
+        return true;
+    } catch (PlayerDoesNotHaveCardException e) {
+        return false;
+    } catch (PlayerCardIsDeactivatedException e) {
+        return false;
+    }
 }

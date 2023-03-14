@@ -5,6 +5,7 @@
 #include <vector>
 #include "../../utils/ListOfThing.hpp"
 #include "Player.hpp"
+#include "InventoryException.hpp"
 
 class CardsBank : public InventoryHolder {
     private: 

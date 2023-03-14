@@ -7,13 +7,20 @@
 #include "command/Next.hpp"
 #include "command/Double.hpp"
 #include "command/Half.hpp"
-//#include "command/Quadruple.hpp"
+#include "command/Quadruple.hpp"
+#include "command/Quarter.hpp"
 #include "inventory/AbilityCardsBank.hpp"
 #include "inventory/CardsBank.hpp"
 #include "command/CheckPrize.hpp"
 #include "command/Help.hpp"
 #include "command/MyCard.hpp"
-#include "command/ChangePlayerCard.hpp"
+#include "command/Swap.hpp"
+#include "command/Switch.hpp"
+#include "command/Reroll.hpp"
+#include "command/Reverse.hpp"
+#include "command/Abilityless.hpp"
+#include "command/CheckTableCard.hpp"
+#include "command/ChangeCard.hpp"
 
 class Round {
     private:
@@ -25,12 +32,15 @@ class Round {
     public:
         // friend ordinaryCommand;
         Round(int,int);
-        void nextPlayer(List<Player>&);
-        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
-        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&);
+        void nextPlayer(List<Player>&, bool&);
+        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
+        void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&, TableCard&);
         int getRoundID();
         int getIdxCurrentPlayer();
-        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&);
+        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
+        string capitalize(string command);
+        void displayTitle(string title, string subtitle);
+        void displayPlayerTurn (string player, string name);
 };
 
 #endif

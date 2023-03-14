@@ -5,10 +5,10 @@
 Next::Next(string type, string name) : OrdinaryCommand(type, name){
 }    
 
-void Next::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Next::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     cout << "Giliran dilanjut ke player selanjutnya." << endl;
 }
 
-bool Next::continueToNextPlayer(){
+bool Next::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return true;
 }

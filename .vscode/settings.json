@@ -23,6 +23,7 @@
         "streambuf": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
+<<<<<<< HEAD
         "map": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
@@ -71,4 +72,11 @@
         "valarray": "cpp"
     },
     "cmake.configureOnOpen": true
+=======
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "*.ipp": "cpp",
+        "bitset": "cpp"
+    }
+>>>>>>> 0ba781e204b5530c7a43392c52ac4b3d47e0f1e4
 }

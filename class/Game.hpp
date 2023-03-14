@@ -17,6 +17,8 @@ class Game {
         int maxPlayerPoint;
         CardsBank cardsBank;
         AbilityCardsBank abilityCardsBank;
+        TableCard tablecard;
+        bool ascending;
         
     public:
         Game(int);
@@ -24,6 +26,7 @@ class Game {
         void NextRound();
         CardsBank getCardsBank();
         AbilityCardsBank getAbilityCardsBank();
+        void displayTitle(string title, string subtitle);
 };
 
 #endif

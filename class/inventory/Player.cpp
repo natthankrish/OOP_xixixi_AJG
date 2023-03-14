@@ -1,9 +1,9 @@
 #include "Player.hpp"
 #include "InventoryException.hpp"
 
-Player::Player() : InventoryHolder("Player"), playerID(0), name(""), point(0) , havePlayedThisRound(false) {};
+Player::Player() : InventoryHolder("Player"), playerID(0), name(""), point(0) , havePlayedThisRound(false), abilityCardStatus(true) {};
 
-Player::Player(int ID, string name, int point, bool status): InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false) {};
+Player::Player(int ID, string name, int point, bool status): InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false), abilityCardStatus(true) {};
 
 bool Player::gethavePlayed() {
     return this->havePlayedThisRound;
@@ -27,9 +27,22 @@ string Player::getName() {
 void Player::setName(string name) {
     this->name = name;
 }
-// void Player::searchBestDeckCards() {
 
-// }
+AbilityCard Player::getAbilityCard(){
+    return this->abilityCard;
+}
+
+void Player::setAbilityCard(AbilityCard abilityCard){
+    this->abilityCard = abilityCard;
+}
+
+bool Player::getAbilityStatus() {
+    return this->abilityCardStatus;
+}
+
+void Player::setAbilityStatus(bool val) {
+    this->abilityCardStatus = val;
+}
 
 void Player::operator+(const NumberCard& card) {
     if (this->playerCards.first.getNumber() == -1) {
@@ -44,15 +57,18 @@ void Player::operator+(const AbilityCard& card) {
 }
 
 void Player::operator-(const NumberCard& card) {
-    if (this->playerCards.first == NumberCard() && this->playerCards.second == NumberCard()) {
-        this->playerCards.first = card;
-    } else if (this->playerCards.second == NumberCard()) {
-        this->playerCards.first = card;
+    if (this->playerCards.second == card) {
+        this->playerCards.second = NumberCard();
+    } else if (this->playerCards.first == card) {
+        this->playerCards.first = this->playerCards.second;
+        this->playerCards.second = NumberCard();
     }
 }
 
-void Player::operator-(const AbilityCard& card) {
+AbilityCard Player::operator-(const AbilityCard& card) {
+    AbilityCard temp = card;
     this->abilityCard = AbilityCard();
+    return temp;
 }
 
 NumberCard Player::operator--() {
@@ -70,6 +86,16 @@ void Player::seeCard() {
     cout << "Kartu 1: " << this->playerCards.first.getNumber() << " " << this->playerCards.first.getColor() << endl;
     cout << "Kartu 2: " << this->playerCards.second.getNumber() << " " << this->playerCards.second.getColor() << endl;
     if (this->abilityCard != AbilityCard()) {
-        cout << "Kartu Ability: " << this->abilityCard.getAbilityName() << endl;
+        cout << "Kartu Ability: " << this->abilityCard.getAbilityName() << " (";
+        if (this->abilityCardStatus) {
+            cout << "aktif";
+        } else {
+            cout << "dimatikan oleh Abilityless";
+        }
+        cout << ")" << endl;
     }
+}
+
+pair <NumberCard, NumberCard> Player::getPairOfCards() {
+    return this->playerCards;
 }

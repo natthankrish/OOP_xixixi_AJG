@@ -5,6 +5,7 @@
 #include "../inventory/Player.hpp"
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
+#include "../inventory/TableCard.hpp"
 
 using namespace std;
 
@@ -16,8 +17,8 @@ class Command {
     public:
         Command(string, string);            // user defined ctor
 
-        virtual void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
-        virtual bool continueToNextPlayer();
+        virtual void execute(TableCard& tablecard, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
+        virtual bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
 #endif

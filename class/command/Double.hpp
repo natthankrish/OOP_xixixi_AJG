@@ -8,10 +8,8 @@ class Double : public OrdinaryCommand {
     public:
         Double(string, string);             // user defined ctor
 
-        void execute(List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
-        bool continueToNextPlayer();
-
-
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
+        bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
 #endif

@@ -3,11 +3,14 @@
 MyCard::MyCard(string type, string name) : OrdinaryCommand("ordinary", "double"){   
 }
 
-bool MyCard::continueToNextPlayer(){
+bool MyCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
 
-void MyCard::execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
+void MyCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
+    cout << "---------------------------------------" <<endl;
+    cout << "        == " << "Player " << playeridx << "'s Cards ==        " <<endl;
     listPlayer[playeridx-1].seeCard();
-    cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
+    cout << "---------------------------------------" <<endl;
+    // cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
 }

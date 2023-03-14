@@ -43,11 +43,12 @@ void CardsBank::operator+(const NumberCard& cardItem) {
 
 void CardsBank::operator-(const NumberCard& element) {
     for (auto ptr = this->element.begin(); ptr != this->element.end(); ptr++) {
-        if (ptr->getCardType() == element.getCardType() && ptr->getValue() == element.getValue()) {
+        if (ptr->getNumber() == element.getNumber() && ptr->getColor() == element.getColor()) {
             this->element.erase(ptr);
             return;
         }
     }
+    throw CardNotFoundException();
 }
 
 void CardsBank::bagiKartu(List<Player>& listPlayer) {

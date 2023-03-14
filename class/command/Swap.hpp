@@ -2,12 +2,12 @@
 #define _SWAP_HPP_
 #include "AbilityCommand.hpp"
 
-class Swap : AbilityCommand {
+class Swap : public AbilityCommand {
     public:
         Swap(string, string);             // user defined ctor
 
-        void execute(List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank);
-        bool continueToNextPlayer();
+        void execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending);
+        bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 
 #endif
