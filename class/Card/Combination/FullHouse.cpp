@@ -3,7 +3,6 @@
 
 double FullHouse::getValue(vector<NumberCard> _sortedCards, LookUpTable table){
     vector<NumberCard> sortedCards (_sortedCards);
-    double bestValue = 0;
     
     int bestTripleStartIndex = -1;
     for (int i = 0; i < sortedCards.size() - 2; i++) {
@@ -33,6 +32,7 @@ double FullHouse::getValue(vector<NumberCard> _sortedCards, LookUpTable table){
 
     vector<NumberCard> bestDouble (sortedCards.begin() + bestDoubleIndex, sortedCards.begin() + bestDoubleIndex + 2);
     
+    double bestValue = 0;
     for (int i = 0; i < 2; i++) {
         bestValue += table.getValue(bestDouble[i]) / pow(MAX_VALUE, -4 + i);
     }
@@ -40,7 +40,7 @@ double FullHouse::getValue(vector<NumberCard> _sortedCards, LookUpTable table){
         bestValue += table.getValue(bestTriple[i]) / pow(MAX_VALUE, -4 + i + 2);
     }
 
-    return bestValue;
+    return MAX_VALUE*6 + bestValue;
 
 }
 vector<NumberCard> FullHouse::getCombo(vector<NumberCard> _sortedCards, LookUpTable table){
