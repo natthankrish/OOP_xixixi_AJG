@@ -1,9 +1,11 @@
-#ifndef _CHANGETABLECARD_HPP_
-#define _CHANGETABLECARD_HPP_
+#ifndef _CHANGECARD_HPP_
+#define _CHANGECARD_HPP_
 
 #include "OrdinaryCommand.hpp"
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
+#include "../inventory/InventoryException.hpp"
+#include "CardException.hpp"
 
 // #include "../inventory/Player.cpp"
 // #include "../../utils/ListOfThing.cpp"
@@ -12,18 +14,20 @@
 // #include "../Card/AbilityCard.cpp"
 // #include "../inventory/InventoryHolder.cpp"
 // #include "Command.cpp"
+// // #include "ChangePlayerCard.cpp"
 // #include "../inventory/TableCard.cpp"
 
-class ChangeTableCard : public OrdinaryCommand {
+class ChangeCard : public OrdinaryCommand {
     private:
 
     public:
-        ChangeTableCard(string, string);             // user defined ctor
+        ChangeCard(string, string);             // user defined ctor
 
-        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&);
+        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
         bool continueToNextPlayer(List<Player>&, int, AbilityCardsBank&);
         int stringToInt(string);
         bool isNum(string);
+        bool isInCardsBank();
 };
 
 #endif

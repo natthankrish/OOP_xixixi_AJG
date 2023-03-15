@@ -1,0 +1,5 @@
+11 kuning
+12 hijau
+12 biru
+11 biru
+12 kuning

@@ -5,7 +5,7 @@
 Quarter::Quarter(string type, string name) : AbilityCommand(type, name){
 }
 
-void Quarter::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Quarter::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
         playerCardIsDeactivated(listPlayer, playeridx);
@@ -33,7 +33,7 @@ bool Quarter::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Abil
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Quarter");
         playerCardIsDeactivated(listPlayer, playeridx);
-        AbilityCard temp = listPlayer.getElement(playeridx-1)-listPlayer.getElement(playeridx-1).getAbilityCard(); 
+        AbilityCard temp = listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getAbilityCard(); 
         abilitycardsbank + temp;
         return true;
     } catch (PlayerDoesNotHaveCardException e) {

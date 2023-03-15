@@ -5,19 +5,22 @@
 Reroll::Reroll(string type, string name) : AbilityCommand(type, name){
 }
 
-void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank) {
+void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     try{
         doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
         playerCardIsDeactivated(listPlayer, playeridx);
         //execution
         cout << "Melakukan pembuangan kartu yang sedang dimiliki" << endl;
-        NumberCard card1 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
+        NumberCard card1 = listPlayer.getElement(playeridx-1).getPairOfCards().first;
         NumberCard card2 = listPlayer.getElement(playeridx-1).getPairOfCards().second;
 
-        listPlayer[playeridx-1]+cardsbank.getElementAt(0);
-        cardsbank-cardsbank.getElementAt(0);
-        listPlayer[playeridx-1]+cardsbank.getElementAt(0);
-        cardsbank-cardsbank.getElementAt(0);
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().first;
+        listPlayer[playeridx-1]-listPlayer.getElement(playeridx-1).getPairOfCards().second;
+
+        listPlayer[playeridx-1]+cardsbank.getElementAt(5);
+        cardsbank-cardsbank.getElementAt(5);
+        listPlayer[playeridx-1]+cardsbank.getElementAt(5);
+        cardsbank-cardsbank.getElementAt(5);
 
         cardsbank+card1;
         cardsbank+card2;

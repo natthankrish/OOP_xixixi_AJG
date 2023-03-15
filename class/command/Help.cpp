@@ -8,9 +8,21 @@ bool Help::continueToNextPlayer(List<Player>& listPlayer, int playeridx, Ability
     return false;
 }
 
-void Help::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank){
-    cout << "PUSAT BANTUAN" << endl;
+void Help::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
+    cout << "         === PUSAT BANTUAN ===         " << endl;
     cout << "---------------------------------------" << endl;
-    cout << "Masih under construction" << endl;
+    cout << "Default Command : " <<endl;
+    cout << "=> NEXT" << endl;
+    cout << "=> DOUBLE" << endl;
+    cout << "=> HALF" << endl;
+    cout << "=> MYCARD" << endl;
+    cout << "=> CHECKTABLECARD" << endl;
+    cout << "" << endl;
+    cout << "Ability Card : " << endl;
+    if (listPlayer[playeridx-1].getAbilityCard().getAbilityName() != "none"){
+        cout << "=> " << listPlayer[playeridx-1].getAbilityCard().getAbilityName() <<endl;
+    } else {
+        cout << " Kamu tidak punya ability card." <<endl;
+    }
     cout << "---------------------------------------" << endl;
 }
