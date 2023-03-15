@@ -9,7 +9,7 @@ using namespace std;
 class Straight : public Combination {
     public:
         static double getValue(vector<NumberCard>, LookUpTable);
-        static double getCombo(vector<NumberCard>, LookUpTable);
+        static vector<NumberCard> getCombo(vector<NumberCard>, LookUpTable);
 };
 
 #endif
