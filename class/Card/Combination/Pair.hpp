@@ -9,7 +9,6 @@ using namespace std;
 
 class Pair : Combination{
     public:
-        Pair(vector <NumberCard>);
         static double getValue(vector<NumberCard>, LookUpTable);
         static vector<NumberCard> getCombo(vector<NumberCard>, LookUpTable);
 };
