@@ -11,6 +11,7 @@
 #include "command/Quarter.hpp"
 #include "inventory/AbilityCardsBank.hpp"
 #include "inventory/CardsBank.hpp"
+#include "inventory/TableCard.hpp"
 #include "command/CheckPrize.hpp"
 #include "command/Help.hpp"
 #include "command/MyCard.hpp"
@@ -21,6 +22,7 @@
 #include "command/Abilityless.hpp"
 #include "command/CheckTableCard.hpp"
 #include "command/ChangeCard.hpp"
+#include "../utils/ListOfThing.hpp"
 
 class Round {
     private:

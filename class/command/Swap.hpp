@@ -1,6 +1,7 @@
 #ifndef _SWAP_HPP_
 #define _SWAP_HPP_
 #include "AbilityCommand.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Swap : public AbilityCommand {
     public:

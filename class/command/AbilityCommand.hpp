@@ -3,7 +3,6 @@
 #include "Command.hpp"
 #include "../inventory/Player.hpp"
 #include "../../utils/ListOfThing.hpp"
-#include "../Round.hpp"
 #include "CardException.hpp"
 
 class AbilityCommand : public Command {

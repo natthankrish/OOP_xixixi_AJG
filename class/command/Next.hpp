@@ -1,9 +1,9 @@
 #ifndef _NEXT_HPP_
 #define _NEXT_HPP_
 #include "OrdinaryCommand.hpp"
-#include "../Round.hpp"
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Next : public OrdinaryCommand {
     public:

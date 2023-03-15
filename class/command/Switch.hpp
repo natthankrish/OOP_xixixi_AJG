@@ -1,6 +1,7 @@
 #ifndef _SWITCH_HPP_
 #define _SWITCH_HPP_
 #include "AbilityCommand.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Switch : public AbilityCommand {
     public:

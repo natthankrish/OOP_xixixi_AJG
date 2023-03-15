@@ -1,6 +1,7 @@
 #ifndef _REVERSE_HPP_
 #define _REVERSE_HPP_
 #include "AbilityCommand.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Reverse : public AbilityCommand {
     public:

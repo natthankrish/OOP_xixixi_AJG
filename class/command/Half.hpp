@@ -3,6 +3,7 @@
 #include "OrdinaryCommand.hpp"
 #include "../inventory/AbilityCardsBank.hpp"
 #include "../inventory/CardsBank.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Half : public OrdinaryCommand {
     public:

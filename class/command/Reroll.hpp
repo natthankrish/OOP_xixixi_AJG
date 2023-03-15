@@ -1,6 +1,7 @@
 #ifndef _REROLL_HPP_
 #define _REROLL_HPP_
 #include "AbilityCommand.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Reroll : public AbilityCommand {
     public:

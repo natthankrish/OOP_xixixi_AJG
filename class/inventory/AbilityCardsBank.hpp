@@ -4,6 +4,7 @@
 #include "../Card/AbilityCard.hpp"
 #include "Player.hpp"
 #include <vector>
+#include "../../utils/ListOfThing.hpp"
 
 class AbilityCardsBank {
     private: 

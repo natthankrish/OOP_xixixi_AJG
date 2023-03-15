@@ -1,6 +1,7 @@
 #ifndef _ABILITYLESS_HPP_
 #define _ABILITYLESS_HPP_
 #include "AbilityCommand.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 class Abilityless : public AbilityCommand {
     public:

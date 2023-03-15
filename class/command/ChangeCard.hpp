@@ -6,6 +6,7 @@
 #include "../inventory/CardsBank.hpp"
 #include "../inventory/InventoryException.hpp"
 #include "CardException.hpp"
+#include "../../utils/ListOfThing.hpp"
 
 // #include "../inventory/Player.cpp"
 // #include "../../utils/ListOfThing.cpp"
