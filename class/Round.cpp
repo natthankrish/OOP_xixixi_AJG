@@ -17,7 +17,7 @@ int Round::getIdxCurrentPlayer(){
     return this->idxCurrentPlayer;
 }
 
-void Round::startRound(List<Player>&listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
+void Round::startRound(List<Player>&listPlayer, long long int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
     initializeRound(listPlayer, cardsbank, abilitycardsbank, tablecard);
     string player = "Player " + to_string(this->idxCurrentPlayer);
     displayPlayerTurn(player, listPlayer.getElement(this->idxCurrentPlayer-1).getName());
@@ -86,7 +86,7 @@ void Round::nextPlayer(List<Player>& listPlayer, bool& ascending) {
 
 }
 
-void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
+void Round::processCurrentPlayer(List<Player>& listPlayer, long long int &prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, TableCard& tablecard, bool& ascending) {
     string perintah;
     // this->command->execute(*this, prize);
     

@@ -3,7 +3,20 @@
 
 Player::Player() : InventoryHolder("Player"), playerID(0), name(""), point(0) , havePlayedThisRound(false), abilityCardStatus(true) {};
 
-Player::Player(int ID, string name, int point, bool status): InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false), abilityCardStatus(true) {};
+Player::Player(int ID, string name, long long int point, bool status) : InventoryHolder("Player"), playerID(ID), name(name), point(point), havePlayedThisRound(false), abilityCardStatus(true) {};
+
+Player& Player::operator=(const Player& p){
+    this->playerID = p.playerID;
+    this->name = p.name;
+    this-> point = p.point;
+    this->havePlayedThisRound = p.havePlayedThisRound;
+    this->abilityCard = p.abilityCard;
+    this->abilityCardStatus = p.abilityCardStatus;
+
+    this->playerCards.first = p.playerCards.first;
+    this->playerCards.second = p.playerCards.second;
+    return *this;
+}
 
 bool Player::gethavePlayed() {
     return this->havePlayedThisRound;
@@ -11,10 +24,10 @@ bool Player::gethavePlayed() {
 void Player::sethavePlayed(bool status) {
     this->havePlayedThisRound = status;
 }
-void Player::updatePoint(int point) {
+void Player::updatePoint(long long int point) {
     this->point += point;
 }
-int Player::getPoint() {
+long long int Player::getPoint() {
     return this->point;
 }
 int Player::getPlayerID() {

@@ -2,6 +2,8 @@
 #include "Competition.hpp"
 #include "Game.hpp"
 #include "inventory/InventoryHolder.hpp"
+#include <math.h> 
+
 
 using namespace std;
 
@@ -23,8 +25,39 @@ Competition::Competition() {
 void Competition::startCompetition() {
     // cout << "MEMULAI PERMAINAN" << endl;
     displayTitle("MEMULAI PERMAINAN", "None");
+
     this->currentGame = new Game(1);
-    int maxPoint = currentGame->startGame(*(this->ListOfPlayer));
+    long long int maxPoint = currentGame->startGame(*(this->ListOfPlayer));
+    int i = 2;
+    while (maxPoint < pow(2, 32)) {
+        this->currentGame = new Game(i);
+        maxPoint = currentGame->startGame(*(this->ListOfPlayer));
+        i++;
+    }
+    
+    // sorting
+    int a = 0;
+    for (int j = 0; j < ListOfPlayer->getNeff(); j++) {
+        long long int max = ListOfPlayer->getElement(j).getPoint();
+        int idxMax = j;
+        for (int k = j; k < ListOfPlayer->getNeff(); k++) {
+            if (max < ListOfPlayer->getElement(k).getPoint()){
+                max = ListOfPlayer->getElement(k).getPoint();
+                idxMax = k;
+            }
+        }
+        Player temp;
+        temp = ListOfPlayer->getElement(j);  
+        ListOfPlayer->setElementAt(j,  ListOfPlayer->getElement(idxMax));
+        ListOfPlayer->setElementAt(idxMax, temp);
+    } 
+
+    cout << "Permainan berakhir." << endl;
+    displayTitle("Leaderboard", "None");
+    for(int x = 1; x <= ListOfPlayer->getNeff(); x++) {
+        cout << x << ". " << ListOfPlayer->getElement(x-1).getName() << ": " << ListOfPlayer->getElement(x-1).getPoint() << endl;
+    }
+    cout << "Permainan dimenangkan oleh " << ListOfPlayer->getElement(0).getName() << "." << endl;
 }
 
 void Competition::displayTitle(string title, string subtitle){

@@ -10,7 +10,7 @@ ChangeCard::ChangeCard(string type, string name) : OrdinaryCommand("ordinary", "
 bool ChangeCard::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     return false;
 }
-void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
+void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, long long int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending){
     string filename;
     cout << "Masukkan nama file card player dengan ekstensi .txt: ";
     cin >> filename;
@@ -376,7 +376,7 @@ bool ChangeCard::isNum(string word) {
 
 
 //     TableCard tablecard;
-//     int prize = 0;
+//     long long int prize = 0;
 //     // bagi ability 
 //     // checking
 //     // cardsbank.bagiKartu(*ListOfPlayer);

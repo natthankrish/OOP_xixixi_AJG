@@ -6,6 +6,18 @@
 #include <vector>
 #include "inventory/CardsBank.hpp"
 #include "inventory/AbilityCardsBank.hpp"
+#include "Card/Combination/Combination.hpp"
+#include "Card/Combination/High.hpp"
+#include "Card/Combination/Pair.hpp"
+#include "Card/Combination/TwoPair.hpp"
+#include "Card/Combination/Flush.hpp"
+#include "Card/Combination/ThreeOfKind.hpp"
+#include "Card/Combination/FourOfKind.hpp"
+#include "Card/Combination/FullHouse.hpp"
+#include "Card/Combination/Straight.hpp"
+#include "Card/Combination/StraightFlush.hpp"
+#include "Card/LookupTable.hpp"
+#include "../utils/sort.hpp"
 
 using namespace std;
 
@@ -13,8 +25,8 @@ class Game {
     private:
         Round* round;
         int gameID;
-        int prize;
-        int maxPlayerPoint;
+        long long int prize;
+        long long int maxPlayerPoint;
         CardsBank cardsBank;
         AbilityCardsBank abilityCardsBank;
         TableCard tablecard;

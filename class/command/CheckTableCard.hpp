@@ -12,7 +12,7 @@ class CheckTableCard : public OrdinaryCommand {
         CheckTableCard(string, string);
 
         bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
-        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
+        void execute(TableCard&, List<Player>&, int, long long int&, CardsBank&, AbilityCardsBank&, bool&);
 };
 
 #endif

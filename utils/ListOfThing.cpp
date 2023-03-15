@@ -13,6 +13,10 @@ template <class T>
 T List<T>::getElement(int index) {
     return this->buffer[index];
 }
+template <class T>
+void List<T>::setElementAt(int index, T element) {
+    this->buffer[index] = element;
+}
 
 template <class T>
 bool List<T>::isEmptyList() {

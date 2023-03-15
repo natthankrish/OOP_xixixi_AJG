@@ -6,7 +6,7 @@
 class Abilityless : public AbilityCommand {
     public:
         Abilityless(string, string);                // user defined ctor
-        void execute(TableCard&, List<Player>& listPlayer, int playeridx, int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending);
+        void execute(TableCard&, List<Player>& listPlayer, int playeridx, long long int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending);
         bool continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank);
 };
 

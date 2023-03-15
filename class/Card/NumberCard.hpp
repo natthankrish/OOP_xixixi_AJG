@@ -10,6 +10,7 @@ class NumberCard : public Card {
     public:
         NumberCard();
         NumberCard(int, string);
+        NumberCard& operator=(const NumberCard& nc);
         int getNumber() const;
         void setNumber(int);
         string getColor() const;

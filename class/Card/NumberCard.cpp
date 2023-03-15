@@ -9,6 +9,12 @@ NumberCard::NumberCard(): number(-1), Card(){
 NumberCard::NumberCard(int number, string color): number(number), color(color), Card() {
 }
 
+NumberCard& NumberCard::operator=(const NumberCard& nc){
+    this->number = nc.number;
+    this->color = nc.number;
+    return *this;
+}
+
 int NumberCard::getNumber() const {
     return this->number;
 }

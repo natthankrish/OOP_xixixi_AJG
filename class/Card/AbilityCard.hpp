@@ -12,6 +12,7 @@ class AbilityCard : public Card {
     public:
         AbilityCard();
         AbilityCard(string);
+        AbilityCard& operator=(const AbilityCard& ac);
         string getAbilityName();
         void setAbilityName(string);
         void useCard();

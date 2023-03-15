@@ -17,6 +17,7 @@ class List {
         bool isEmptyList();
         int getSize();
         int getNeff();
+        void setElementAt(int, T);
         bool isElement(T);
         void insertFirst(T);
         void insertAt(T, int);

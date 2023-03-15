@@ -35,11 +35,11 @@ class Round {
         // friend ordinaryCommand;
         Round(int,int);
         void nextPlayer(List<Player>&, bool&);
-        void processCurrentPlayer(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
+        void processCurrentPlayer(List<Player>&, long long int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
         void initializeRound(List<Player>&, CardsBank&, AbilityCardsBank&, TableCard&);
         int getRoundID();
         int getIdxCurrentPlayer();
-        void startRound(List<Player>&, int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
+        void startRound(List<Player>&, long long int&, CardsBank&, AbilityCardsBank&, TableCard&, bool&);
         string capitalize(string command);
         void displayTitle(string title, string subtitle);
         void displayPlayerTurn (string player, string name);

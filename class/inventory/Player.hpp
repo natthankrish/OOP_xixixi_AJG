@@ -10,7 +10,7 @@ class Player : public InventoryHolder {
     private:
         int playerID;
         string name;
-        int point;
+        long long int point;
         bool havePlayedThisRound;
         AbilityCard abilityCard;
         bool abilityCardStatus;
@@ -18,11 +18,12 @@ class Player : public InventoryHolder {
         // Kombo bestKombo
     public:
         Player();
-        Player(int, string, int, bool);
+        Player(int, string, long long int, bool);
+        Player& operator=(const Player&);
         bool gethavePlayed();
         void sethavePlayed(bool);
-        void updatePoint(int point);
-        int getPoint();
+        void updatePoint(long long int point);
+        long long int getPoint();
         int getPlayerID();
         string getName();
         void setName(string);

@@ -21,8 +21,36 @@ int Game::startGame(List<Player>& listPlayer) {
         round->startRound(listPlayer, this->prize, this->cardsBank, this->abilityCardsBank, this->tablecard, this->ascending);
     }
     
-    displayTitle("PERMAINAN SELESAI", "None");
-    return 0;
+    // pushing table card 
+    vector<NumberCard> tempcard;
+    while (tablecard.getCard().size() > 0) {
+        tempcard.push_back(tablecard.getCard()[0]);
+        tablecard - tablecard.getCard()[0];
+    }
+
+    LookUpTable table;
+
+    for (int i = 0; i < listPlayer.getNeff(); i++) {
+        tempcard.push_back(listPlayer.getElement(i).getPairOfCards().first);
+        tempcard.push_back(listPlayer.getElement(i).getPairOfCards().second);
+        
+        int bestCombo = 0;
+        SortVector::sortByNumber(tempcard);
+        if (StraightFlush::getValue(tempcard, table) > bestCombo){
+            bestCombo = StraightFlush::getValue(tempcard, table); 
+        } else if (Flush::getValue(tempcard, table) > bestCombo) {
+            bestCombo = Flush::getValue(tempcard, table); 
+        }
+    }
+
+
+    long long int maxPoint = listPlayer[0].getPoint();
+    for (int i = 1 ; i < listPlayer.getNeff(); i++) {
+        if(listPlayer.getElement(i).getPoint() >= maxPoint) {
+            maxPoint = listPlayer.getElement(i).getPoint();
+        }
+    }
+    return maxPoint;
 }
     
 void Game::NextRound() {

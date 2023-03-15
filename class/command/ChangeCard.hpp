@@ -24,7 +24,7 @@ class ChangeCard : public OrdinaryCommand {
     public:
         ChangeCard(string, string);             // user defined ctor
 
-        void execute(TableCard&, List<Player>&, int, int&, CardsBank&, AbilityCardsBank&, bool&);
+        void execute(TableCard&, List<Player>&, int, long long int&, CardsBank&, AbilityCardsBank&, bool&);
         bool continueToNextPlayer(List<Player>&, int, AbilityCardsBank&);
         int stringToInt(string);
         bool isNum(string);

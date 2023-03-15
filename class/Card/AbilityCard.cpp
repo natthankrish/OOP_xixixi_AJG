@@ -9,6 +9,10 @@ AbilityCard::AbilityCard(string name): abilityName(name) {
 
 }
 
+AbilityCard& AbilityCard::operator=(const AbilityCard& ac){
+    this->abilityName = ac.abilityName;
+}
+
 string AbilityCard::getAbilityName(){
     return this->abilityName;
 }
