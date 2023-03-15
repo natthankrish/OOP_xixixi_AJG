@@ -21,6 +21,20 @@ string NumberCard::getColor() const {
     return this->color;
 }
 
+int NumberCard::getColorWeight() const {
+    if (this->color == "hijau") {
+        return 0;
+    } else if (this->color == "biru") {
+        return 1;
+    } else if (this->color == "kuning") {
+        return 2;
+    } else if (this->color == "merah") {
+        return 3;
+    } else {
+        return -1;
+    }
+}
+
 void NumberCard::setColor(string color) {
     this->color = color;
 }

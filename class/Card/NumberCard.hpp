@@ -13,6 +13,7 @@ class NumberCard : public Card {
         int getNumber() const;
         void setNumber(int);
         string getColor() const;
+        int getColorWeight() const;
         void setColor(string);
         bool operator==(const NumberCard&);
         bool operator!=(const NumberCard&);
