@@ -1,7 +1,7 @@
-1 hijau
-2 hijau
-3 hijau
-4 hijau
+11 hijau
+1 merah
+5 hijau
+2 merah
 5 merah
 6 merah
 7 merah

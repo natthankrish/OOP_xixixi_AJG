@@ -4,32 +4,36 @@
 
 double Straight::getValue(vector<NumberCard> sortedCards, LookUpTable table) {
     vector<NumberCard> bestCombo;
-    int walker = sortedCards.size() - 1;
-    while (walker >= 0 && bestCombo.size() < 5) {
-        if (bestCombo.size() == 0) {
-            bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
-        } else {
-            if (!(bestCombo.front().getNumber() == sortedCards[walker].getNumber())) {
-                if (bestCombo.front().getNumber() - sortedCards[walker].getNumber() == 1) {
-                    bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
-                } else {
-                    bestCombo.clear();
-                    bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
-                }    
-            }
-        }
-        walker--;
-    }
+    if (sortedCards.size() >= 5) {
 
-    if (bestCombo.size() == 5) {
-        double bestValue = 0;
-        for (int j = 0; j < 5; j++) {
-            bestValue += table.getValue(bestCombo[j]) * (pow(MAX_VALUE, -5 + j));
+        int walker = sortedCards.size() - 1;
+        while (walker >= 0 && bestCombo.size() < 5) {
+            if (bestCombo.size() == 0) {
+                bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
+            } else {
+                if (!(bestCombo.front().getNumber() == sortedCards[walker].getNumber())) {
+                    if (bestCombo.front().getNumber() - sortedCards[walker].getNumber() == 1) {
+                        bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
+                    } else {
+                        bestCombo.clear();
+                        bestCombo.insert(bestCombo.begin(), sortedCards[walker]);
+                    }    
+                }
+            }
+            walker--;
         }
-        return MAX_VALUE*4 + bestValue;
-    } else {
-        return 0;
+
+        if (bestCombo.size() == 5) {
+            double bestValue = 0;
+            for (int j = 0; j < 5; j++) {
+                bestValue += table.getValue(bestCombo[j]) * (pow(MAX_VALUE, -5 + j));
+            }
+            return (MAX_VALUE + bestValue) * 40;
+        } else {
+            return 0;
+        }
     }
+    return 0;
     
 }
 

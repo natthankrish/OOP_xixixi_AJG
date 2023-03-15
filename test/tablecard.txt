@@ -1,5 +1,5 @@
-11 kuning
-12 hijau
-12 biru
-11 biru
-12 kuning
+6 hijau
+7 hijau
+8 hijau
+9 hijau
+10 hijau

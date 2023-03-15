@@ -4,6 +4,7 @@
 #include "../utils/ListOfThing.hpp"
 #include "Round.hpp"
 #include <vector>
+#include <algorithm>
 #include "inventory/CardsBank.hpp"
 #include "inventory/AbilityCardsBank.hpp"
 #include "Card/Combination/Combination.hpp"
