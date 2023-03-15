@@ -131,7 +131,17 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, int &prize, CardsBank
             this->command = new Command("none", "none");
         }
 
-        this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank, ascending);
+        try {
+            this->command->execute(tablecard, listPlayer, this->getIdxCurrentPlayer(), prize, cardsbank, abilitycardsbank, ascending);
+        } catch (ChangeTableCardFailed e) {
+            cout << e.what() << endl;
+        } catch (ChangePlayerCardFailed e) {
+            cout << e.what() << endl;
+        } catch (TableCardDoNotMatch e) {
+            cout << e.what() << endl;
+        } catch (PlayerCardDoNotMatch e) {
+            cout << e.what() << endl;
+        }
         nextPerson = this->command->continueToNextPlayer(listPlayer, this->getIdxCurrentPlayer(), abilitycardsbank);
         //listPlayer[this->getIdxCurrentPlayer()-1].sethavePlayed(true);
     }
