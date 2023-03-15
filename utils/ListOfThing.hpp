@@ -28,4 +28,5 @@ class List {
         T getMaxElement();
 };
 
+#include "ListOfThing.cpp"
 #endif

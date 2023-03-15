@@ -8,7 +8,7 @@ CLASS4 := $(wildcard utils/*.cpp)
 	  g++ -c $< -o $@
 
 main: 
-	g++ $(CLASS4) $(CLASS) $(CLASS2) $(CLASS3) main.cpp -o $@.exe
+	g++ $(CLASS) $(CLASS2) $(CLASS3) main.cpp -o $@.exe
 
 clean: 
 	rm *.exe
