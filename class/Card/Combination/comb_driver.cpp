@@ -53,6 +53,8 @@ int main() {
     vector<NumberCard> deck2;
     vector<NumberCard> deck3;
     vector<NumberCard> deck4;
+    vector<NumberCard> deckA;
+    vector<NumberCard> deckB;
     
     
     deck1.push_back(NumberCard(5, "merah"));
@@ -62,6 +64,7 @@ int main() {
     deck1.push_back(NumberCard(5, "kuning"));
     deck1.push_back(NumberCard(2, "kuning"));
     deck1.push_back(NumberCard(2, "kuning"));
+    
     cout << "_______SORTING_________" << endl;
     sortByNumber(deck1);
     cout << "Sort by Number: ";
@@ -77,6 +80,7 @@ int main() {
     // {"hijau", "biru", "kuning", "merah"}
     cout << "_______HIGH__________" << endl;
     /* WAJIB SORTING BY NUMBER */
+
     sortByNumber(deck1);
     cout << "Example Problem: ";
     prettyPrint(deck1);
@@ -86,6 +90,12 @@ int main() {
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
     cout << endl;
+
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckB.push_back(NumberCard(13, "merah"));
+    cout << "lower bound: " << High::getValue(deckA, table) << endl;
+    cout << "upper bound: " << High::getValue(deckB, table) << endl;
+
 
     cout << "______PAIR________" << endl;
     cout << "Example Problem: ";
@@ -97,6 +107,17 @@ int main() {
     cout << "value: " << resultValue << endl;
     cout << endl;
 
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(1, "biru"));
+    deckB.push_back(NumberCard(13, "kuning"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << Pair::getValue(deckA, table) << endl;
+    cout << "upper bound: " << Pair::getValue(deckB, table) << endl;
+
     cout << "______TWOPAIR________" << endl;
     cout << "Example Problem: ";
     prettyPrint(deck1);
@@ -107,6 +128,21 @@ int main() {
     cout << "value: " << resultValue << endl;
     cout << endl;
 
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(1, "biru"));
+    deckA.push_back(NumberCard(1, "kuning"));
+    deckA.push_back(NumberCard(1, "merah"));
+    deckB.push_back(NumberCard(13, "hijau"));
+    deckB.push_back(NumberCard(13, "biru"));
+    deckB.push_back(NumberCard(13, "kuning"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << TwoPair::getValue(deckA, table) << endl;
+    cout << "upper bound: " << TwoPair::getValue(deckB, table) << endl;
+
     cout << "______THREEOFKIND_______" << endl;
     cout << "Example Problem: ";
     prettyPrint(deck1);
@@ -116,6 +152,18 @@ int main() {
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
     cout << endl;
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(1, "biru"));
+    deckA.push_back(NumberCard(1, "kuning"));
+    deckB.push_back(NumberCard(13, "biru"));
+    deckB.push_back(NumberCard(13, "kuning"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << ThreeOfKind::getValue(deckA, table) << endl;
+    cout << "upper bound: " << ThreeOfKind::getValue(deckB, table) << endl;
 
 
     deck3.push_back(NumberCard(6, "merah"));
@@ -135,6 +183,22 @@ int main() {
     cout << "Straight ";
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(2, "hijau"));
+    deckA.push_back(NumberCard(3, "hijau"));
+    deckA.push_back(NumberCard(4, "hijau"));
+    deckA.push_back(NumberCard(5, "hijau"));
+    deckB.push_back(NumberCard(9, "merah"));
+    deckB.push_back(NumberCard(10, "merah"));
+    deckB.push_back(NumberCard(11, "merah"));
+    deckB.push_back(NumberCard(12, "merah"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << Straight::getValue(deckA, table) << endl;
+    cout << "upper bound: " << Straight::getValue(deckB, table) << endl;
 
     
     deck4.push_back(NumberCard(10, "merah"));
@@ -158,6 +222,23 @@ int main() {
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
 
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(2, "hijau"));
+    deckA.push_back(NumberCard(3, "hijau"));
+    deckA.push_back(NumberCard(4, "hijau"));
+    deckA.push_back(NumberCard(5, "hijau"));
+    deckB.push_back(NumberCard(9, "merah"));
+    deckB.push_back(NumberCard(10, "merah"));
+    deckB.push_back(NumberCard(11, "merah"));
+    deckB.push_back(NumberCard(12, "merah"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << Flush::getValue(deckA, table) << endl;
+    cout << "upper bound: " << Flush::getValue(deckB, table) << endl;
+
     cout << "______FOUROFKIND_______" << endl;
     cout << "Example Problem: ";
     prettyPrint(deck1);
@@ -166,6 +247,21 @@ int main() {
     cout << "FourOfKind ";
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
+
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(1, "biru"));
+    deckA.push_back(NumberCard(1, "kuning"));
+    deckA.push_back(NumberCard(1, "merah"));
+    deckB.push_back(NumberCard(13, "hijau"));
+    deckB.push_back(NumberCard(13, "biru"));
+    deckB.push_back(NumberCard(13, "kuning"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByNumber(deckA);
+    sortByNumber(deckB);
+    cout << "lower bound: " << FourOfKind::getValue(deckA, table) << endl;
+    cout << "upper bound: " << FourOfKind::getValue(deckB, table) << endl;
 
 
     vector <NumberCard> deck5;
@@ -186,6 +282,23 @@ int main() {
     cout << "StraightFlush ";
     prettyPrint(resultCombo);
     cout << "value: " << resultValue << endl;
+    deckA.clear();
+    deckB.clear();
+    deckA.push_back(NumberCard(1, "hijau"));
+    deckA.push_back(NumberCard(2, "hijau"));
+    deckA.push_back(NumberCard(3, "hijau"));
+    deckA.push_back(NumberCard(4, "hijau"));
+    deckA.push_back(NumberCard(5, "hijau"));
+    
+    deckB.push_back(NumberCard(9, "merah"));
+    deckB.push_back(NumberCard(10, "merah"));
+    deckB.push_back(NumberCard(11, "merah"));
+    deckB.push_back(NumberCard(12, "merah"));
+    deckB.push_back(NumberCard(13, "merah"));
+    sortByColorNumber(deckA);
+    sortByColorNumber(deckB);
+    cout << "lower bound: " << StraightFlush::getValue(deckA, table) << endl;
+    cout << "upper bound: " << StraightFlush::getValue(deckB, table) << endl;
     
 
     
