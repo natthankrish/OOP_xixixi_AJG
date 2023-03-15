@@ -7,8 +7,11 @@ CLASS4 := $(wildcard utils/*.cpp)
 %.o : %.cpp
 	  g++ -c $< -o $@
 
-main: 
+main_window: 
+	g++ $(CLASS) $(CLASS2) $(CLASS3) utils/sort.cpp main.cpp -o $@.exe
+
+main_linux: 
 	g++ $(CLASS) $(CLASS2) $(CLASS3) utils/sort.cpp main.cpp -o $@
 
 clean: 
-	rm *.exe
+	rm *.exe main

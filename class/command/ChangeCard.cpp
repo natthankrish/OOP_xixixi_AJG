@@ -76,7 +76,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     }
 
     // cout << "temp size: " << tempp.size() << endl;
-    cardsbank.seeCard();
+    // cardsbank.seeCard();
     // bagi ulang dengan spesifikasi dari file
     count = 0;
     int counttemp = 0;

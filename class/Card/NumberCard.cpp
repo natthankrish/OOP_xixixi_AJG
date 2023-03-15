@@ -11,7 +11,7 @@ NumberCard::NumberCard(int number, string color): number(number), color(color), 
 
 NumberCard& NumberCard::operator=(const NumberCard& nc){
     this->number = nc.number;
-    this->color = nc.number;
+    this->color = nc.color;
     return *this;
 }
 

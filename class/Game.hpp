@@ -16,7 +16,7 @@
 #include "Card/Combination/FullHouse.hpp"
 #include "Card/Combination/Straight.hpp"
 #include "Card/Combination/StraightFlush.hpp"
-#include "Card/LookupTable.hpp"
+#include "Card/LookUpTable.hpp"
 #include "../utils/sort.hpp"
 
 using namespace std;

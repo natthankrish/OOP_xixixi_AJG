@@ -1,6 +1,6 @@
 #include <map>
 #include <vector>
-#include "LookupTable.hpp"
+#include "LookUpTable.hpp"
 
 
 LookUpTable::LookUpTable() {

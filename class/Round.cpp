@@ -111,6 +111,8 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, long long int &prize,
             this->command = new MyCard("ordinary", "mycard");
         } else if (perintah == "CHECKTABLECARD") {
             this->command = new CheckTableCard("ordinary", "checktablecard");
+        } else if (perintah == "CHECKPOINT") {
+            this->command = new CheckPoint("ordinary", "checkpoint");
         } else if (perintah == "CHANGECARD") {
             this->command = new ChangeCard("ordinary", "changenum");
         } else if (perintah == "QUADRUPLE") {
