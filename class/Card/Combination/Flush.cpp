@@ -31,4 +31,6 @@ vector<NumberCard> Flush::getCombo(vector<NumberCard> sortedCards, LookUpTable t
             return bestCombo;
         }
     }
+    return vector<NumberCard>();
+
 }

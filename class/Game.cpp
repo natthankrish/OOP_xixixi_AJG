@@ -35,21 +35,48 @@ int Game::startGame(List<Player>& listPlayer) {
         tempcard.push_back(listPlayer.getElement(i).getPairOfCards().second);
         
         int bestCombo = 0;
-        SortVector::sortByNumber(tempcard);
+        SortVector::sortByColorNumber(tempcard);
         if (StraightFlush::getValue(tempcard, table) > bestCombo){
             bestCombo = StraightFlush::getValue(tempcard, table); 
         } else if (Flush::getValue(tempcard, table) > bestCombo) {
             bestCombo = Flush::getValue(tempcard, table); 
         }
+
+        SortVector::sortByNumber(tempcard);
+        if (FourOfKind::getValue(tempcard, table) > bestCombo) {
+            bestCombo = FourOfKind::getValue(tempcard, table);
+        }
+        else if (FullHouse::getValue(tempcard, table) > bestCombo) {
+            bestCombo = FullHouse::getValue(tempcard, table);
+        }
+        else if (Flush::getValue(tempcard, table) > bestCombo) {
+            bestCombo = Flush::getValue(tempcard, table);
+        }
+        else if (Straight::getValue(tempcard, table) > bestCombo) {
+            bestCombo = Straight::getValue(tempcard, table);
+        }
+        else if (ThreeOfKind::getValue(tempcard, table) > bestCombo) {
+            bestCombo = ThreeOfKind::getValue(tempcard, table);
+        }
+        else if (TwoPair::getValue(tempcard, table) > bestCombo) {
+            bestCombo = TwoPair::getValue(tempcard, table);
+        }
+        else if (Pair::getValue(tempcard, table) > bestCombo) {
+            bestCombo = Pair::getValue(tempcard, table);
+        }
+        listPlayer[i].updatePoint(bestCombo);
     }
 
 
+    int index;
     long long int maxPoint = listPlayer[0].getPoint();
     for (int i = 1 ; i < listPlayer.getNeff(); i++) {
         if(listPlayer.getElement(i).getPoint() >= maxPoint) {
             maxPoint = listPlayer.getElement(i).getPoint();
+            index = i;
         }
     }
+    listPlayer[index].updatePoint(this->prize);
     return maxPoint;
 }
     

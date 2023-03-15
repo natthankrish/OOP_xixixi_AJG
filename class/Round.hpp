@@ -22,6 +22,7 @@
 #include "command/Abilityless.hpp"
 #include "command/CheckTableCard.hpp"
 #include "command/ChangeCard.hpp"
+#include "command/CheckPoint.hpp"
 #include "../utils/ListOfThing.hpp"
 
 class Round {

@@ -15,12 +15,13 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     cout << "Masukkan nama file card player dengan ekstensi .txt: ";
     cin >> filename;
 
-    ifstream infile(filename); // sementara
+    string path = "test/";
+    ifstream infile(path + filename); // sementara
     while (infile.fail()) {
-        cout << "Failed to open file: " << filename << endl;
+        cout << "Failed to open file: " << path << filename << endl;
         cout << "Masukkan ulang nama file card player dengan ekstensi .txt: ";
         cin >> filename;
-        infile = ifstream(filename); // sementara
+        infile = ifstream(path + filename); // sementara
     } 
     
     string word;
@@ -75,7 +76,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     }
 
     // cout << "temp size: " << tempp.size() << endl;
-    // cout << "Cardsbank size: " << cardsbank.getElement().size() << endl;
+    cardsbank.seeCard();
     // bagi ulang dengan spesifikasi dari file
     count = 0;
     int counttemp = 0;
@@ -91,12 +92,12 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
                 while (cardsbank.getElement().size() > 0) {
                     cardsbank - cardsbank.getElementAt(0);
                 }
-                cout << cardsbank.getElement().size() << endl;
+                // cout << cardsbank.getElement().size() << endl;
                 // assigning it back to the old cards bank
                 for (int i = 0; i < oldcardsbank.size(); i++) {
                     cardsbank + oldcardsbank[i];
                 }
-                cout << "size now: " << cardsbank.getElement().size() << endl;
+                // cout << "size now: " << cardsbank.getElement().size() << endl;
 
                 // clearing player card
                 int countplayer = 0;
@@ -116,7 +117,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
                     }
                     countplayer++;
                 }
-                cout << listPlayer[0].getPairOfCards().first.getNumber() << " " << listPlayer[0].getPairOfCards().first.getColor() << endl; 
+                // cout << listPlayer[0].getPairOfCards().first.getNumber() << " " << listPlayer[0].getPairOfCards().first.getColor() << endl; 
                 throw ChangePlayerCardFailed();
 
             }
@@ -132,12 +133,12 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     cout << "Masukkan nama file ability card player dengan ekstensi .txt: ";
     cin >> filename;
 
-    ifstream infile2(filename); // sementara
+    ifstream infile2(path + filename); // sementara
     while (infile2.fail()) {
-        cout << "Failed to open file: " << filename << endl;
+        cout << "Failed to open file: " << path << filename << endl;
         cout << "Masukkan ulang nama file ability card player dengan ekstensi .txt: ";
         cin >> filename;
-        infile2 = ifstream(filename);
+        infile2 = ifstream(path + filename);
     } 
 
     // taking all of the ability cards from player
@@ -188,12 +189,12 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     cout << "Masukkan nama file table card dengan ekstensi .txt: ";
     cin >> filename;
 
-    ifstream infile3(filename); // sementara
+    ifstream infile3(path + filename); // sementara
     while (infile3.fail()) {
-        cout << "Failed to open file: " << filename << endl;
+        cout << "Failed to open file: " << path << filename << endl;
         cout << "Masukkan ulang nama file table card dengan ekstensi .txt: ";
         cin >> filename;
-        infile3 = ifstream(filename);
+        infile3 = ifstream(path + filename);
     }
    
     count = 0;
@@ -236,7 +237,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             while (cardsbank.getElement().size() > 0) {
                 cardsbank - cardsbank.getElementAt(0);
             }
-            cout << cardsbank.getElement().size() << endl;
+            // cout << cardsbank.getElement().size() << endl;
             // assigning it back to the old cards bank
             for (int i = 0; i < oldcardsbank2.size(); i++) {
                 cardsbank + oldcardsbank2[i];
@@ -269,7 +270,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             while (cardsbank.getElement().size() > 0) {
                 cardsbank - cardsbank.getElementAt(0);
             }
-            cout << cardsbank.getElement().size() << endl;
+            // cout << cardsbank.getElement().size() << endl;
             // assigning it back to the old cards bank
             for (int i = 0; i < oldcardsbank2.size(); i++) {
                 cardsbank + oldcardsbank2[i];

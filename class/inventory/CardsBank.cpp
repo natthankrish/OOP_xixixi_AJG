@@ -42,13 +42,18 @@ void CardsBank::operator+(const NumberCard& cardItem) {
 }
 
 void CardsBank::operator-(const NumberCard& element) {
+    bool found = false;
     for (auto ptr = this->element.begin(); ptr != this->element.end(); ptr++) {
         if (ptr->getNumber() == element.getNumber() && ptr->getColor() == element.getColor()) {
             this->element.erase(ptr);
-            return;
+            cout << "hello" << endl;
+            found = true;
+            break;
         }
     }
-    throw CardNotFoundException();
+    if (!found) {
+        throw CardNotFoundException();
+    }
 }
 
 void CardsBank::bagiKartu(List<Player>& listPlayer) {

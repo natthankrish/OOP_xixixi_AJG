@@ -18,6 +18,7 @@ void Help::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx
     cout << "=> MYCARD" << endl;
     cout << "=> CHECKTABLECARD" << endl;
     cout << "=> CHANGECARD" << endl;
+    cout << "=> CHECKPOINT" << endl;
     cout << "" << endl;
     cout << "Ability Card : " << endl;
     if (listPlayer[playeridx-1].getAbilityCard().getAbilityName() != "none"){
