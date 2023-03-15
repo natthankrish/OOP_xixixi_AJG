@@ -145,7 +145,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     count = 0;
     while (count < 7) {
         if (listPlayer.getElement(count).getAbilityCard() != AbilityCard()) {
-            cout << "Masuk taking all of the ability cards from player, kartu ability tidak kosong" << endl; 
+            // cout << "Masuk taking all of the ability cards from player, kartu ability tidak kosong" << endl; 
             hasAbilityCard = true;
             AbilityCard temp = listPlayer.getElement(count).getAbilityCard();
             abilitycardsbank + temp;          
@@ -158,7 +158,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     if (hasAbilityCard) {
         count = 0; 
         while (count < 7 && infile2 >> word) {
-            cout << word << endl;
+            // cout << word << endl;
             AbilityCard temp(word);
             listPlayer[count] + temp; 
             abilitycardsbank - temp;
@@ -261,7 +261,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     }
 
     // placing the rest of the table card
-    for (int i = countTableCard; i < 5; i++) {
+    for (int i = 4; i >= countTableCard; i++) {
         // placing the rest of the cards on top of the cardsbank
         try {
             cardsbank - temp[i];
@@ -274,7 +274,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             for (int i = 0; i < oldcardsbank2.size(); i++) {
                 cardsbank + oldcardsbank2[i];
             }
-            cout << "size now: " << cardsbank.getElement().size() << endl;
+            // cout << "size now: " << cardsbank.getElement().size() << endl;
             // clearing table card 
             while (tablecard.getCard().size() > 0) {
                 // cout << "something" << endl;
@@ -284,6 +284,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
             for (int i = 0; i < temp0.size(); i++) {
                 tablecard + temp0[i];
             }
+            throw ChangeTableCardFailed();
         }
         cardsbank + temp[i];
     }

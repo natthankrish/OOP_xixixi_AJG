@@ -42,14 +42,16 @@ void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank, Abili
     } else if (this->roundID == 2) {
         displayTitle("RONDE 2", "SAATNYA PEMBAGIAN ABILITY");
         abilitycardsbank.bagiAbility(listPlayer);
-        tablecard + cardsbank.getElementAt(0);
-        cardsbank - cardsbank.getElementAt(0);
+        int idx = cardsbank.getElement().size() - 1;
+        tablecard + cardsbank.getElementAt(idx);
+        cardsbank - cardsbank.getElementAt(idx);
         // cout << cardsbank.getElement().size() <<endl;
     } else {
         string round = "RONDE " + to_string(this->roundID);
         displayTitle(round, "None");
-        tablecard + cardsbank.getElementAt(0);
-        cardsbank - cardsbank.getElementAt(0);
+        int idx = cardsbank.getElement().size() - 1;
+        tablecard + cardsbank.getElementAt(idx);
+        cardsbank - cardsbank.getElementAt(idx);
         // cout << cardsbank.getElement().size() <<endl;
     }
     cout << "--------------------------------------------------" << endl;
