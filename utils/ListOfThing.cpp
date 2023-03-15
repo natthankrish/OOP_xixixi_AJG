@@ -112,6 +112,11 @@ T& List<T>::operator[] (int index) {
 }
 
 template <class T>
+T List<T>::getElementAt(int index) {
+    return this->buffer[index];
+}
+
+template <class T>
 T List<T>::getMaxElement() {
     if (!isEmptyList()) {
         if (this->neff == 1) {

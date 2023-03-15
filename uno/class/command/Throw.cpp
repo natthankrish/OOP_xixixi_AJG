@@ -31,7 +31,6 @@ void Throw::execute(TableCard& tablecard, List<Player>& listPlayer, int& playeri
                     ptr = listPlayer[playeridx-1].getPlayerCard().begin() + k;
                     i = k;
                 }
-                cout << *ptr << endl;
                 
                 candidate.push_back(temp);
             }
@@ -220,10 +219,14 @@ void Throw::execute(TableCard& tablecard, List<Player>& listPlayer, int& playeri
                         } else {
                             if (ascending) {
                                 playeridx++;
-                                playeridx %= count;
+                                if (playeridx > count) {
+                                    playeridx -= count;
+                                }
                             } else {
                                 playeridx--;
-                                playeridx %= count;
+                                if (playeridx < 1) {
+                                    playeridx += count;
+                                }
                             }
                             cout << "----------------------------------------------------------" << endl;
                             cout << "Giliran player " << playeridx << " (" << listPlayer[playeridx-1].getName() << ") dilewatkan!" << endl;

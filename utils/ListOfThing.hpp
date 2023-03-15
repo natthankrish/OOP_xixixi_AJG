@@ -14,6 +14,7 @@ class List {
         List(int);
         ~List();
         T getElement(int);
+        T getElementAt(int);
         bool isEmptyList();
         int getSize();
         int getNeff();

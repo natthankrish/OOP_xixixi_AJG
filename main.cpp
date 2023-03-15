@@ -3,6 +3,8 @@
 #include "class/Game.hpp"
 #include "class/Round.hpp"
 #include "utils/ListOfThing.hpp"
+#include "utils/sort.hpp"
+#include "utils/Max.hpp"
 #include "class/inventory/Player.hpp"
 #include "class/inventory/InventoryHolder.hpp"
 #include "class/inventory/CardsBank.hpp"

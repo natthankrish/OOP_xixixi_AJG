@@ -20,10 +20,12 @@ class Player : public InventoryHolder {
         Player();
         Player(int, string, long long int, bool);
         Player& operator=(const Player&);
+        bool operator>(const Player&);
+        bool operator<(const Player&);
         bool gethavePlayed();
         void sethavePlayed(bool);
         void updatePoint(long long int point);
-        long long int getPoint();
+        long long int getPoint() const;
         int getPlayerID();
         string getName();
         void setName(string);

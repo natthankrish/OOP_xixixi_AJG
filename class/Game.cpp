@@ -10,7 +10,7 @@ Game::Game(int gameID) {
     this->ascending = true;
 }
 
-int Game::startGame(List<Player>& listPlayer) {
+long long int Game::startGame(List<Player>& listPlayer) {
     string game = "PERMAINAN " + to_string(this->gameID);
     displayTitle(game, "None");
 
@@ -29,7 +29,7 @@ int Game::startGame(List<Player>& listPlayer) {
     }
 
     LookUpTable table;
-
+    vector<int> bestcomboarray;
     for (int i = 0; i < listPlayer.getNeff(); i++) {
         tempcard.push_back(listPlayer.getElement(i).getPairOfCards().first);
         tempcard.push_back(listPlayer.getElement(i).getPairOfCards().second);
@@ -64,20 +64,20 @@ int Game::startGame(List<Player>& listPlayer) {
         else if (Pair::getValue(tempcard, table) > bestCombo) {
             bestCombo = Pair::getValue(tempcard, table);
         }
-        listPlayer[i].updatePoint(bestCombo);
+        bestcomboarray.push_back(bestCombo);
     }
 
 
     int index;
-    long long int maxPoint = listPlayer[0].getPoint();
-    for (int i = 1 ; i < listPlayer.getNeff(); i++) {
-        if(listPlayer.getElement(i).getPoint() >= maxPoint) {
-            maxPoint = listPlayer.getElement(i).getPoint();
+    long long int maxPoint = bestcomboarray[0];
+    for (int i = 1 ; i < bestcomboarray.size(); i++) {
+        if(bestcomboarray[i] >= maxPoint) {
+            maxPoint = bestcomboarray[i];
             index = i;
         }
     }
     listPlayer[index].updatePoint(this->prize);
-    return maxPoint;
+    return getMaxList<Player>(listPlayer).getPoint();
 }
     
 void Game::NextRound() {

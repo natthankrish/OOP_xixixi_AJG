@@ -18,6 +18,20 @@ Player& Player::operator=(const Player& p){
     return *this;
 }
 
+bool Player::operator>(const Player& p) {
+    if (this->getPoint() > p.getPoint()){
+        return true;
+    }
+    return false;
+    
+}
+bool Player::operator<(const Player& p){
+    if (this->getPoint() < p.getPoint()){
+        return true;
+    }
+    return false;
+}
+
 bool Player::gethavePlayed() {
     return this->havePlayedThisRound;
 }
@@ -27,7 +41,7 @@ void Player::sethavePlayed(bool status) {
 void Player::updatePoint(long long int point) {
     this->point += point;
 }
-long long int Player::getPoint() {
+long long int Player::getPoint() const {
     return this->point;
 }
 int Player::getPlayerID() {

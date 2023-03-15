@@ -29,6 +29,7 @@ void Competition::startCompetition() {
     this->currentGame = new Game(1);
     long long int maxPoint = currentGame->startGame(*(this->ListOfPlayer));
     int i = 2;
+    cout << "MaxPoint: " << maxPoint << endl;
     while (maxPoint < pow(2, 32)) {
         this->currentGame = new Game(i);
         maxPoint = currentGame->startGame(*(this->ListOfPlayer));

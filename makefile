@@ -14,4 +14,4 @@ main_linux:
 	g++ $(CLASS) $(CLASS2) $(CLASS3) utils/sort.cpp main.cpp -o $@
 
 clean: 
-	rm *.exe main
+	rm *.exe main_linux

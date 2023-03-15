@@ -18,6 +18,7 @@
 #include "Card/Combination/StraightFlush.hpp"
 #include "Card/LookUpTable.hpp"
 #include "../utils/sort.hpp"
+#include "../utils/Max.hpp"
 
 using namespace std;
 
@@ -34,7 +35,7 @@ class Game {
         
     public:
         Game(int);
-        int startGame(List<Player>&);
+        long long int startGame(List<Player>&);
         void NextRound();
         CardsBank getCardsBank();
         AbilityCardsBank getAbilityCardsBank();

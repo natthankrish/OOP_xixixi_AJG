@@ -91,7 +91,6 @@ void Round::nextPlayer(List<Player>& listPlayer) {
     }
     cout << "----------------------------------------------------------" << endl;
     cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
-
 }
 
 void Round::getCardToPick(List<Player>& listPlayer, CardsBank& cardsbank, TableCard& tablecard) {
