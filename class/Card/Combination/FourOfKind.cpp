@@ -11,7 +11,7 @@ double FourOfKind::getValue(vector<NumberCard> sortedCards, LookUpTable table) {
             vector<NumberCard> bestCombo = vector<NumberCard> (sortedCards.begin() + i - 3, sortedCards.begin() + i + 1);
             double bestValue = 0;
             for (int j = 0; j < 4; j++) {
-                bestValue += table.getValue(sortedCards[j]) * (pow(MAX_VALUE, -3 + j));
+                bestValue += table.getValue(sortedCards[j]) * (pow(MAX_VALUE, -4 + j));
             }
             return MAX_VALUE*6 + bestValue;
         }

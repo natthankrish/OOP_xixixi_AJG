@@ -11,7 +11,7 @@ double Flush::getValue(vector<NumberCard> sortedCards, LookUpTable table){
             vector<NumberCard> bestCombo (sortedCards.begin() + i - 4, sortedCards.begin() + i + 1);
             double bestValue = 0;
             for (int j = 0; j < 5; j++) {
-                bestValue += table.getValue(bestCombo[j]) * (pow(MAX_VALUE, -4 + j));
+                bestValue += table.getValue(bestCombo[j]) * (pow(MAX_VALUE, -5 + j));
             }
             return MAX_VALUE*5 + bestValue;
         }

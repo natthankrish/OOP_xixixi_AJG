@@ -13,11 +13,11 @@ double StraightFlush::getValue(vector<NumberCard> sortedCards, LookUpTable table
                                 sortedCards[i-4].getColor() == sortedCards[i].getColor()  ; 
         if (isStraightFlush) {
             vector<NumberCard> bestCombo = vector<NumberCard> (sortedCards.begin() + i - 4, sortedCards.begin() + i + 1);
-            double bestValue;
+            double bestValue = 0;
             for (int j = 0; j < 5; j++) {
                 bestValue += table.getValue(bestCombo[j]) * (pow(MAX_VALUE, -5 + j));
             }
-            return MAX_VALUE*8 + bestValue;
+            return MAX_VALUE*7 + bestValue;
         }
     }                                     
     return 0;
