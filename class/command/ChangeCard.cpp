@@ -261,7 +261,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     }
 
     // placing the rest of the table card
-    for (int i = 4; i >= countTableCard; i++) {
+    for (int i = 4; i >= countTableCard; i--) {
         // placing the rest of the cards on top of the cardsbank
         try {
             cardsbank - temp[i];
