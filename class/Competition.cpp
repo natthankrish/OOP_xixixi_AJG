@@ -29,7 +29,6 @@ void Competition::startCompetition() {
     this->currentGame = new Game(1);
     long long int maxPoint = currentGame->startGame(*(this->ListOfPlayer));
     int i = 2;
-    cout << "MaxPoint: " << maxPoint << endl;
     while (maxPoint < pow(2, 32)) {
         this->currentGame = new Game(i);
         maxPoint = currentGame->startGame(*(this->ListOfPlayer));
@@ -58,7 +57,8 @@ void Competition::startCompetition() {
     for(int x = 1; x <= ListOfPlayer->getNeff(); x++) {
         cout << x << ". " << ListOfPlayer->getElement(x-1).getName() << ": " << ListOfPlayer->getElement(x-1).getPoint() << endl;
     }
-    cout << "Permainan dimenangkan oleh " << ListOfPlayer->getElement(0).getName() << "." << endl;
+    string pemenang = "Permainan dimenangkan oleh " + ListOfPlayer->getElement(0).getName();
+    displayTitle(pemenang, "None");
 }
 
 void Competition::displayTitle(string title, string subtitle){
