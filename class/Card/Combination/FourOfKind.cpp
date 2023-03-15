@@ -1,53 +1,35 @@
 #include "FourOfKind.hpp"
 #include <cmath>
+#include <iostream>
 
 double FourOfKind::getValue(vector<NumberCard> sortedCards, LookUpTable table) {
-    double bestValue = 0;
-    
-    for (int i = 0; i < sortedCards.size() - 4; i++) {
-        bool isFourOfKind = sortedCards[i + 1].getNumber() == sortedCards[i].getNumber() &&
-                            sortedCards[i + 2].getNumber() == sortedCards[i].getNumber() &&
-                            sortedCards[i + 3].getNumber() == sortedCards[i].getNumber();
-        if (!isFourOfKind) 
-            continue;
-
-        double currentValue = 0;
-        for (int j = 0; j < 4; j++) {
-            currentValue += table.getValue(sortedCards[j]) / (pow(MAX_VALUE, -3 + j));
+    for (int i = sortedCards.size() - 1; i >= 0 + 3; i--) {
+        bool isFourOfKind = sortedCards[i - 1].getNumber() == sortedCards[i].getNumber() &&
+                            sortedCards[i - 2].getNumber() == sortedCards[i].getNumber() &&
+                            sortedCards[i - 3].getNumber() == sortedCards[i].getNumber();
+        if (isFourOfKind) {
+            vector<NumberCard> bestCombo = vector<NumberCard> (sortedCards.begin() + i - 3, sortedCards.begin() + i + 1);
+            double bestValue = 0;
+            for (int j = 0; j < 4; j++) {
+                bestValue += table.getValue(sortedCards[j]) * (pow(MAX_VALUE, -3 + j));
+            }
+            return MAX_VALUE*6 + bestValue;
         }
 
-        bestValue = (currentValue > bestValue) ? currentValue : bestValue;
-
     }
-
-    return bestValue;
+    return 0;
 }
 
 vector<NumberCard> FourOfKind::getCombo(vector<NumberCard> sortedCards, LookUpTable table){
-    double bestValue = 0;
-    vector<NumberCard> bestCombo;
-    
-    for (int i = 0; i < sortedCards.size() - 4; i++) {
-        bool isFourOfKind = sortedCards[i + 1].getNumber() == sortedCards[i].getNumber() &&
-                            sortedCards[i + 2].getNumber() == sortedCards[i].getNumber() &&
-                            sortedCards[i + 3].getNumber() == sortedCards[i].getNumber();
-        if (!isFourOfKind) 
-            continue;
-
-        double currentValue = 0;
-        for (int j = 0; j < 4; j++) {
-            currentValue += table.getValue(sortedCards[j]) / (pow(MAX_VALUE, -3 + j));
-        }
-
-        if(currentValue > bestValue) {
-            bestValue = currentValue;
-            auto first = sortedCards.begin() + i;
-            auto end = sortedCards.begin() + i + 4;
-            bestCombo = vector<NumberCard> (first, end);
-            // sebenernya bisa langsung return
+    for (int i = sortedCards.size() - 1; i >= 0 + 3; i--) {
+        bool isFourOfKind = sortedCards[i - 1].getNumber() == sortedCards[i].getNumber() &&
+                            sortedCards[i - 2].getNumber() == sortedCards[i].getNumber() &&
+                            sortedCards[i - 3].getNumber() == sortedCards[i].getNumber();
+        if (isFourOfKind) {
+            vector<NumberCard> bestCombo = vector<NumberCard> (sortedCards.begin() + i - 3, sortedCards.begin() + i + 1);
+            return bestCombo;
         }
 
     }
-
-    return bestCombo;
+    return vector<NumberCard> ();
 }
