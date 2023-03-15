@@ -1,5 +1,5 @@
-#ifndef HIGH_H
-#define HIGH_H
+#ifndef HIGH_HPP
+#define HIGH_HPP
 
 #include <vector>
 #include "Combination.hpp"
