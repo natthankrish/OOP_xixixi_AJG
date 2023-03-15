@@ -8,16 +8,6 @@
 #include "CardException.hpp"
 #include "../../utils/ListOfThing.hpp"
 
-// #include "../inventory/Player.cpp"
-// #include "../../utils/ListOfThing.cpp"
-// #include "../Card/Card.cpp"
-// #include "../Card/NumberCard.cpp"
-// #include "../Card/AbilityCard.cpp"
-// #include "../inventory/InventoryHolder.cpp"
-// #include "Command.cpp"
-// // #include "ChangePlayerCard.cpp"
-// #include "../inventory/TableCard.cpp"
-
 class ChangeCard : public OrdinaryCommand {
     private:
 

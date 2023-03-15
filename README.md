@@ -25,14 +25,32 @@ Here are the things needed to run the program:
  
 ## **How to Run The Program**
 
-1. Clone this repository </br>
+
+Clone this repository </br>
 ```sh
 git clone https://github.com/natthankrish/OOP_xixixi_AJG.git
 ```
 
-2. Change the current directory into the cloned repository </br>
+Change the current directory into the cloned repository </br>
 ```sh
 cd OOP_xixixi_AJG
+```
+
+If you are using window, you can try to compile and run the program by : </br>
+```sh
+make main_windows           #compiling program
+```
+```sh 
+./bin/main_windows.exe      #running the compiled program
+```
+
+
+Else, if you are using linux, you can try: </br>
+```sh
+make main_linux             #compiling program
+```
+```sh
+./bin/main_linux            #running the compiled program
 ```
 
 
@@ -43,25 +61,25 @@ cd OOP_xixixi_AJG
 | 2 | Player Card and Table Card | | &check; |
 | 3 | Game Round Robin System | | &check; |
 | 4 | Reward Point | | &check; |
-| 5 | Combinations  | High Card |  |
+| 5 | Combinations  | High Card | &check; |
 |   |               | Pair| &check; |
 |   |               | Two Pairs | &check; |
-|   |               | Three of a Kind |  |
+|   |               | Three of a Kind | &check; |
 |   |               | Straight | &check; |
 |   |               | Flush | &check; |
-|   |               | Full House |  |
+|   |               | Full House | &check; |
 |   |               | Four of a Kind | &check;  |
-|   |               | Straight Flush |  |
-| 6 | Abilities and Commands | Next |  |
-|   |                        | Re-Roll |  |
-|   |                        | Double / Quadruple |  |
-|   |                        | Half / Quarter |  |
-|   |                        | Reverse |  |
-|   |                        | Swap Card |  |
-|   |                        | Switch |  |
-|   |                        | Abilityless |  |
-| 7 |  Bonuses | Generic Class and Function |  |
-|   |          | Another Card Game Implementation |  |
+|   |               | Straight Flush | &check; |
+| 6 | Abilities and Commands | Next | &check; |
+|   |                        | Re-Roll | &check; |
+|   |                        | Double / Quadruple |&check;  |
+|   |                        | Half / Quarter | &check; |
+|   |                        | Reverse | &check; |
+|   |                        | Swap Card | &check; |
+|   |                        | Switch | &check; |
+|   |                        | Abilityless | &check; |
+| 7 |  Bonuses | Generic Class and Function | &check; |
+|   |          | Another Card Game Implementation | &check; |
 
 
 ## **Authors** 
@@ -77,71 +95,101 @@ cd OOP_xixixi_AJG
 
 ## **Folders and Files Description**
     .
-    ├─ .vscode                
-    ├─ class 
-        ├─ Card
-            ├─ AbilityCard.cpp
-            ├─ AbilityCard.hpp
-            ├─ Card.cpp
-            ├─ Card.hpp
-            ├─ NumberCard.cpp
-            ├─ NumberCard.hpp
-        ├─ command
-            ├─ AbilityCommand.cpp
-            ├─ AbilityCommand.hpp
-            ├─ Abilityless.cpp
-            ├─ Abilityless.hpp
-            ├─ CardException.hpp
-            ├─ ChangePlayerCard.cpp
-            ├─ ChangePlayerCard.hpp
-            ├─ ChangeTableCard.cpp
-            ├─ ChangeTableCard.hpp
-            ├─ CheckPrize.cpp
-            ├─ CheckPrize.hpp
-            ├─ Command.cpp
-            ├─ Command.hpp
-            ├─ Double.cpp
-            ├─ Double.hpp
-            ├─ Half.cpp
-            ├─ Half.hpp
-            ├─ Help.cpp
-            ├─ Help.hpp
-            ├─ MyCard.cpp
-            ├─ MyCard.hpp
-            ├─ Next.cpp
-            ├─ Next.hpp
-            ├─ OrdinaryCommand.cpp
-            ├─ OrdinaryCommand.hpp
-            ├─ Quadruple.cpp
-            ├─ Quadruple.hpp
-            ├─ Quarter.cpp
-            ├─ Quarter.hpp
-            ├─ Reroll.cpp
-            ├─ Reroll.hpp
-            ├─ Reverse.cpp
-            ├─ Reverse.hpp
-            ├─ Swap.cpp
-            ├─ Swap.hpp
-            ├─ Switch.cpp
-            ├─ Switch.hpp
-        ├─ inventory
-            ├─ AbilityCardsBank.cpp
-            ├─ AbilityCardsBank.hpp
-            ├─ CardsBank.cpp
-            ├─ CardsBank.hpp
-            ├─ InventoryException.hpp
-            ├─ InventoryHolder.cpp
-            ├─ InventoryHolder.hpp
-            ├─ Player.cpp
-            ├─ Player.hpp
-            ├─ TableCard.cpp
-            ├─ TableCard.hpp
-        ├─ Competition.cpp
-        ├─ Competition.hpp
-        ├─ Round.cpp
-        ├─ Round.hpp
-    ├─ utils   
-        ├─ ListOfThing.cpp
-        ├─ ListOfThing.hpp
-    ├─ main.cpp                
+    ├─ .vscode    
+    ├─ bin                  # contains executable compiled program
+    ├─ doc                  # contains complete documentation of the program
+    ├─ src       
+        ├─ class 
+            ├─ Card
+                ├─ Combination
+                    ├─ Combination.hpp
+                    ├─ Flush.cpp
+                    ├─ Flush.hpp
+                    ├─ FourOfKind.cpp
+                    ├─ FourOfKind.hpp
+                    ├─ FullHouse.cpp
+                    ├─ FullHouse.hpp
+                    ├─ High.cpp
+                    ├─ High.hpp
+                    ├─ Pair.cpp
+                    ├─ Pair.hpp
+                    ├─ Straight.cpp
+                    ├─ Straight.hpp
+                    ├─ StraightFlush.cpp
+                    ├─ StraightFlush.hpp
+                    ├─ ThreeOfKind.cpp
+                    ├─ ThreeOfKind.hpp
+                    ├─ TwoPair.cpp
+                    ├─ TwoPair.hpp
+                ├─ AbilityCard.cpp
+                ├─ AbilityCard.hpp
+                ├─ Card.cpp
+                ├─ Card.hpp
+                ├─ NumberCard.cpp
+                ├─ NumberCard.hpp
+            ├─ command
+                ├─ AbilityCommand.cpp
+                ├─ AbilityCommand.hpp
+                ├─ Abilityless.cpp
+                ├─ Abilityless.hpp
+                ├─ CardException.hpp
+                ├─ ChangePlayerCard.cpp
+                ├─ ChangePlayerCard.hpp
+                ├─ ChangeTableCard.cpp
+                ├─ ChangeTableCard.hpp
+                ├─ CheckPrize.cpp
+                ├─ CheckPrize.hpp
+                ├─ Command.cpp
+                ├─ Command.hpp
+                ├─ Double.cpp
+                ├─ Double.hpp
+                ├─ Half.cpp
+                ├─ Half.hpp
+                ├─ Help.cpp
+                ├─ Help.hpp
+                ├─ MyCard.cpp
+                ├─ MyCard.hpp
+                ├─ Next.cpp
+                ├─ Next.hpp
+                ├─ OrdinaryCommand.cpp
+                ├─ OrdinaryCommand.hpp
+                ├─ Quadruple.cpp
+                ├─ Quadruple.hpp
+                ├─ Quarter.cpp
+                ├─ Quarter.hpp
+                ├─ Reroll.cpp
+                ├─ Reroll.hpp
+                ├─ Reverse.cpp
+                ├─ Reverse.hpp
+                ├─ Swap.cpp
+                ├─ Swap.hpp
+                ├─ Switch.cpp
+                ├─ Switch.hpp
+            ├─ inventory
+                ├─ AbilityCardsBank.cpp
+                ├─ AbilityCardsBank.hpp
+                ├─ CardsBank.cpp
+                ├─ CardsBank.hpp
+                ├─ InventoryException.hpp
+                ├─ InventoryHolder.cpp
+                ├─ InventoryHolder.hpp
+                ├─ Player.cpp
+                ├─ Player.hpp
+                ├─ TableCard.cpp
+                ├─ TableCard.hpp
+            ├─ Competition.cpp
+            ├─ Competition.hpp
+            ├─ Round.cpp
+            ├─ Round.hpp
+        ├─ utils   
+            ├─ ListOfThing.cpp
+            ├─ ListOfThing.hpp
+            ├─ Max.cpp
+            ├─ Max.hpp
+            ├─ sort.cpp
+            ├─ sort.hpp
+        ├─ main.cpp      
+    ├─ test
+    ├─ uno                  # contains the algorithm for bonus aspect
+    ├─ makefile       
     └─ README.md

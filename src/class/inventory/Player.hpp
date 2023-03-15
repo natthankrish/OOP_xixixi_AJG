@@ -33,8 +33,6 @@ class Player : public InventoryHolder {
         bool getAbilityStatus();
         void setAbilityStatus(bool);
         AbilityCard getAbilityCard();
-        // void setPlayerCards();
-        // void searchBestDeckCards();
         void operator+(const NumberCard&);
         void operator+(const AbilityCard&);
         void operator-(const NumberCard&);
