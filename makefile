@@ -15,7 +15,7 @@ main_linux:
 	g++ $(CLASS) $(CLASS2) $(CLASS3) src/utils/sort.cpp src/main.cpp -o $(OUTPUT_FOLDER)/$@
 
 clean_main: 
-	rm $(OUTPUT_FOLDER)*.exe $(OUTPUT_FOLDER)/main_linux
+	rm $(OUTPUT_FOLDER)/*.exe $(OUTPUT_FOLDER)/main_linux
 
 CLASS_UNO := $(wildcard uno/class/*.cpp)
 CLASS_UNO2 := $(wildcard uno/class/*/*.cpp)
