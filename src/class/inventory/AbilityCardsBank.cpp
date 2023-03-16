@@ -4,7 +4,7 @@
 AbilityCardsBank::AbilityCardsBank() {
     vector<AbilityCard> temp;
     
-    temp.push_back(AbilityCard("Re-roll"));
+    temp.push_back(AbilityCard("Reroll"));
     temp.push_back(AbilityCard("Quadruple"));
     temp.push_back(AbilityCard("Quarter"));
     temp.push_back(AbilityCard("Reverse"));

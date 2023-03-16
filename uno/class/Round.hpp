@@ -8,6 +8,7 @@
 #include "command/CheckTable.hpp"
 #include "command/Pick.hpp"
 #include "command/MyCard.hpp"
+#include "command/Help.hpp"
 
 class Round {
     private:
@@ -27,6 +28,9 @@ class Round {
         int getIdxCurrentPlayer();
         void startRound(List<Player>&, CardsBank&, TableCard&);
         void getCardToPick(List<Player>&, CardsBank&, TableCard&);
+        string capitalize(string command);
+        void displayTitle(string title, string subtitle);
+        void displayPlayerTurn (string player, string name);
 };
 
 #endif

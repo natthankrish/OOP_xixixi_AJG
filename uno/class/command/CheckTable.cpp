@@ -8,9 +8,12 @@ bool CheckTable::continueToNextPlayer(List<Player>& listPlayer, int& playeridx){
 }
 
 void CheckTable::execute(TableCard& tablecard, List<Player>& listPlayer, int& playeridx, CardsBank& cardsbank, bool& ascending, int& cardToPick){
+    cout << "---------------------------------------" <<endl;
+    cout << "           == Table Cards ==           " <<endl;
     if (tablecard.Top().getNumber() < 14) {
         cout << "Kartu teratas di meja " << tablecard.Top() << endl;
     } else {
         cout << "Kartu teratas di meja " << tablecard.Top() << "(" << tablecard.Top().getColor() << ")" << endl;
     }
+    cout << "---------------------------------------" <<endl;
 }

@@ -4,7 +4,7 @@
 #include "Command.hpp"
 #include "../inventory/Player.hpp"
 #include "../../utils/ListOfThing.hpp"
-#include "../Round.hpp"
+// #include "../Round.hpp"
 #include "../inventory/CardsBank.hpp"
 
 class OrdinaryCommand : public Command {

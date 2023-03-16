@@ -27,5 +27,5 @@ class List {
         void deleteAt(int);
         T getMaxElement();
 };
-
+#include "ListOfThing.cpp"
 #endif

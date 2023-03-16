@@ -22,7 +22,9 @@ void Round::startRound(List<Player>& listPlayer, CardsBank& cardsbank, TableCard
     initializeRound(listPlayer, cardsbank);
 
 
-    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
+    string player = "Player " + to_string(this->idxCurrentPlayer);
+    displayPlayerTurn(player, listPlayer.getElement(this->idxCurrentPlayer-1).getName());
+    // cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" <<listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
     
     NumberCard pick = cardsbank.operator--();
     while (pick.getNumber() > 10) {
@@ -54,9 +56,10 @@ void Round::startRound(List<Player>& listPlayer, CardsBank& cardsbank, TableCard
 }
 
 void Round::initializeRound(List<Player>&listPlayer, CardsBank& cardsbank) {
-    cout << "SAATNYA PEMBAGIAN KARTU" << endl;
+    displayTitle("SAATNYA PEMBAGIAN KARTU", "None");
+    // cout << "SAATNYA PEMBAGIAN KARTU" << endl;
     cardsbank.bagiKartu(listPlayer);
-    cout << "----------------------------------------------------------" << endl;
+    // cout << "----------------------------------------------------------" << endl;
 }
 
 void Round::nextPlayer(List<Player>& listPlayer) {
@@ -89,8 +92,8 @@ void Round::nextPlayer(List<Player>& listPlayer) {
             }
         }
     }
-    cout << "----------------------------------------------------------" << endl;
-    cout << "Sekarang Giliran Pemain " << this->idxCurrentPlayer << " (" << listPlayer.getElement(this->idxCurrentPlayer-1).getName() << ")" << endl;
+    string player = "Player " + to_string(this->idxCurrentPlayer);
+    displayPlayerTurn(player, listPlayer.getElement(this->idxCurrentPlayer-1).getName());
 }
 
 void Round::getCardToPick(List<Player>& listPlayer, CardsBank& cardsbank, TableCard& tablecard) {
@@ -115,17 +118,20 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, CardsBank& cardsbank,
         // masukan perintah
         cout << "Masukkan Perintah: "; 
         cin >> perintah;
+        perintah = capitalize(perintah);
         // Percabangan buat objek
         if (perintah == "NEXT") {
             this->command = new Next("ordinary", "next");
         } else if (perintah == "THROW") {
             this->command = new Throw("ordinary", "throw");
-        } else if (perintah == "CHECKTABLE") {
+        } else if (perintah == "CHECKTABLECARD") {
             this->command = new CheckTable("ordinary", "double");
         } else if (perintah == "MYCARD") {
             this->command = new MyCard("ordinary", "mycard");
         } else if (perintah == "PICK") {
             this->command = new Pick("ordinary", "pick");
+        } else if (perintah == "HELP") {
+            this->command = new Help("ordinary", "help");
         } else {
             this->command = new Command("none", "none");
         }
@@ -135,3 +141,76 @@ void Round::processCurrentPlayer(List<Player>& listPlayer, CardsBank& cardsbank,
     }
     listPlayer[this->idxCurrentPlayer-1].terminateThisRound();
 }
+
+string Round::capitalize(string command){
+    for (int i = 0; i < command.length(); i++){
+        command[i] = toupper(command[i]);
+    }
+    return command;
+}
+
+void Round::displayTitle(string title, string subtitle){
+    string border = "==================================================" ;
+    int whitespace = border.length() - title.length() - 4;
+    int frontwhitespace = whitespace / 2;
+    int backwhitespace = whitespace - frontwhitespace;
+    cout << border << endl;
+    cout << "==";
+    for( int i = 0; i < frontwhitespace ; i++){
+        cout << " ";
+    }
+    cout << title;
+    for (int i = 0; i < backwhitespace; i++){
+        cout << " ";
+    }
+    cout << "==" << endl;
+    cout << border << endl;
+    if (subtitle != "None"){
+        int whitespace = border.length() - subtitle.length() - 4;
+        int frontwhitespace = whitespace / 2;
+        int backwhitespace = whitespace - frontwhitespace;
+        cout << "==";
+        for( int i = 0; i < frontwhitespace ; i++){
+            cout << " ";
+        }
+        cout << subtitle;
+        for (int i = 0; i < backwhitespace; i++){
+            cout << " ";
+        }
+        cout << "==" << endl;
+        cout << border << endl;
+    }
+}
+
+void Round::displayPlayerTurn(string player, string name) {
+    string border = "==================================================" ;
+    int i;
+    int whitespace = border.length() - player.length() - name.length() - 6;
+    int fwhitespace = whitespace /2;
+    int bwhitespace = whitespace - fwhitespace;
+    int ffwhitespace = fwhitespace/2;
+    int fbwhitespace = fwhitespace - ffwhitespace;
+    int bfwhitespace = bwhitespace/2;
+    int bbwhitespace = bwhitespace - bfwhitespace;
+    cout << border << endl;
+    cout << "==" ;
+    for (i = 0; i < ffwhitespace; i++){
+        cout << " ";
+    }
+    cout << player;
+    for (i = 0; i < fbwhitespace; i++){
+        cout << " ";
+    }
+    cout << "==";
+    for (i = 0; i < bfwhitespace; i++){
+        cout << " ";
+    }
+    cout << name;
+    for (i = 0; i < bbwhitespace; i++){
+        cout << " ";
+    }
+    cout << "==" << endl;
+    cout << border << endl;
+}
+
+

@@ -19,6 +19,7 @@ class Game {
         Game(int);
         int startGame(List<Player>&);
         CardsBank getCardsBank();
+        void displayTitle(string title, string subtitle);
 };
 
 #endif

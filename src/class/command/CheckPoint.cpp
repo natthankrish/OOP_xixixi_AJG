@@ -26,7 +26,7 @@ void CheckPoint::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     } 
     
     cout << "---------------------------------------" <<endl;
-    cout << "           == LEADERBOARD ==           " << endl;
+    cout << "           == Leaderboard ==           " << endl;
     for(int x = 1; x <= listPlayer.getNeff(); x++) {
         cout << x << ". " << listPlayer.getElement(x-1).getName() << ": " << listPlayer.getElement(x-1).getPoint() << endl;
     }

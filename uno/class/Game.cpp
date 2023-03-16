@@ -9,7 +9,7 @@ Game::Game(int gameID) {
 }
 
 int Game::startGame(List<Player>& listPlayer) {
-    cout << "PERMAIAN UNO dimulai" << endl;
+    displayTitle("PERMAIAN UNO DIMULAI","None");
     this->round = new Round(1, 1);
     round->startRound(listPlayer, this->cardsBank, this->tablecard);
     
@@ -18,10 +18,45 @@ int Game::startGame(List<Player>& listPlayer) {
             cout << i+1 << ". " << listPlayer[i].getName() << endl;
         }
     }
-    cout << "PERMAIAN SELESAI" << endl;
+    displayTitle("PERMAIAN SELESAI","None");
     return 0;
 }
 
 CardsBank Game::getCardsBank() {
     return this->cardsBank;
 }
+
+
+void Game::displayTitle(string title, string subtitle){
+    string border = "==================================================" ;
+    int whitespace = border.length() - title.length() - 4;
+    int frontwhitespace = whitespace / 2;
+    int backwhitespace = whitespace - frontwhitespace;
+    cout << border << endl;
+    cout << "==";
+    for( int i = 0; i < frontwhitespace ; i++){
+        cout << " ";
+    }
+    cout << title;
+    for (int i = 0; i < backwhitespace; i++){
+        cout << " ";
+    }
+    cout << "==" << endl;
+    cout << border << endl;
+    if (subtitle != "None"){
+        int whitespace = border.length() - subtitle.length() - 4;
+        int frontwhitespace = whitespace / 2;
+        int backwhitespace = whitespace - frontwhitespace;
+        cout << "==";
+        for( int i = 0; i < frontwhitespace ; i++){
+            cout << " ";
+        }
+        cout << subtitle;
+        for (int i = 0; i < backwhitespace; i++){
+            cout << " ";
+        }
+        cout << "==" << endl;
+        cout << border << endl;
+    }
+}
+

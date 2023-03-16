@@ -12,6 +12,7 @@ class Competition {
     public:
         Competition();
         void startCompetition();
+        void displayTitle(string title, string subtitle);
 };
 
 #endif

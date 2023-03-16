@@ -7,7 +7,7 @@ Reroll::Reroll(string type, string name) : AbilityCommand(type, name){
 
 void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeridx, long long int& prize, CardsBank& cardsbank, AbilityCardsBank& abilitycardsbank, bool& ascending) {
     try{
-        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reroll");
         playerCardIsDeactivated(listPlayer, playeridx);
         //execution
         cout << "Melakukan pembuangan kartu yang sedang dimiliki" << endl;
@@ -40,7 +40,7 @@ void Reroll::execute(TableCard& tablecard, List<Player>& listPlayer, int playeri
 
 bool Reroll::continueToNextPlayer(List<Player>& listPlayer, int playeridx, AbilityCardsBank& abilitycardsbank){
     try{
-        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Re-roll");
+        doesPlayerHaveAbilityCard(listPlayer, playeridx, "Reroll");
         playerCardIsDeactivated(listPlayer, playeridx);
         AbilityCard temp = listPlayer[playeridx-1]-listPlayer[playeridx-1].getAbilityCard(); 
         abilitycardsbank + temp;

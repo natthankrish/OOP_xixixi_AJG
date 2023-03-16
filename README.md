@@ -53,6 +53,14 @@ make main_linux             #compiling program
 ./bin/main_linux            #running the compiled program
 ```
 
+There is a bonus aspect in this program where you can play UNO, to compile and run the UNO program, try:
+```sh
+make uno_linux             #compiling program
+```
+```sh
+./bin/uno_linux            #running the compiled program
+```
+
 
 ## **Progress Report**
 | No | Module | Sub-module | Done |

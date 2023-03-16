@@ -8,6 +8,8 @@ bool MyCard::continueToNextPlayer(List<Player>& listPlayer, int& playeridx){
 }
 
 void MyCard::execute(TableCard& tablecard, List<Player>& listPlayer, int& playeridx, CardsBank& cardsbank, bool& ascending, int& cardToPick){
+    cout << "---------------------------------------" <<endl;
+    cout << "        == " << "Player " << playeridx << "'s Cards ==        " <<endl;
     listPlayer[playeridx-1].seeCard();
-    cout << "Sekarang masih giliran pemain " << listPlayer[playeridx-1].getName() << endl;
+    cout << "---------------------------------------" <<endl;
 }
