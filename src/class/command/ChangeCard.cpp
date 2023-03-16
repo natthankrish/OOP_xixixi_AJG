@@ -15,7 +15,7 @@ void ChangeCard::execute(TableCard& tablecard, List<Player>& listPlayer, int pla
     cout << "Masukkan nama file card player dengan ekstensi .txt: ";
     cin >> filename;
 
-    string path = "test/";
+    string path = "../test/";
     ifstream infile(path + filename); // sementara
     while (infile.fail()) {
         cout << "Failed to open file: " << path << filename << endl;
